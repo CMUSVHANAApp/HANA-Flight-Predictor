@@ -16,14 +16,19 @@
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
 
 - (IBAction)grabURLInBackground:(id)sender;
+@property (retain, nonatomic) IBOutlet UITextField *airlineText;
+@property (retain, nonatomic) IBOutlet UITextField *flightNumberText;
+@property (retain, nonatomic) IBOutlet UITextField *departureAirportText;
+@property (retain, nonatomic) IBOutlet UITextField *departureDateText;
+@property (retain, nonatomic) IBOutlet UITextField *destinationAirporteText;
 
 
 @property (strong, nonatomic) IBOutlet UITableView *listTableView;
-@property (strong, nonatomic) IBOutlet UITextField *airlineText;
-@property (strong, nonatomic) IBOutlet UITextField *flightNumberText;
-@property (strong, nonatomic) IBOutlet UITextField *departureAirportText;
-@property (strong, nonatomic) IBOutlet UITextField *departureDateText;
-@property (strong, nonatomic) IBOutlet UITextField *destinationAirportText;
+@property (strong, nonatomic) IBOutlet UILabel *airlineLabel;
+@property (strong, nonatomic) IBOutlet UILabel *flightNumberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *departureAirportLabel;
+@property (strong, nonatomic) IBOutlet UILabel *departureDateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *destinationAirportLabel;
 
 
 

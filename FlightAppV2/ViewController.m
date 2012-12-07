@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "ASIHTTPRequest.h"
 #import "MapViewController.h"
+#import "SBJson.h"
 
 
 
@@ -22,7 +23,7 @@
 
 @implementation ViewController
 
-@synthesize listTableView, submitButton, airlineText, departureAirportText, departureDateText, destinationAirportText;
+@synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel;
 
 
 
@@ -122,8 +123,7 @@ return cell;
 
 - (IBAction)grabURLInBackground:(id)sender
 {
-    
-    
+       
     
     NSURL *url = [NSURL URLWithString:@"http://flight-prediction.herokuapp.com/predictions/DL123"];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -133,15 +133,25 @@ return cell;
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    // Use when fetching text data
-NSString *responseString = [request responseString];
+    
+  SBJsonParser *parser = [[SBJsonParser alloc] init];
+    
+   NSString *responseString = [request responseString];
+    
+    NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
+    
+    
+    NSLog(@"Delay dparture is %@", [jsonDictionary valueForKey:@"delayDeparture"]);
+    
+        
+    
     
     NSString *result = @" Response for ";
     result = [result stringByAppendingString:self.departureAirportText.text];
     
     result = [result stringByAppendingString:@" to "];
     
-    result = [result stringByAppendingString:self.destinationAirportText.text];
+    result = [result stringByAppendingString:self.destinationAirporteText.text];
     
     
     responseString = [result stringByAppendingString:responseString];
@@ -150,7 +160,29 @@ NSString *responseString = [request responseString];
     
     if(mapViewController.view){
         
-        mapViewController.departurePrediction.text = responseString;
+        
+       
+        mapViewController.flightNumberLabel.text =[jsonDictionary valueForKey:@"flightNumber"];
+        
+        int departureDelay = [[jsonDictionary valueForKey:@"delayDeparture"] doubleValue];
+        
+        if(departureDelay<20){
+            mapViewController.departurePrediction.text =@"On time";
+            
+        }else{
+            mapViewController.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
+        }
+
+        
+        int destinationDelay = [[jsonDictionary valueForKey:@"delayArrival"] doubleValue];
+        
+        if(destinationDelay<20){
+            mapViewController.destinationPrediction.text =@"On time";
+ 
+        }else{
+           mapViewController.destinationPrediction.text =[NSString stringWithFormat:@"Delay %d minutes", destinationDelay];
+        }
+        
 
     }
    
@@ -173,4 +205,12 @@ NSString *responseString = [request responseString];
 
 
 
+- (void)dealloc {
+    [_airlineText release];
+    [_flightNumberText release];
+    [_departureAirportText release];
+    [_departureDateText release];
+    [_destinationAirporteText release];
+    [super dealloc];
+}
 @end

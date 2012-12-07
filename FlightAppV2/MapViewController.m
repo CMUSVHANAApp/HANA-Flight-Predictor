@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "AppDelegate.h"
+#import "MapAnnotation.h"
 
 @interface MapViewController ()
 
@@ -29,13 +30,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-//    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    
-//    self.arrivalDelay.text = appDelegate.arrivalDelay.text;
-   //self.departurePrediction.text = @"Modified";
+    MKCoordinateRegion region;
+    region.center.latitude = 37.3305262;
+    region.center.longitude = -122.0290935;
+    region.span.latitudeDelta = 0.1;
+    region.span.longitudeDelta = 0.1;
+    [mapView setRegion:region animated:YES];
     
+    MapAnnotation *annotation = [[MapAnnotation alloc] init];
+    annotation.title = @"From here";
+    annotation.subTitle =@"Weather";
+    annotation.coordinate = region.center;
+    
+    
+    [mapView addAnnotation:annotation];
+   
    
 }
 
@@ -47,7 +57,7 @@
 
 - (void)dealloc {
     
-    
+   
     [super dealloc];
 }
 @end

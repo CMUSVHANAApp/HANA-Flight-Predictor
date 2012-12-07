@@ -76,7 +76,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-ad-Xn8">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="354" id="gDH-kO-cpI"/>
+                                    <constraint firstAttribute="width" constant="696" id="Jua-j9-KKe"/>
+                                    <constraint firstAttribute="height" constant="316" id="coi-62-zox"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="U1c-Wf-Ytm">
@@ -224,10 +225,10 @@
                         <color key="backgroundColor" red="0.29411764705882354" green="0.53725490196078429" blue="0.81568627450980391" alpha="0.82000000000000006" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bRy-pj-6VN" firstAttribute="trailing" secondItem="UW4-cd-4Lu" secondAttribute="trailing" type="default" id="1bB-yo-OPE"/>
-                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="766" id="1va-3v-MFx"/>
-                            <constraint firstAttribute="trailing" secondItem="4If-bv-0JW" secondAttribute="trailing" constant="36" id="2go-Yg-Pkf"/>
-                            <constraint firstAttribute="bottom" secondItem="Rur-BC-iA3" secondAttribute="bottom" constant="249" id="BSz-CP-xrV"/>
-                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="158" id="Ci8-J3-3rF"/>
+                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="168" id="5JM-53-3Br"/>
+                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="9sn-BT-nkd"/>
+                            <constraint firstAttribute="bottom" secondItem="Rur-BC-iA3" secondAttribute="bottom" constant="332" id="B1H-Hj-q3K"/>
+                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="794" id="Esz-nA-uoj"/>
                             <constraint firstItem="bRy-pj-6VN" firstAttribute="leading" secondItem="Rur-BC-iA3" secondAttribute="leading" type="default" id="HT6-hm-ptl"/>
                             <constraint firstItem="uB9-Cm-jBy" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="326" id="Hey-wL-8ar"/>
                             <constraint firstItem="Rur-BC-iA3" firstAttribute="leading" secondItem="wtG-z9-aMP" secondAttribute="leading" type="default" id="Iee-0h-aX1"/>
@@ -237,38 +238,37 @@
                             <constraint firstItem="C1t-dV-Wwp" firstAttribute="top" secondItem="UW4-cd-4Lu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="L3W-CH-pgS"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="leading" secondItem="SPd-ad-Xn8" secondAttribute="leading" type="default" id="O4G-mL-eIf"/>
                             <constraint firstItem="P86-F0-Pze" firstAttribute="trailing" secondItem="Ly5-PV-dgZ" secondAttribute="trailing" type="default" id="ONh-nZ-pFP"/>
-                            <constraint firstAttribute="bottom" secondItem="C1t-dV-Wwp" secondAttribute="bottom" constant="109" id="REV-ok-KAS"/>
-                            <constraint firstAttribute="bottom" secondItem="uB9-Cm-jBy" secondAttribute="bottom" constant="339" id="S9j-6O-R5S"/>
                             <constraint firstItem="Rur-BC-iA3" firstAttribute="trailing" secondItem="bRy-pj-6VN" secondAttribute="trailing" type="default" id="SPv-tA-GAO"/>
                             <constraint firstItem="UW4-cd-4Lu" firstAttribute="baseline" secondItem="aO5-vE-jYE" secondAttribute="baseline" type="default" id="VOO-eT-1M9"/>
-                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="195" id="Vhy-Js-99a"/>
                             <constraint firstItem="bRy-pj-6VN" firstAttribute="baseline" secondItem="vc0-Bn-Ndg" secondAttribute="baseline" type="default" id="Vm6-3W-mU7"/>
                             <constraint firstItem="uB9-Cm-jBy" firstAttribute="top" secondItem="Ly5-PV-dgZ" secondAttribute="top" type="default" id="WFq-jd-5tX"/>
                             <constraint firstItem="uB9-Cm-jBy" firstAttribute="trailing" secondItem="wtG-z9-aMP" secondAttribute="trailing" type="default" id="X48-Kq-aek"/>
                             <constraint firstItem="vc0-Bn-Ndg" firstAttribute="trailing" secondItem="MnB-CV-Gjn" secondAttribute="trailing" type="default" id="Xlp-wt-Tp1"/>
                             <constraint firstItem="MnB-CV-Gjn" firstAttribute="trailing" secondItem="P86-F0-Pze" secondAttribute="trailing" type="default" id="Ze3-1U-EJZ"/>
-                            <constraint firstAttribute="bottom" secondItem="bRy-pj-6VN" secondAttribute="bottom" constant="203" id="bUN-yj-g2Y"/>
-                            <constraint firstAttribute="bottom" secondItem="wtG-z9-aMP" secondAttribute="bottom" constant="296" id="gNm-AE-J50"/>
-                            <constraint firstAttribute="bottom" secondItem="MnB-CV-Gjn" secondAttribute="bottom" constant="254" id="goa-wy-jfG"/>
+                            <constraint firstAttribute="bottom" secondItem="uB9-Cm-jBy" secondAttribute="bottom" constant="422" id="bjd-2J-hz9"/>
+                            <constraint firstAttribute="bottom" secondItem="C1t-dV-Wwp" secondAttribute="bottom" constant="192" id="k9a-hK-lK5"/>
                             <constraint firstItem="yc3-W2-bQ9" firstAttribute="trailing" secondItem="M86-ZS-sDC" secondAttribute="trailing" type="default" id="lAI-fD-hUv"/>
                             <constraint firstItem="yc3-W2-bQ9" firstAttribute="top" secondItem="4If-bv-0JW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lJp-6m-DTN"/>
                             <constraint firstItem="wtG-z9-aMP" firstAttribute="trailing" secondItem="Rur-BC-iA3" secondAttribute="trailing" type="default" id="lir-hP-rhg"/>
+                            <constraint firstAttribute="bottom" secondItem="wtG-z9-aMP" secondAttribute="bottom" constant="379" id="ndP-1I-ptb"/>
                             <constraint firstItem="wtG-z9-aMP" firstAttribute="top" secondItem="P86-F0-Pze" secondAttribute="top" type="default" id="ozM-i3-Teo"/>
+                            <constraint firstAttribute="bottom" secondItem="bRy-pj-6VN" secondAttribute="bottom" constant="286" id="sbV-Pv-fed"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="trailing" secondItem="SPd-ad-Xn8" secondAttribute="trailing" type="default" id="soa-hR-lEE"/>
                             <constraint firstItem="4If-bv-0JW" firstAttribute="trailing" secondItem="yc3-W2-bQ9" secondAttribute="trailing" type="default" id="sxr-5L-OuH"/>
+                            <constraint firstAttribute="bottom" secondItem="MnB-CV-Gjn" secondAttribute="bottom" constant="337" id="t37-p0-Jmv"/>
+                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="130" id="ugg-Xn-tih"/>
                             <constraint firstItem="aO5-vE-jYE" firstAttribute="trailing" secondItem="vc0-Bn-Ndg" secondAttribute="trailing" type="default" id="xCM-d8-htw"/>
                             <constraint firstItem="UW4-cd-4Lu" firstAttribute="leading" secondItem="bRy-pj-6VN" secondAttribute="leading" type="default" id="xYm-zK-Dyb"/>
-                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="xgk-S7-TBP"/>
                             <constraint firstItem="aO5-vE-jYE" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="172" id="ygm-RE-uCh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hP7-DH-0zK"/>
                     <connections>
-                        <outlet property="airlineText" destination="uB9-Cm-jBy" id="96V-XJ-85M"/>
-                        <outlet property="departureAirportText" destination="Rur-BC-iA3" id="VCw-bE-mqb"/>
-                        <outlet property="departureDateText" destination="bRy-pj-6VN" id="xat-AE-uJA"/>
-                        <outlet property="destinationAirportText" destination="UW4-cd-4Lu" id="Aqe-fA-N0I"/>
-                        <outlet property="flightNumberText" destination="wtG-z9-aMP" id="UPk-dD-7S0"/>
+                        <outlet property="airlineText" destination="uB9-Cm-jBy" id="Tbm-dD-77A"/>
+                        <outlet property="departureAirportText" destination="Rur-BC-iA3" id="RkL-Vr-Ld7"/>
+                        <outlet property="departureDateText" destination="bRy-pj-6VN" id="096-z1-h8Q"/>
+                        <outlet property="destinationAirporteText" destination="UW4-cd-4Lu" id="Qd6-ud-gZc"/>
+                        <outlet property="flightNumberText" destination="wtG-z9-aMP" id="LFE-bI-Ejl"/>
                         <outlet property="listTableView" destination="SPd-ad-Xn8" id="xcb-Wl-vAY"/>
                         <outlet property="submitButton" destination="C1t-dV-Wwp" id="wU8-th-4S1"/>
                     </connections>
@@ -304,10 +304,15 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="grabURLInBackground:"/>
+                <relationship kind="outlet" name="airlineLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="airlineText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="departureAirportLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="departureAirportText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="departureDateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="departureDateText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="destinationAirportText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="destinationAirportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="destinationAirporteText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="flightNumberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="flightNumberText" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
