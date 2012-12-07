@@ -26,4 +26,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *flightNumberLabel;
 
 
+@property (retain, nonatomic) IBOutlet UIImageView *rainImage;
+
 @end

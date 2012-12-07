@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		180EB5BD16715A3500FD5B06 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5BC16715A3500FD5B06 /* MapAnnotation.m */; };
+		180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5BF167173A000FD5B06 /* weather_few_clouds.png */; };
+		180EB5C51671D60800FD5B06 /* weather_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5C41671D60800FD5B06 /* weather_128.png */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -78,6 +80,8 @@
 /* Begin PBXFileReference section */
 		180EB5BB16715A3500FD5B06 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		180EB5BC16715A3500FD5B06 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		180EB5BF167173A000FD5B06 /* weather_few_clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_few_clouds.png; sourceTree = "<group>"; };
+		180EB5C41671D60800FD5B06 /* weather_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_128.png; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -270,6 +274,8 @@
 		182E2F4616711B050036F6D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				180EB5C41671D60800FD5B06 /* weather_128.png */,
+				180EB5BF167173A000FD5B06 /* weather_few_clouds.png */,
 				182E2F4716711B050036F6D6 /* FlightAppV2-Info.plist */,
 				182E2F4816711B050036F6D6 /* InfoPlist.strings */,
 				182E2F4B16711B050036F6D6 /* main.m */,
@@ -338,6 +344,8 @@
 				182E2F5616711B050036F6D6 /* Default-568h@2x.png in Resources */,
 				182E2F5916711B050036F6D6 /* MainStoryboard.storyboard in Resources */,
 				182E2F9A16711D880036F6D6 /* MapViewController.xib in Resources */,
+				180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */,
+				180EB5C51671D60800FD5B06 /* weather_128.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

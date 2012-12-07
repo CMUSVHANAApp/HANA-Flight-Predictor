@@ -78,8 +78,9 @@
                 numberLabel.text = @"FX150";
                 [numberLabel setBackgroundColor:[UIColor clearColor]];
               
-                statusLabel.text = @"Delayed 5 mins ";
+                statusLabel.text = @"On time ";
                 [statusLabel setBackgroundColor:[UIColor clearColor]];
+                [statusLabel setTextColor:[UIColor blueColor]];
                 
             }
             
@@ -160,17 +161,17 @@ return cell;
     
     if(mapViewController.view){
         
-        
        
-        mapViewController.flightNumberLabel.text =[jsonDictionary valueForKey:@"flightNumber"];
         
         int departureDelay = [[jsonDictionary valueForKey:@"delayDeparture"] doubleValue];
         
         if(departureDelay<20){
             mapViewController.departurePrediction.text =@"On time";
+             mapViewController.departurePrediction.textColor =[UIColor blueColor];
             
         }else{
             mapViewController.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
+             mapViewController.departurePrediction.textColor =[UIColor redColor];
         }
 
         
@@ -178,13 +179,16 @@ return cell;
         
         if(destinationDelay<20){
             mapViewController.destinationPrediction.text =@"On time";
+            mapViewController.destinationPrediction.textColor =[UIColor blueColor];
  
         }else{
            mapViewController.destinationPrediction.text =[NSString stringWithFormat:@"Delay %d minutes", destinationDelay];
+            mapViewController.destinationPrediction.textColor =[UIColor redColor];
         }
+        mapViewController.airlineLabel.text = self.airlineText.text;
         
-
-    }
+        
+        mapViewController.flightNumberLabel.text =self.flightNumberText.text;    }
    
     
     [self.navigationController pushViewController:mapViewController animated:YES];
@@ -213,4 +217,5 @@ return cell;
     [_destinationAirporteText release];
     [super dealloc];
 }
+
 @end

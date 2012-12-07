@@ -10,6 +10,7 @@
 
 
 @implementation MapAnnotation
+
 @synthesize title, subTitle, coordinate;
 
 -(void) dealloc{
@@ -18,13 +19,17 @@
     [super dealloc];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.addSb
+-(id) init{
+       
+        coordinate.latitude = 37.4000000+arc4random() % (10)+1;
+        coordinate.longitude = -122.0290935+arc4random() % (10)+1;
         
+        //self.title = [dict objectForKey:@"name"];
+        //self.title = [dict objectForKey:@"address"];
     
+    return self;
 }
+
+
 
 @end
