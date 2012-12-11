@@ -190,8 +190,15 @@ return cell;
         
         mapViewController.flightNumberLabel.text =self.flightNumberText.text;    }
    
+    if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        // optional - add more buttons:
+//        [alert addButtonWithTitle:@"Yes"];
+        [alert show];
+    }else{
+       [self.navigationController pushViewController:mapViewController animated:YES]; 
+    }
     
-    [self.navigationController pushViewController:mapViewController animated:YES];
 
     
 }

@@ -51,7 +51,8 @@
     region.span.latitudeDelta = (latA-latB)*2;
     region.span.longitudeDelta = (longA-longB)*2;
   
-    
+    annotation1.title = @"Departure city";
+    annotation2.title = @"Destination city";
         
     [mapView addAnnotation:annotation1];
     [annotation1 release];
