@@ -156,6 +156,7 @@ return cell;
     
     
     responseString = [result stringByAppendingString:responseString];
+    
  
     MapViewController *mapViewController = [[MapViewController alloc] init];
     

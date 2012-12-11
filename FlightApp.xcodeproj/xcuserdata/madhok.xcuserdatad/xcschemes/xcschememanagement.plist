@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FlightAppV2.xcscheme</key>
+		<key>FlightApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>182E2F3A16711B050036F6D6</key>
+		<key>1899595E166C1F9B00A14B85</key>
 		<dict>
 			<key>primary</key>
 			<true/>

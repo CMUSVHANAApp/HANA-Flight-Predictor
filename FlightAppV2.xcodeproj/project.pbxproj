@@ -16,7 +16,6 @@
 		182E2F4A16711B050036F6D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182E2F4816711B050036F6D6 /* InfoPlist.strings */; };
 		182E2F4C16711B050036F6D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 182E2F4B16711B050036F6D6 /* main.m */; };
 		182E2F5016711B050036F6D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 182E2F4F16711B050036F6D6 /* AppDelegate.m */; };
-		182E2F5216711B050036F6D6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 182E2F5116711B050036F6D6 /* Default.png */; };
 		182E2F5416711B050036F6D6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182E2F5316711B050036F6D6 /* Default@2x.png */; };
 		182E2F5616711B050036F6D6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182E2F5516711B050036F6D6 /* Default-568h@2x.png */; };
 		182E2F5916711B050036F6D6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182E2F5716711B050036F6D6 /* MainStoryboard.storyboard */; };
@@ -75,6 +74,9 @@
 		186E6B2016712D8100AB495C /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */; };
 		186E6B2116712D8100AB495C /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0816712D8100AB495C /* SBJsonWriter.h */; };
 		186E6B2216712D8100AB495C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0916712D8100AB495C /* SBJsonWriter.m */; };
+		7710FFD716767C0600E05E22 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFD616767C0600E05E22 /* Default.png */; };
+		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
+		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,7 +94,6 @@
 		182E2F4D16711B050036F6D6 /* FlightAppV2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlightAppV2-Prefix.pch"; sourceTree = "<group>"; };
 		182E2F4E16711B050036F6D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		182E2F4F16711B050036F6D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		182E2F5116711B050036F6D6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		182E2F5316711B050036F6D6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		182E2F5516711B050036F6D6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		182E2F5816711B050036F6D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -153,6 +154,10 @@
 		186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		186E6B0816712D8100AB495C /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		186E6B0916712D8100AB495C /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		7710FFD616767C0600E05E22 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		7710FFD81676850E00E05E22 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +182,7 @@
 		182E2F3016711B050036F6D6 = {
 			isa = PBXGroup;
 			children = (
+				7710FFD516767BDF00E05E22 /* Resources */,
 				186E6AF116712D8100AB495C /* NSObject+SBJson.h */,
 				186E6AF216712D8100AB495C /* NSObject+SBJson.m */,
 				186E6AF316712D8100AB495C /* SBJson.h */,
@@ -267,6 +273,9 @@
 				182E2F4616711B050036F6D6 /* Supporting Files */,
 				180EB5BB16715A3500FD5B06 /* MapAnnotation.h */,
 				180EB5BC16715A3500FD5B06 /* MapAnnotation.m */,
+				7710FFD81676850E00E05E22 /* ImageViewController.h */,
+				7710FFD91676850E00E05E22 /* ImageViewController.m */,
+				7710FFDA1676850E00E05E22 /* ImageViewController.xib */,
 			);
 			path = FlightAppV2;
 			sourceTree = "<group>";
@@ -274,17 +283,24 @@
 		182E2F4616711B050036F6D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7710FFD616767C0600E05E22 /* Default.png */,
 				180EB5C41671D60800FD5B06 /* weather_128.png */,
 				180EB5BF167173A000FD5B06 /* weather_few_clouds.png */,
 				182E2F4716711B050036F6D6 /* FlightAppV2-Info.plist */,
 				182E2F4816711B050036F6D6 /* InfoPlist.strings */,
 				182E2F4B16711B050036F6D6 /* main.m */,
 				182E2F4D16711B050036F6D6 /* FlightAppV2-Prefix.pch */,
-				182E2F5116711B050036F6D6 /* Default.png */,
 				182E2F5316711B050036F6D6 /* Default@2x.png */,
 				182E2F5516711B050036F6D6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7710FFD516767BDF00E05E22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,13 +355,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				182E2F4A16711B050036F6D6 /* InfoPlist.strings in Resources */,
-				182E2F5216711B050036F6D6 /* Default.png in Resources */,
 				182E2F5416711B050036F6D6 /* Default@2x.png in Resources */,
 				182E2F5616711B050036F6D6 /* Default-568h@2x.png in Resources */,
 				182E2F5916711B050036F6D6 /* MainStoryboard.storyboard in Resources */,
 				182E2F9A16711D880036F6D6 /* MapViewController.xib in Resources */,
 				180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */,
 				180EB5C51671D60800FD5B06 /* weather_128.png in Resources */,
+				7710FFD716767C0600E05E22 /* Default.png in Resources */,
+				7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +425,7 @@
 				182E2F5C16711B050036F6D6 /* ViewController.m in Sources */,
 				182E2F9916711D880036F6D6 /* MapViewController.m in Sources */,
 				180EB5BD16715A3500FD5B06 /* MapAnnotation.m in Sources */,
+				7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

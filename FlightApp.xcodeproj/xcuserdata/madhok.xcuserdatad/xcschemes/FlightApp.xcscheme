@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "182E2F3A16711B050036F6D6"
-               BuildableName = "FlightAppV2.app"
-               BlueprintName = "FlightAppV2"
-               ReferencedContainer = "container:FlightAppV2.xcodeproj">
+               BlueprintIdentifier = "1899595E166C1F9B00A14B85"
+               BuildableName = "FlightApp.app"
+               BlueprintName = "FlightApp"
+               ReferencedContainer = "container:FlightApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "182E2F3A16711B050036F6D6"
-            BuildableName = "FlightAppV2.app"
-            BlueprintName = "FlightAppV2"
-            ReferencedContainer = "container:FlightAppV2.xcodeproj">
+            BlueprintIdentifier = "1899595E166C1F9B00A14B85"
+            BuildableName = "FlightApp.app"
+            BlueprintName = "FlightApp"
+            ReferencedContainer = "container:FlightApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "182E2F3A16711B050036F6D6"
-            BuildableName = "FlightAppV2.app"
-            BlueprintName = "FlightAppV2"
-            ReferencedContainer = "container:FlightAppV2.xcodeproj">
+            BlueprintIdentifier = "1899595E166C1F9B00A14B85"
+            BuildableName = "FlightApp.app"
+            BlueprintName = "FlightApp"
+            ReferencedContainer = "container:FlightApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "182E2F3A16711B050036F6D6"
-            BuildableName = "FlightAppV2.app"
-            BlueprintName = "FlightAppV2"
-            ReferencedContainer = "container:FlightAppV2.xcodeproj">
+            BlueprintIdentifier = "1899595E166C1F9B00A14B85"
+            BuildableName = "FlightApp.app"
+            BlueprintName = "FlightApp"
+            ReferencedContainer = "container:FlightApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
