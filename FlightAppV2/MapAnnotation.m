@@ -18,17 +18,29 @@
     [subTitle release];
     [super dealloc];
 }
-
--(id) init{
+-(id) initWithCoordinate: (CLLocationCoordinate2D) the_coordinate
+{
+    if (self = [super init])
+    {
+        coordinate = the_coordinate;
+    }
+    return self;
+}
+-(NSString*) getWeatherCode{
+    return self.weatherCode;
+}
+/*
+ -(id) init{
        
-        coordinate.latitude = 37.4000000+arc4random() % (10)+1;
-        coordinate.longitude = -122.0290935+arc4random() % (10)+1;
+        //coordinate.latitude = 37.4000000+arc4random() % (10)+1;
+        //coordinate.longitude = -122.0290935+arc4random() % (10)+1;
         
         //self.title = [dict objectForKey:@"name"];
         //self.title = [dict objectForKey:@"address"];
     
     return self;
 }
+*/
 
 
 

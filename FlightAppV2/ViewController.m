@@ -141,9 +141,6 @@ return cell;
     
     NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
     
-    
-    NSLog(@"Delay dparture is %@", [jsonDictionary valueForKey:@"delayDeparture"]);
-    
         
     
     
@@ -161,10 +158,10 @@ return cell;
     MapViewController *mapViewController = [[MapViewController alloc] init];
     
     if(mapViewController.view){
-        
        
-        
-        int departureDelay = [[jsonDictionary valueForKey:@"delayDeparture"] doubleValue];
+        NSLog(@"Delay dparture is %@", [jsonDictionary valueForKey:@"departDelay"]);
+        NSLog(@"Delay arrival is %@", [jsonDictionary valueForKey:@"arrivalDealy"]);
+        int departureDelay = [[jsonDictionary valueForKey:@"departDelay"] doubleValue];
         
         if(departureDelay<20){
             mapViewController.departurePrediction.text =@"On time";
@@ -176,7 +173,7 @@ return cell;
         }
 
         
-        int destinationDelay = [[jsonDictionary valueForKey:@"delayArrival"] doubleValue];
+        int destinationDelay = [[jsonDictionary valueForKey:@"arrivalDealy"] doubleValue];
         
         if(destinationDelay<20){
             mapViewController.destinationPrediction.text =@"On time";
@@ -190,6 +187,7 @@ return cell;
         
         
         mapViewController.flightNumberLabel.text =self.flightNumberText.text;    }
+
    
     if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -198,9 +196,9 @@ return cell;
         [alert show];
     }else{
        [self.navigationController pushViewController:mapViewController animated:YES]; 
-    }
-    
+    }    
 
+    [self.navigationController pushViewController:mapViewController animated:YES];
     
 }
 
@@ -209,7 +207,7 @@ return cell;
 //    NSError *error = [request error];
     
     NSString *alertViewText = [[NSString alloc] initWithFormat:@"Error"];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title" message:alertViewText delegate:(nil) cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failed" message:alertViewText delegate:(nil) cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     
     [alert show];
 }

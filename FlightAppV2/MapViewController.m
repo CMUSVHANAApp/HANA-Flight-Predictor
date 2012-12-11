@@ -10,58 +10,75 @@
 #import "AppDelegate.h"
 #import "MapAnnotation.h"
 
-
 @interface MapViewController ()
+
+@property (nonatomic, retain) MapAnnotation *calloutAnnotation;
 
 @end
 
 @implementation MapViewController
 
 @synthesize arrivalDelay, departurePrediction,destinationPrediction, rainImage;
+@synthesize calloutAnnotation = _calloutAnnotation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+              
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+
+
+    CLLocationCoordinate2D locationDeparture;
+    locationDeparture.latitude = 33.920570;
+    locationDeparture.longitude = -111.9260460;
+
+
+    CLLocationCoordinate2D locationArrival;
+    locationArrival.longitude = -74.95576290;
+    locationArrival.latitude = 40.13799190;
     
-    MapAnnotation *annotation1 = [[MapAnnotation alloc] init];
     
-    MapAnnotation *annotation2 = [[MapAnnotation alloc] init];
+    MapAnnotation *annotation1 = [[MapAnnotation alloc] initWithCoordinate: locationDeparture];
+
+    MapAnnotation *annotation2 = [[MapAnnotation alloc] initWithCoordinate: locationArrival];
     
-    MKCoordinateRegion region;
- 
+    MKCoordinateRegion region = { {0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.latitude = (locationDeparture.latitude + locationArrival.latitude) /2 ;
+    region.center.longitude = (locationDeparture.longitude + locationArrival.longitude) /2;
     
-    double latA = annotation1.coordinate.latitude;
-    double latB = annotation2.coordinate.latitude;
-    
-    double longA = annotation1.coordinate.longitude;
-    double longB = annotation2.coordinate.longitude;
-    
-    region.center.latitude = (latA+latB)/2.0;
-    region.center.longitude = (longA+longB)/2.0;
-    
-    region.span.latitudeDelta = (latA-latB)*2;
-    region.span.longitudeDelta = (longA-longB)*2;
+    region.span.latitudeDelta = fabs(locationDeparture.latitude - locationArrival.latitude)*2;
+    region.span.longitudeDelta = fabs(locationDeparture.longitude-locationArrival.longitude)*2;
   
-    annotation1.title = @"Departure city";
-    annotation2.title = @"Destination city";
+    annotation1.title = @"Phoenix";
+    annotation1.weatherCode = @"sunny";
+    annotation1.subTitle = @"Sunny";
+    annotation2.title = @"Philadelphia";
+    annotation2.weatherCode = @"rain";
+    annotation2.subTitle = @"Rain";
+    [mapView setRegion:region animated:YES];
+
         
     [mapView addAnnotation:annotation1];
+    [mapView selectAnnotation:annotation1 animated:YES];
     [annotation1 release];
     
     
     [mapView addAnnotation:annotation2];
+    [mapView selectAnnotation:annotation2 animated:YES];
     [annotation2 release];
+    
 
-   
+
+    
+    [mapView setRegion:region];
+    [super viewDidLoad];   
    
 }
 
@@ -76,33 +93,36 @@
  
     [super dealloc];
 }
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    self.calloutAnnotation = [[MapAnnotation alloc] init];
+	
+	[mapView addAnnotation:self.calloutAnnotation];
+}
 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+	if (self.calloutAnnotation && view.annotation == self.calloutAnnotation) {
+		[mapView removeAnnotation: self.calloutAnnotation];
+	}
+}
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
+    
     MKAnnotationView *pin = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:[annotation title]];
     
     if (pin == nil) {
         pin = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[annotation title]] autorelease];
+        MapAnnotation *travellerAnnotation = (MapAnnotation *)annotation;
+        if(travellerAnnotation.weatherCode == @"sunny"){
+            UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"weather_few_clouds.png"]];
+            pin.leftCalloutAccessoryView = imageView;
+        }
+        else{
+            UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"weather_128.png"]];
+            pin.leftCalloutAccessoryView = imageView;
+        }
     }else {
         pin.annotation = annotation;
     }
-    
-    int weatherType = arc4random() % (10)+1;
-    
-    if((weatherType %2) == 0){
-        pin.image = [UIImage imageNamed:@"weather_few_clouds.png"];
-  
-    }else{
-         pin.image = [UIImage imageNamed:@"weather_128.png"];
-    }
-      
-    
-    //pin.pinColor = MKPinAnnotationColorGreen;
-    
-  
-    
-    pin.canShowCallout = FALSE;
+    pin.canShowCallout = TRUE;
     return pin;
 }
-
-
 @end
