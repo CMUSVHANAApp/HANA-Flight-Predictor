@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "AppDelegate.h"
 #import "MapAnnotation.h"
+#import "WeatherAnnotationView.h"
 
 @interface MapViewController ()
 
@@ -50,34 +51,35 @@
     MapAnnotation *annotation2 = [[MapAnnotation alloc] initWithCoordinate: locationArrival];
     
     MKCoordinateRegion region = { {0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.latitude = (locationDeparture.latitude + locationArrival.latitude) /2 ;
-    region.center.longitude = (locationDeparture.longitude + locationArrival.longitude) /2;
+    region.center.latitude = (locationDeparture.latitude + locationArrival.latitude) /2.0f;
+    region.center.longitude = (locationDeparture.longitude + locationArrival.longitude) /2.0f ;
     
-    region.span.latitudeDelta = fabs(locationDeparture.latitude - locationArrival.latitude)*2;
-    region.span.longitudeDelta = fabs(locationDeparture.longitude-locationArrival.longitude)*2;
-  
-    annotation1.title = @"Phoenix";
+    region.span.latitudeDelta = fabs(locationDeparture.latitude - locationArrival.latitude);
+    region.span.longitudeDelta = fabs(locationDeparture.longitude-locationArrival.longitude);
+    [mapView setRegion:region];
+    
+    annotation1.title = @"PHX";
     annotation1.weatherCode = @"sunny";
-    annotation1.subTitle = @"Sunny";
-    annotation2.title = @"Philadelphia";
+    annotation1.subTitle = @"Delay 5 hours";
+    annotation2.title = @"PHL";
     annotation2.weatherCode = @"rain";
-    annotation2.subTitle = @"Rain";
+    annotation2.subTitle = @"Delay 6 hours";
     [mapView setRegion:region animated:YES];
 
         
     [mapView addAnnotation:annotation1];
-    [mapView selectAnnotation:annotation1 animated:YES];
+    //[mapView selectAnnotation:annotation1 animated:NO];
     [annotation1 release];
     
     
     [mapView addAnnotation:annotation2];
-    [mapView selectAnnotation:annotation2 animated:YES];
+    //[mapView selectAnnotation:annotation2 animated:NO];
     [annotation2 release];
     
 
 
     
-    [mapView setRegion:region];
+
     [super viewDidLoad];   
    
 }
@@ -95,34 +97,30 @@
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     self.calloutAnnotation = [[MapAnnotation alloc] init];
-	
+	NSLog(@"TEST did Select");
 	[mapView addAnnotation:self.calloutAnnotation];
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-	if (self.calloutAnnotation && view.annotation == self.calloutAnnotation) {
-		[mapView removeAnnotation: self.calloutAnnotation];
+	NSLog(@"TEST did DeSelect");
+    if (self.calloutAnnotation && view.annotation == self.calloutAnnotation) {
+        
+        [mapView removeAnnotation: self.calloutAnnotation];
 	}
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
     
-    MKAnnotationView *pin = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:[annotation title]];
+    WeatherAnnotationView *pin = (WeatherAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:[annotation title]];
     
     if (pin == nil) {
-        pin = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[annotation title]] autorelease];
+        pin = [[[WeatherAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[annotation title]] autorelease];
         MapAnnotation *travellerAnnotation = (MapAnnotation *)annotation;
-        if(travellerAnnotation.weatherCode == @"sunny"){
-            UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"weather_few_clouds.png"]];
-            pin.leftCalloutAccessoryView = imageView;
-        }
-        else{
-            UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"weather_128.png"]];
-            pin.leftCalloutAccessoryView = imageView;
-        }
+        [pin setImage: travellerAnnotation.weatherCode];
+        [pin setTitle: travellerAnnotation.title];
+        [pin setSubTitle:travellerAnnotation.subTitle];
     }else {
         pin.annotation = annotation;
     }
-    pin.canShowCallout = TRUE;
     return pin;
 }
 @end
