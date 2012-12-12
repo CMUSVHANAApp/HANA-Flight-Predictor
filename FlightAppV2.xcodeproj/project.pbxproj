@@ -74,6 +74,7 @@
 		186E6B2016712D8100AB495C /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */; };
 		186E6B2116712D8100AB495C /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0816712D8100AB495C /* SBJsonWriter.h */; };
 		186E6B2216712D8100AB495C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0916712D8100AB495C /* SBJsonWriter.m */; };
+		1A49A6371678A2F500918751 /* WeatherAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49A6351678A2F500918751 /* WeatherAnnotationView.m */; };
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
 		77BFDD7C1677D6E6008099A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFDD7B1677D6E6008099A2 /* Default.png */; };
@@ -154,6 +155,8 @@
 		186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		186E6B0816712D8100AB495C /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		186E6B0916712D8100AB495C /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		1A49A6351678A2F500918751 /* WeatherAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherAnnotationView.m; path = FlightAppV2/WeatherAnnotationView.m; sourceTree = "<group>"; };
+		1A49A6361678A2F500918751 /* WeatherAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherAnnotationView.h; path = FlightAppV2/WeatherAnnotationView.h; sourceTree = "<group>"; };
 		7710FFD81676850E00E05E22 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				186E6B0916712D8100AB495C /* SBJsonWriter.m */,
 				182E2F9B167122CE0036F6D6 /* MapKit.framework */,
 				182E2F6A16711CF80036F6D6 /* ASIAuthenticationDialog.h */,
+				1A49A6351678A2F500918751 /* WeatherAnnotationView.m */,
+				1A49A6361678A2F500918751 /* WeatherAnnotationView.h */,
 				182E2F6B16711CF80036F6D6 /* ASIAuthenticationDialog.m */,
 				182E2F6C16711CF80036F6D6 /* ASICacheDelegate.h */,
 				182E2F6D16711CF80036F6D6 /* ASIDataCompressor.h */,
@@ -426,6 +431,7 @@
 				182E2F9916711D880036F6D6 /* MapViewController.m in Sources */,
 				180EB5BD16715A3500FD5B06 /* MapAnnotation.m in Sources */,
 				7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */,
+				1A49A6371678A2F500918751 /* WeatherAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
