@@ -32,4 +32,6 @@
 
 @property (retain, nonatomic) IBOutlet UIImageView *rainImage;
 
+-(IBAction)drawRoute;
+
 @end

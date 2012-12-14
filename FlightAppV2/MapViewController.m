@@ -12,6 +12,7 @@
 #import "WeatherAnnotationView.h"
 #import <QuartzCore/QuartzCore.h>
 
+
 @interface MapViewController ()
 
 @property (nonatomic, retain) MapAnnotation *calloutAnnotation;
@@ -23,6 +24,7 @@
 @synthesize arrivalDelay, departurePrediction,destinationPrediction, rainImage;
 @synthesize calloutAnnotation = _calloutAnnotation;
 @synthesize displayView, realTimeLabel, poweredBySAPLabel, flightInformationLabel;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,7 +43,7 @@
     
     realTimeLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:18.0f];
-    
+   
 
 
     CLLocationCoordinate2D locationDeparture;
@@ -53,7 +55,7 @@
     locationArrival.longitude = -74.95576290;
     locationArrival.latitude = 40.13799190;
     
-    
+       
     MapAnnotation *annotation1 = [[MapAnnotation alloc] initWithCoordinate: locationDeparture];
 
     MapAnnotation *annotation2 = [[MapAnnotation alloc] initWithCoordinate: locationArrival];
@@ -84,9 +86,32 @@
     //[mapView selectAnnotation:annotation2 animated:NO];
     [annotation2 release];
     
-
-
+//    
+//    CLLocationCoordinate2D locationDeparture;
+//    locationDeparture.latitude = 33.920570;
+//    locationDeparture.longitude = -111.9260460;
+//    
+//    
+//    CLLocationCoordinate2D locationArrival;
+//    locationArrival.longitude = -74.95576290;
+//    locationArrival.latitude = 40.13799190;
     
+    
+    NSInteger numberOfSteps = 2;
+    CLLocationCoordinate2D coordinates[2];
+    
+    
+    
+    coordinates[0] = locationDeparture;
+    coordinates[1] = locationArrival;
+    
+    
+    
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
+    [mapView addOverlay:polyline];
+    
+    [mapView setDelegate:self];
+      
 
     [super viewDidLoad];   
    
@@ -96,6 +121,8 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
 }
 
 
@@ -130,5 +157,16 @@
         pin.annotation = annotation;
     }
     return pin;
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id < MKOverlay >)overlay{
+    
+    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+    polylineView.lineWidth = 10.0;
+    polylineView.strokeColor = [UIColor orangeColor];
+    [polylineView setFillColor:[UIColor orangeColor]];
+    
+    return [polylineView autorelease];
+    
 }
 @end

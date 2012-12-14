@@ -205,13 +205,13 @@
                                 <color key="backgroundColor" white="0.83137254900000002" alpha="0.81999999999999995" colorSpace="deviceWhite"/>
                                 <constraints>
                                     <constraint firstItem="Sia-1e-8Ke" firstAttribute="leading" secondItem="2Yh-Ll-xGi" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="84J-WB-Hvh"/>
+                                    <constraint firstItem="Sia-1e-8Ke" firstAttribute="centerY" secondItem="I35-tZ-Xir" secondAttribute="centerY" type="default" id="BTN-1y-Htb"/>
                                     <constraint firstItem="doK-Da-LGu" firstAttribute="baseline" secondItem="YiW-Bi-6hr" secondAttribute="baseline" type="default" id="Dex-4D-vYL"/>
                                     <constraint firstItem="2Yh-Ll-xGi" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GLY-Bs-4tD"/>
                                     <constraint firstItem="LzS-Or-cWd" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="325" id="LLH-nf-XZQ"/>
                                     <constraint firstItem="Sia-1e-8Ke" firstAttribute="baseline" secondItem="LzS-Or-cWd" secondAttribute="baseline" type="default" id="TgT-aV-UFk"/>
                                     <constraint firstAttribute="trailing" secondItem="doK-Da-LGu" secondAttribute="trailing" constant="9" id="VXf-xc-hNB"/>
                                     <constraint firstItem="Sia-1e-8Ke" firstAttribute="baseline" secondItem="2Yh-Ll-xGi" secondAttribute="baseline" type="default" id="bAm-jG-raL"/>
-                                    <constraint firstItem="4Vf-Y6-0r9" firstAttribute="centerY" secondItem="I35-tZ-Xir" secondAttribute="centerY" type="default" id="dX2-YJ-WMr"/>
                                     <constraint firstAttribute="trailing" secondItem="YiW-Bi-6hr" secondAttribute="trailing" constant="141" id="ftS-ME-d1X"/>
                                     <constraint firstItem="YiW-Bi-6hr" firstAttribute="baseline" secondItem="LzS-Or-cWd" secondAttribute="baseline" type="default" id="ikj-G6-a06"/>
                                     <constraint firstAttribute="trailing" secondItem="4Vf-Y6-0r9" secondAttribute="trailing" constant="98" id="mjH-dg-sc7"/>
@@ -345,12 +345,12 @@
                             <constraint firstItem="qXL-3r-weV" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="76" id="15y-fs-xwc"/>
                             <constraint firstItem="SeT-62-R2n" firstAttribute="trailing" secondItem="dEt-0g-o1f" secondAttribute="trailing" type="default" id="7nM-4y-v69"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="144" id="BcG-fC-KYj"/>
+                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="776" id="BcY-Ot-wLl"/>
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="top" secondItem="5" secondAttribute="top" constant="452" id="CSs-MF-vRq"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="Dj7-Sc-aaH"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="leading" secondItem="SPd-ad-Xn8" secondAttribute="leading" type="default" id="O4G-mL-eIf"/>
                             <constraint firstItem="LEK-Uk-PQo" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R6O-Np-Zy7"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" type="default" id="See-7d-ltx"/>
-                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="778" id="Z5N-aN-KTD"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="SeT-62-R2n" secondAttribute="trailing" type="default" id="fPX-H5-JPH"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="M86-ZS-sDC" secondAttribute="trailing" type="default" id="iub-03-sMo"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="top" secondItem="5" secondAttribute="top" constant="478" id="kgy-mW-Rc0"/>
@@ -360,7 +360,7 @@
                             <constraint firstItem="SeT-62-R2n" firstAttribute="top" secondItem="dEt-0g-o1f" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sKX-pf-Yvl"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="trailing" secondItem="SPd-ad-Xn8" secondAttribute="trailing" type="default" id="soa-hR-lEE"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="top" secondItem="5" secondAttribute="top" constant="100" id="sv7-BW-kZ7"/>
-                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="817" id="vYj-cZ-Nmz"/>
+                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="815" id="uHU-ET-5q1"/>
                             <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="183" id="z0E-5p-PMs"/>
                         </constraints>
                     </view>
@@ -404,32 +404,6 @@
         <image name="Predict My Flight.png" width="267" height="40"/>
         <image name="Screen Shot 2012-12-13 at 9.00.22 PM.png" width="344" height="67"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="grabURLInBackground:"/>
-                <relationship kind="outlet" name="airlineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="airlineText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="departureAirportLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="departureAirportText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="departureDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="departureDateText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="destinationAirportLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="destinationAirporteText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="flightNumberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="flightNumberText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="itineraryInputView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="poweredBySAPLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="realTimePredictionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
