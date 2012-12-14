@@ -85,28 +85,24 @@
     [mapView addAnnotation:annotation2];
     //[mapView selectAnnotation:annotation2 animated:NO];
     [annotation2 release];
+   locationArrival.latitude = 40.13799190;
     
-//    
-//    CLLocationCoordinate2D locationDeparture;
-//    locationDeparture.latitude = 33.920570;
-//    locationDeparture.longitude = -111.9260460;
-//    
-//    
-//    CLLocationCoordinate2D locationArrival;
-//    locationArrival.longitude = -74.95576290;
-//    locationArrival.latitude = 40.13799190;
+
     
+    //Add a central point to create a curve
+    NSInteger numberOfSteps = 3;
+    CLLocationCoordinate2D coordinates[3];
     
-    NSInteger numberOfSteps = 2;
-    CLLocationCoordinate2D coordinates[2];
-    
-    
+    CLLocationCoordinate2D locationMiddle;
+    locationMiddle.latitude = ((locationDeparture.latitude+locationArrival.latitude)-5)/2.0f;
+    locationMiddle.longitude = ((locationDeparture.longitude+locationArrival.longitude)+7)/2.0f;
     
     coordinates[0] = locationDeparture;
-    coordinates[1] = locationArrival;
+    coordinates[1] = locationMiddle;
+    coordinates[2] = locationArrival;
+
     
-    
-    
+
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
     [mapView addOverlay:polyline];
     
@@ -162,9 +158,9 @@
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id < MKOverlay >)overlay{
     
     MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
-    polylineView.lineWidth = 10.0;
-    polylineView.strokeColor = [UIColor orangeColor];
-    [polylineView setFillColor:[UIColor orangeColor]];
+    polylineView.lineWidth = 5.0;
+    polylineView.strokeColor = [UIColor greenColor];
+    [polylineView setFillColor:[UIColor greenColor]];
     
     return [polylineView autorelease];
     
