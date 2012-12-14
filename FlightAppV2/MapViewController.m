@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "MapAnnotation.h"
 #import "WeatherAnnotationView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MapViewController ()
 
@@ -21,6 +22,7 @@
 
 @synthesize arrivalDelay, departurePrediction,destinationPrediction, rainImage;
 @synthesize calloutAnnotation = _calloutAnnotation;
+@synthesize displayView, realTimeLabel, poweredBySAPLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +36,11 @@
 
 - (void)viewDidLoad
 {
+    displayView.layer.cornerRadius = 5;
+    displayView.layer.masksToBounds = YES;
+    
+    realTimeLabel.font = [UIFont italicSystemFontOfSize:20.0f];
+    poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:18.0f];
 
 
     CLLocationCoordinate2D locationDeparture;
@@ -54,8 +61,8 @@
     region.center.latitude = (locationDeparture.latitude + locationArrival.latitude) /2.0f;
     region.center.longitude = (locationDeparture.longitude + locationArrival.longitude) /2.0f ;
     
-    region.span.latitudeDelta = fabs(locationDeparture.latitude - locationArrival.latitude);
-    region.span.longitudeDelta = fabs(locationDeparture.longitude-locationArrival.longitude);
+    region.span.latitudeDelta = fabs(locationDeparture.latitude - locationArrival.latitude)*2;
+    region.span.longitudeDelta = fabs(locationDeparture.longitude-locationArrival.longitude)*2;
     [mapView setRegion:region];
     
     annotation1.title = @"PHX";
@@ -93,6 +100,7 @@
 
 - (void)dealloc {
  
+
     [super dealloc];
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {

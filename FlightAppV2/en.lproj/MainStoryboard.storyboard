@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dJ8-sq-Bw8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dJ8-sq-Bw8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -52,8 +52,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1t-dV-Wwp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="604-PT-Asq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Submit">
+                                <state key="normal" title="Predict">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -237,27 +240,27 @@
                             <constraint firstItem="4If-bv-0JW" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="KPs-Ci-A7o"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="leading" secondItem="SPd-ad-Xn8" secondAttribute="leading" type="default" id="O4G-mL-eIf"/>
                             <constraint firstItem="gsN-L7-Cuy" firstAttribute="leading" secondItem="Rur-BC-iA3" secondAttribute="leading" type="default" id="OTH-K8-UBJ"/>
+                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="PJp-cw-aRO"/>
                             <constraint firstItem="MnB-CV-Gjn" firstAttribute="top" secondItem="Rur-BC-iA3" secondAttribute="top" type="default" id="QXd-XU-EYK"/>
                             <constraint firstItem="MnB-CV-Gjn" firstAttribute="trailing" secondItem="vek-mp-pSq" secondAttribute="trailing" type="default" id="RHM-mE-5P3"/>
                             <constraint firstItem="UW4-cd-4Lu" firstAttribute="top" secondItem="Rur-BC-iA3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RLp-cq-nbd"/>
                             <constraint firstItem="uB9-Cm-jBy" firstAttribute="top" secondItem="Ly5-PV-dgZ" secondAttribute="top" type="default" id="WFq-jd-5tX"/>
                             <constraint firstItem="UW4-cd-4Lu" firstAttribute="trailing" secondItem="Rur-BC-iA3" secondAttribute="trailing" type="default" id="ZuF-8J-gzr"/>
                             <constraint firstItem="MnB-CV-Gjn" firstAttribute="trailing" secondItem="aO5-vE-jYE" secondAttribute="trailing" type="default" id="cmP-hR-OEh"/>
-                            <constraint firstItem="M86-ZS-sDC" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="dFO-PG-3a4"/>
                             <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="129" id="dIL-GE-X4A"/>
                             <constraint firstItem="vek-mp-pSq" firstAttribute="trailing" secondItem="P86-F0-Pze" secondAttribute="trailing" type="default" id="dg3-Iu-Xx3"/>
                             <constraint firstItem="wtG-z9-aMP" firstAttribute="trailing" secondItem="uB9-Cm-jBy" secondAttribute="trailing" type="default" id="eoV-5P-Qff"/>
                             <constraint firstAttribute="bottom" secondItem="vek-mp-pSq" secondAttribute="bottom" constant="390" id="fhF-T9-1lI"/>
-                            <constraint firstItem="UW4-cd-4Lu" firstAttribute="trailing" secondItem="C1t-dV-Wwp" secondAttribute="trailing" type="default" id="hTh-Pj-9Nk"/>
                             <constraint firstItem="Rur-BC-iA3" firstAttribute="top" secondItem="gsN-L7-Cuy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jNQ-E4-roF"/>
                             <constraint firstItem="yc3-W2-bQ9" firstAttribute="trailing" secondItem="M86-ZS-sDC" secondAttribute="trailing" type="default" id="lAI-fD-hUv"/>
                             <constraint firstItem="yc3-W2-bQ9" firstAttribute="top" secondItem="4If-bv-0JW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lJp-6m-DTN"/>
+                            <constraint firstItem="C1t-dV-Wwp" firstAttribute="top" secondItem="UW4-cd-4Lu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lRw-LH-buw"/>
                             <constraint firstItem="P86-F0-Pze" firstAttribute="trailing" secondItem="Ly5-PV-dgZ" secondAttribute="trailing" type="default" id="liB-E9-bw7"/>
                             <constraint firstItem="gsN-L7-Cuy" firstAttribute="leading" secondItem="wtG-z9-aMP" secondAttribute="leading" type="default" id="pce-2o-i9W"/>
                             <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="833" id="sfC-DA-ocg"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="trailing" secondItem="SPd-ad-Xn8" secondAttribute="trailing" type="default" id="soa-hR-lEE"/>
                             <constraint firstItem="4If-bv-0JW" firstAttribute="trailing" secondItem="yc3-W2-bQ9" secondAttribute="trailing" type="default" id="sxr-5L-OuH"/>
-                            <constraint firstAttribute="bottom" secondItem="C1t-dV-Wwp" secondAttribute="bottom" constant="246" id="w2i-Y0-GFr"/>
+                            <constraint firstItem="C1t-dV-Wwp" firstAttribute="trailing" secondItem="UW4-cd-4Lu" secondAttribute="trailing" type="default" id="vwu-Yu-R6P"/>
                             <constraint firstItem="P86-F0-Pze" firstAttribute="top" secondItem="wtG-z9-aMP" secondAttribute="top" type="default" id="yN4-DZ-zLj"/>
                             <constraint firstItem="aO5-vE-jYE" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="172" id="ygm-RE-uCh"/>
                         </constraints>
@@ -274,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="-301"/>
+            <point key="canvasLocation" x="223" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zut-9i-TwU">
@@ -295,29 +298,6 @@
             <point key="canvasLocation" x="-357" y="-321"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="grabURLInBackground:"/>
-                <relationship kind="outlet" name="airlineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="airlineText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="departureAirportLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="departureAirportText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="departureDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="departureDateText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="destinationAirportLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="destinationAirporteText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="flightNumberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="flightNumberText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

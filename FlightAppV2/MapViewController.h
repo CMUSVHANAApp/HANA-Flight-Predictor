@@ -15,8 +15,10 @@
   IBOutlet MKMapView *mapView;
     
 }
+@property (retain, nonatomic) IBOutlet UILabel *poweredBySAPLabel;
 
 
+@property (retain, nonatomic) IBOutlet UILabel *realTimeLabel;
 
 
 @property (retain, readwrite) IBOutlet UILabel *arrivalDelay;
@@ -24,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *destinationPrediction;
 @property (retain, nonatomic) IBOutlet UILabel *airlineLabel;
 @property (retain, nonatomic) IBOutlet UILabel *flightNumberLabel;
+@property (retain, nonatomic) IBOutlet UIView *displayView;
 
 
 @property (retain, nonatomic) IBOutlet UIImageView *rainImage;

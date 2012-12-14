@@ -164,8 +164,8 @@ return cell;
         int departureDelay = [[jsonDictionary valueForKey:@"departDelay"] doubleValue];
         
         if(departureDelay<20){
-            mapViewController.departurePrediction.text =@"On time";
-             mapViewController.departurePrediction.textColor =[UIColor blueColor];
+            mapViewController.departurePrediction.text =@"PHL";
+            mapViewController.departurePrediction.textColor =[UIColor blueColor];
             
         }else{
             mapViewController.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
@@ -175,14 +175,10 @@ return cell;
         
         int destinationDelay = [[jsonDictionary valueForKey:@"arrivalDealy"] doubleValue];
         
-        if(destinationDelay<20){
-            mapViewController.destinationPrediction.text =@"On time";
-            mapViewController.destinationPrediction.textColor =[UIColor blueColor];
+        
+        mapViewController.destinationPrediction.text =@"PHX";
+        mapViewController.destinationPrediction.textColor =[UIColor blueColor];
  
-        }else{
-           mapViewController.destinationPrediction.text =[NSString stringWithFormat:@"Delay %d minutes", destinationDelay];
-            mapViewController.destinationPrediction.textColor =[UIColor redColor];
-        }
         mapViewController.airlineLabel.text = self.airlineText.text;
         
         
@@ -198,7 +194,7 @@ return cell;
        [self.navigationController pushViewController:mapViewController animated:YES]; 
     }    
 
-    [self.navigationController pushViewController:mapViewController animated:YES];
+//    [self.navigationController pushViewController:mapViewController animated:YES];
     
 }
 
