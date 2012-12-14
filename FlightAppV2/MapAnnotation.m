@@ -29,19 +29,4 @@
 -(NSString*) getWeatherCode{
     return self.weatherCode;
 }
-/*
- -(id) init{
-       
-        //coordinate.latitude = 37.4000000+arc4random() % (10)+1;
-        //coordinate.longitude = -122.0290935+arc4random() % (10)+1;
-        
-        //self.title = [dict objectForKey:@"name"];
-        //self.title = [dict objectForKey:@"address"];
-    
-    return self;
-}
-*/
-
-
-
 @end

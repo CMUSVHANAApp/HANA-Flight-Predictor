@@ -20,8 +20,8 @@
 @implementation MapViewController
 
 @synthesize arrivalDelay, departurePrediction,destinationPrediction, rainImage;
-@synthesize calloutAnnotation = _calloutAnnotation;
 
+/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,56 +31,86 @@
     }
     return self;
 }
+*/
+
+-(id)initWithJsonData:(NSMutableDictionary *) json {
+    self = [super init];
+    if(self){
+        self.jsonDictionary = json;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
+    
+     self.flightNumberLabel.text =[self.jsonDictionary valueForKey:@"flightNumber"];
+     self.airlineLabel.text = [self.jsonDictionary valueForKey: @"airline"];
 
-
+    int departureDelay = [[self.jsonDictionary valueForKey:@"departDelay"] doubleValue];
+    if(departureDelay<20){
+        self.departurePrediction.text =@"On time";
+        self.departurePrediction.textColor =[UIColor blueColor];
+        
+    }else{
+        self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
+        self.departurePrediction.textColor =[UIColor redColor];
+    }
+    
     CLLocationCoordinate2D locationDeparture;
-    locationDeparture.latitude = 33.920570;
-    locationDeparture.longitude = -111.9260460;
-
-
-    CLLocationCoordinate2D locationArrival;
-    locationArrival.longitude = -74.95576290;
-    locationArrival.latitude = 40.13799190;
-    
-    
+    locationDeparture.latitude = [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"latitude"] doubleValue];
+    locationDeparture.longitude = [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
     MapAnnotation *annotation1 = [[MapAnnotation alloc] initWithCoordinate: locationDeparture];
+    annotation1.title = [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] ;
+    if([self.jsonDictionary valueForKey:@"departWeather"] != (id)[NSNull null]  ){
+        annotation1.weatherCode = [[[self.jsonDictionary valueForKey:@"departWeather"] objectForKey:@"weatherCode"] integerValue] ;
+    }
+    annotation1.subTitle = self.departurePrediction.text;
+        NSLog(@"departure weather is %d", annotation1.weatherCode );
+    
+    [mapView addAnnotation:annotation1];
+    [annotation1 release];
 
+
+    int arrivalDelay = [[self.jsonDictionary valueForKey:@"arrivalDealy"] doubleValue];
+    
+    if(arrivalDelay<20){
+        self.destinationPrediction.text =@"On time";
+        self.destinationPrediction.textColor =[UIColor blueColor];
+        
+    }else{
+        self.destinationPrediction.text =[NSString stringWithFormat:@"Delay %d minutes", arrivalDelay];
+        self.destinationPrediction.textColor =[UIColor redColor];
+    }
+    self.airlineLabel.text = self.airlineText.text;
+    
+    CLLocationCoordinate2D locationArrival;
+    locationArrival.longitude = [[[[self.jsonDictionary valueForKey:@"arrivalAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
+    locationArrival.latitude = [[[[self.jsonDictionary valueForKey:@"arrivalAirport"] valueForKey:@"geoLocation"] objectForKey: @"latitude"] doubleValue];
     MapAnnotation *annotation2 = [[MapAnnotation alloc] initWithCoordinate: locationArrival];
+    annotation2.title = [[self.jsonDictionary valueForKey:@"arrivalAirport"] objectForKey:@"name"] ;
+    if([self.jsonDictionary valueForKey:@"arrivalWeather"] != (id)[NSNull null] ){
+        annotation2.weatherCode = [[[self.jsonDictionary valueForKey:@"arrivalWeather"] objectForKey:@"weatherCode"] integerValue] ;
+    }
+    annotation2.subTitle = self.destinationPrediction.text;
+    [mapView addAnnotation:annotation2];
+    [annotation2 release];
+
     
     MKCoordinateRegion region = { {0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.latitude = (locationDeparture.latitude + locationArrival.latitude) /2.0f;
+    region.center.latitude = (locationDeparture.latitude + locationArrival.latitude) /2.0f + 1.5;
     region.center.longitude = (locationDeparture.longitude + locationArrival.longitude) /2.0f ;
     
-    region.span.latitudeDelta = fabs(locationDeparture.latitude - locationArrival.latitude);
+    region.span.latitudeDelta = fabs(locationDeparture.latitude - locationArrival.latitude) + 1;
     region.span.longitudeDelta = fabs(locationDeparture.longitude-locationArrival.longitude);
-    [mapView setRegion:region];
-    
-    annotation1.title = @"PHX";
-    annotation1.weatherCode = @"sunny";
-    annotation1.subTitle = @"Delay 5 hours";
-    annotation2.title = @"PHL";
-    annotation2.weatherCode = @"rain";
-    annotation2.subTitle = @"Delay 6 hours";
     [mapView setRegion:region animated:YES];
-
-        
-    [mapView addAnnotation:annotation1];
-    //[mapView selectAnnotation:annotation1 animated:NO];
-    [annotation1 release];
     
     
-    [mapView addAnnotation:annotation2];
-    //[mapView selectAnnotation:annotation2 animated:NO];
-    [annotation2 release];
-    
-
+    NSLog(@"Delay dparture is %@", [self.jsonDictionary valueForKey:@"departDelay"]);
+    NSLog(@"Delay arrival is %@", [self.jsonDictionary valueForKey:@"arrivalDelay"]);
 
     
-
-    [super viewDidLoad];   
+    [super viewDidLoad];
    
 }
 
@@ -95,29 +125,12 @@
  
     [super dealloc];
 }
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    self.calloutAnnotation = [[MapAnnotation alloc] init];
-	NSLog(@"TEST did Select");
-	[mapView addAnnotation:self.calloutAnnotation];
-}
-
-- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-	NSLog(@"TEST did DeSelect");
-    if (self.calloutAnnotation && view.annotation == self.calloutAnnotation) {
-        
-        [mapView removeAnnotation: self.calloutAnnotation];
-	}
-}
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
     
     WeatherAnnotationView *pin = (WeatherAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:[annotation title]];
     
     if (pin == nil) {
         pin = [[[WeatherAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[annotation title]] autorelease];
-        MapAnnotation *travellerAnnotation = (MapAnnotation *)annotation;
-        [pin setImage: travellerAnnotation.weatherCode];
-        [pin setTitle: travellerAnnotation.title];
-        [pin setSubTitle:travellerAnnotation.subTitle];
     }else {
         pin.annotation = annotation;
     }

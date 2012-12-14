@@ -75,6 +75,23 @@
 		186E6B2116712D8100AB495C /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0816712D8100AB495C /* SBJsonWriter.h */; };
 		186E6B2216712D8100AB495C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0916712D8100AB495C /* SBJsonWriter.m */; };
 		1A49A6371678A2F500918751 /* WeatherAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49A6351678A2F500918751 /* WeatherAnnotationView.m */; };
+		1A8811B8167AF63900718D76 /* Thunderstorms-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811B7167AF63900718D76 /* Thunderstorms-48.png */; };
+		1A8811BB167AF64900718D76 /* thunder-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BA167AF64900718D76 /* thunder-48.png */; };
+		1A8811CA167AF67800718D76 /* Cloudy-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BC167AF67700718D76 /* Cloudy-48.png */; };
+		1A8811CB167AF67800718D76 /* fog-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BD167AF67700718D76 /* fog-48.png */; };
+		1A8811CC167AF67800718D76 /* hail-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BE167AF67700718D76 /* hail-48.png */; };
+		1A8811CD167AF67800718D76 /* light-rain-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BF167AF67700718D76 /* light-rain-48.png */; };
+		1A8811CE167AF67800718D76 /* Light-Showers-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C0167AF67700718D76 /* Light-Showers-48.png */; };
+		1A8811CF167AF67800718D76 /* light-snow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C1167AF67700718D76 /* light-snow-48.png */; };
+		1A8811D0167AF67800718D76 /* lightning-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C2167AF67700718D76 /* lightning-48.png */; };
+		1A8811D1167AF67800718D76 /* Overcast-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C3167AF67700718D76 /* Overcast-48.png */; };
+		1A8811D2167AF67800718D76 /* rain-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C4167AF67700718D76 /* rain-48.png */; };
+		1A8811D3167AF67800718D76 /* Showers-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C5167AF67700718D76 /* Showers-48.png */; };
+		1A8811D4167AF67800718D76 /* snow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C6167AF67700718D76 /* snow-48.png */; };
+		1A8811D5167AF67800718D76 /* Sunny-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C7167AF67800718D76 /* Sunny-48.png */; };
+		1A8811D6167AF67800718D76 /* Sunny-Interval-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */; };
+		1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C9167AF67800718D76 /* Sunny-Period-48.png */; };
+		1A8811D9167B016700718D76 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811D8167B016700718D76 /* question.png */; };
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
 		77BFDD7C1677D6E6008099A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFDD7B1677D6E6008099A2 /* Default.png */; };
@@ -157,6 +174,23 @@
 		186E6B0916712D8100AB495C /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		1A49A6351678A2F500918751 /* WeatherAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherAnnotationView.m; path = FlightAppV2/WeatherAnnotationView.m; sourceTree = "<group>"; };
 		1A49A6361678A2F500918751 /* WeatherAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherAnnotationView.h; path = FlightAppV2/WeatherAnnotationView.h; sourceTree = "<group>"; };
+		1A8811B7167AF63900718D76 /* Thunderstorms-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thunderstorms-48.png"; sourceTree = "<group>"; };
+		1A8811BA167AF64900718D76 /* thunder-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thunder-48.png"; sourceTree = "<group>"; };
+		1A8811BC167AF67700718D76 /* Cloudy-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cloudy-48.png"; sourceTree = "<group>"; };
+		1A8811BD167AF67700718D76 /* fog-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fog-48.png"; sourceTree = "<group>"; };
+		1A8811BE167AF67700718D76 /* hail-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hail-48.png"; sourceTree = "<group>"; };
+		1A8811BF167AF67700718D76 /* light-rain-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-rain-48.png"; sourceTree = "<group>"; };
+		1A8811C0167AF67700718D76 /* Light-Showers-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light-Showers-48.png"; sourceTree = "<group>"; };
+		1A8811C1167AF67700718D76 /* light-snow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-snow-48.png"; sourceTree = "<group>"; };
+		1A8811C2167AF67700718D76 /* lightning-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightning-48.png"; sourceTree = "<group>"; };
+		1A8811C3167AF67700718D76 /* Overcast-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overcast-48.png"; sourceTree = "<group>"; };
+		1A8811C4167AF67700718D76 /* rain-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rain-48.png"; sourceTree = "<group>"; };
+		1A8811C5167AF67700718D76 /* Showers-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Showers-48.png"; sourceTree = "<group>"; };
+		1A8811C6167AF67700718D76 /* snow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-48.png"; sourceTree = "<group>"; };
+		1A8811C7167AF67800718D76 /* Sunny-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-48.png"; sourceTree = "<group>"; };
+		1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-Interval-48.png"; sourceTree = "<group>"; };
+		1A8811C9167AF67800718D76 /* Sunny-Period-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-Period-48.png"; sourceTree = "<group>"; };
+		1A8811D8167B016700718D76 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		7710FFD81676850E00E05E22 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -289,9 +323,26 @@
 			isa = PBXGroup;
 			children = (
 				77BFDD7B1677D6E6008099A2 /* Default.png */,
+				1A8811BC167AF67700718D76 /* Cloudy-48.png */,
+				1A8811BD167AF67700718D76 /* fog-48.png */,
+				1A8811BE167AF67700718D76 /* hail-48.png */,
+				1A8811D8167B016700718D76 /* question.png */,
+				1A8811BF167AF67700718D76 /* light-rain-48.png */,
+				1A8811C0167AF67700718D76 /* Light-Showers-48.png */,
+				1A8811C1167AF67700718D76 /* light-snow-48.png */,
+				1A8811C2167AF67700718D76 /* lightning-48.png */,
+				1A8811C3167AF67700718D76 /* Overcast-48.png */,
+				1A8811C4167AF67700718D76 /* rain-48.png */,
+				1A8811C5167AF67700718D76 /* Showers-48.png */,
+				1A8811C6167AF67700718D76 /* snow-48.png */,
+				1A8811C7167AF67800718D76 /* Sunny-48.png */,
+				1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */,
+				1A8811C9167AF67800718D76 /* Sunny-Period-48.png */,
 				180EB5C41671D60800FD5B06 /* weather_128.png */,
 				180EB5BF167173A000FD5B06 /* weather_few_clouds.png */,
+				1A8811BA167AF64900718D76 /* thunder-48.png */,
 				182E2F4716711B050036F6D6 /* FlightAppV2-Info.plist */,
+				1A8811B7167AF63900718D76 /* Thunderstorms-48.png */,
 				182E2F4816711B050036F6D6 /* InfoPlist.strings */,
 				182E2F4B16711B050036F6D6 /* main.m */,
 				182E2F4D16711B050036F6D6 /* FlightAppV2-Prefix.pch */,
@@ -368,6 +419,23 @@
 				180EB5C51671D60800FD5B06 /* weather_128.png in Resources */,
 				7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */,
 				77BFDD7C1677D6E6008099A2 /* Default.png in Resources */,
+				1A8811B8167AF63900718D76 /* Thunderstorms-48.png in Resources */,
+				1A8811BB167AF64900718D76 /* thunder-48.png in Resources */,
+				1A8811CA167AF67800718D76 /* Cloudy-48.png in Resources */,
+				1A8811CB167AF67800718D76 /* fog-48.png in Resources */,
+				1A8811CC167AF67800718D76 /* hail-48.png in Resources */,
+				1A8811CD167AF67800718D76 /* light-rain-48.png in Resources */,
+				1A8811CE167AF67800718D76 /* Light-Showers-48.png in Resources */,
+				1A8811CF167AF67800718D76 /* light-snow-48.png in Resources */,
+				1A8811D0167AF67800718D76 /* lightning-48.png in Resources */,
+				1A8811D1167AF67800718D76 /* Overcast-48.png in Resources */,
+				1A8811D2167AF67800718D76 /* rain-48.png in Resources */,
+				1A8811D3167AF67800718D76 /* Showers-48.png in Resources */,
+				1A8811D4167AF67800718D76 /* snow-48.png in Resources */,
+				1A8811D5167AF67800718D76 /* Sunny-48.png in Resources */,
+				1A8811D6167AF67800718D76 /* Sunny-Interval-48.png in Resources */,
+				1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */,
+				1A8811D9167B016700718D76 /* question.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,9 +16,7 @@
     
 }
 
-
-
-
+@property (nonatomic, assign) NSMutableDictionary *jsonDictionary;
 @property (retain, readwrite) IBOutlet UILabel *arrivalDelay;
 @property (strong, nonatomic) IBOutlet UILabel *departurePrediction;
 @property (strong, nonatomic) IBOutlet UILabel *destinationPrediction;

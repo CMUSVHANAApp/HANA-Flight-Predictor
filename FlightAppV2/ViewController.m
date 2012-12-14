@@ -90,13 +90,8 @@
             [cell addSubview:numberLabel];
             [cell addSubview:statusLabel];
             
-          
-
-            
         }
-        
    
-    
     
 }
 
@@ -107,13 +102,12 @@ return cell;
 
 - (void)viewDidLoad
 {
+    self.airlineText.text = @"Delta";
+    self.flightNumberText.text = @"DL123";
+    self.departureAirportText.text = @"PHX";
+    self.departureDateText.text = @"2012-12-15";
+    self.destinationAirporteText.text = @"PHL";
     [super viewDidLoad];
-	
-    
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,9 +118,19 @@ return cell;
 
 - (IBAction)grabURLInBackground:(id)sender
 {
-       
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *formattedDate = [formatter stringFromDate:[NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]]];
+    NSLog(formattedDate);
+    NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
+    NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
+    NSString *departDate =([self.departureDateText.text length] == 0)?formattedDate:self.departureAirportText.text;
+    NSString *departAirport = ([self.departureAirportText.text length] == 0)?@"PHX":self.departureAirportText.text;
+    NSString *arrivalAirport = ([self.destinationAirporteText.text length] == 0)?@"PHL":self.destinationAirporteText.text;
     
-    NSURL *url = [NSURL URLWithString:@"http://flight-prediction.herokuapp.com/predictions/DL123"];
+    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/predictions/%@/%@/%@/%@/%@", airline, flight, departDate ,departAirport, arrivalAirport];
+    NSLog(@"Requested URL: %@", strUrl);
+    NSURL *url = [NSURL URLWithString: strUrl];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];
@@ -155,38 +159,11 @@ return cell;
     responseString = [result stringByAppendingString:responseString];
     
  
-    MapViewController *mapViewController = [[MapViewController alloc] init];
+    MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
     
     if(mapViewController.view){
-       
-        NSLog(@"Delay dparture is %@", [jsonDictionary valueForKey:@"departDelay"]);
-        NSLog(@"Delay arrival is %@", [jsonDictionary valueForKey:@"arrivalDealy"]);
-        int departureDelay = [[jsonDictionary valueForKey:@"departDelay"] doubleValue];
-        
-        if(departureDelay<20){
-            mapViewController.departurePrediction.text =@"On time";
-             mapViewController.departurePrediction.textColor =[UIColor blueColor];
             
-        }else{
-            mapViewController.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
-             mapViewController.departurePrediction.textColor =[UIColor redColor];
-        }
-
-        
-        int destinationDelay = [[jsonDictionary valueForKey:@"arrivalDealy"] doubleValue];
-        
-        if(destinationDelay<20){
-            mapViewController.destinationPrediction.text =@"On time";
-            mapViewController.destinationPrediction.textColor =[UIColor blueColor];
- 
-        }else{
-           mapViewController.destinationPrediction.text =[NSString stringWithFormat:@"Delay %d minutes", destinationDelay];
-            mapViewController.destinationPrediction.textColor =[UIColor redColor];
-        }
-        mapViewController.airlineLabel.text = self.airlineText.text;
-        
-        
-        mapViewController.flightNumberLabel.text =self.flightNumberText.text;    }
+    }
 
    
     if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
@@ -198,8 +175,6 @@ return cell;
        [self.navigationController pushViewController:mapViewController animated:YES]; 
     }    
 
-    [self.navigationController pushViewController:mapViewController animated:YES];
-    
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
