@@ -11,7 +11,8 @@
 		180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5BF167173A000FD5B06 /* weather_few_clouds.png */; };
 		180EB5C51671D60800FD5B06 /* weather_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5C41671D60800FD5B06 /* weather_128.png */; };
 		182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */; };
-		182516B5167AF1BC00FC70C5 /* Screen Shot 2012-12-13 at 9.30.02 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B4167AF1BC00FC70C5 /* Screen Shot 2012-12-13 at 9.30.02 PM.png */; };
+		182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B6167AFE9E00FC70C5 /* Untitled.png */; };
+		182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B8167B078000FC70C5 /* Predict My Flight.png */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -88,7 +89,8 @@
 		180EB5BF167173A000FD5B06 /* weather_few_clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_few_clouds.png; sourceTree = "<group>"; };
 		180EB5C41671D60800FD5B06 /* weather_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_128.png; sourceTree = "<group>"; };
 		182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2012-12-13 at 9.00.22 PM.png"; sourceTree = "<group>"; };
-		182516B4167AF1BC00FC70C5 /* Screen Shot 2012-12-13 at 9.30.02 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2012-12-13 at 9.30.02 PM.png"; sourceTree = "<group>"; };
+		182516B6167AFE9E00FC70C5 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
+		182516B8167B078000FC70C5 /* Predict My Flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Predict My Flight.png"; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -292,7 +294,8 @@
 		182E2F4616711B050036F6D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				182516B4167AF1BC00FC70C5 /* Screen Shot 2012-12-13 at 9.30.02 PM.png */,
+				182516B8167B078000FC70C5 /* Predict My Flight.png */,
+				182516B6167AFE9E00FC70C5 /* Untitled.png */,
 				182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */,
 				77BFDD7B1677D6E6008099A2 /* Default.png */,
 				180EB5C41671D60800FD5B06 /* weather_128.png */,
@@ -375,7 +378,8 @@
 				7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */,
 				77BFDD7C1677D6E6008099A2 /* Default.png in Resources */,
 				182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */,
-				182516B5167AF1BC00FC70C5 /* Screen Shot 2012-12-13 at 9.30.02 PM.png in Resources */,
+				182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */,
+				182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,10 +525,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edward Akoto (ULDT5AZ8QF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightAppV2/FlightAppV2-Prefix.pch";
 				INFOPLIST_FILE = "FlightAppV2/FlightAppV2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "16C8F9D9-1852-4BD9-A209-A63FA0F31D56";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -533,10 +539,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edward Akoto (ULDT5AZ8QF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightAppV2/FlightAppV2-Prefix.pch";
 				INFOPLIST_FILE = "FlightAppV2/FlightAppV2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "16C8F9D9-1852-4BD9-A209-A63FA0F31D56";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

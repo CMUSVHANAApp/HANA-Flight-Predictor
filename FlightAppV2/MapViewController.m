@@ -22,7 +22,7 @@
 
 @synthesize arrivalDelay, departurePrediction,destinationPrediction, rainImage;
 @synthesize calloutAnnotation = _calloutAnnotation;
-@synthesize displayView, realTimeLabel, poweredBySAPLabel;
+@synthesize displayView, realTimeLabel, poweredBySAPLabel, flightInformationLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +41,7 @@
     
     realTimeLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+    
 
 
     CLLocationCoordinate2D locationDeparture;
@@ -100,7 +101,6 @@
 
 - (void)dealloc {
  
-
     [super dealloc];
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {

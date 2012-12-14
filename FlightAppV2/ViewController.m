@@ -12,6 +12,7 @@
 #import "ASIHTTPRequest.h"
 #import "MapViewController.h"
 #import "SBJson.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 
@@ -23,7 +24,8 @@
 
 @implementation ViewController
 
-@synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel;
+@synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel, poweredBySAPLabel, realTimePredictionLabel;
+@synthesize itineraryInputView;
 
 
 
@@ -108,8 +110,14 @@ return cell;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
     
+    
+    itineraryInputView.layer.cornerRadius = 5;
+    itineraryInputView.layer.masksToBounds = YES;
+
+	
+    realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+    poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     
     
     
@@ -217,6 +225,7 @@ return cell;
     [_departureAirportText release];
     [_departureDateText release];
     [_destinationAirporteText release];
+  
     [super dealloc];
 }
 

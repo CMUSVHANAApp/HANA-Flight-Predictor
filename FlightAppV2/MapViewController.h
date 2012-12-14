@@ -15,6 +15,7 @@
   IBOutlet MKMapView *mapView;
     
 }
+@property (retain, nonatomic) IBOutlet UILabel *flightInformationLabel;
 @property (retain, nonatomic) IBOutlet UILabel *poweredBySAPLabel;
 
 
