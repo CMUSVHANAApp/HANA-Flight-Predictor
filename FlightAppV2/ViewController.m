@@ -92,13 +92,8 @@
             [cell addSubview:numberLabel];
             [cell addSubview:statusLabel];
             
-          
-
-            
         }
-        
    
-    
     
 }
 
@@ -109,8 +104,12 @@ return cell;
 
 - (void)viewDidLoad
 {
+    self.airlineText.text = @"Delta";
+    self.flightNumberText.text = @"DL123";
+    self.departureAirportText.text = @"PHX";
+    self.departureDateText.text = @"2012-12-15";
+    self.destinationAirporteText.text = @"PHL";
     [super viewDidLoad];
-    
     
     itineraryInputView.layer.cornerRadius = 5;
     itineraryInputView.layer.masksToBounds = YES;
@@ -118,9 +117,6 @@ return cell;
 	
     realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
     poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
-    
-    
-    
     
 }
 
@@ -132,9 +128,19 @@ return cell;
 
 - (IBAction)grabURLInBackground:(id)sender
 {
-       
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *formattedDate = [formatter stringFromDate:[NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]]];
+    NSLog(formattedDate);
+    NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
+    NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
+    NSString *departDate =([self.departureDateText.text length] == 0)?formattedDate:self.departureAirportText.text;
+    NSString *departAirport = ([self.departureAirportText.text length] == 0)?@"PHX":self.departureAirportText.text;
+    NSString *arrivalAirport = ([self.destinationAirporteText.text length] == 0)?@"PHL":self.destinationAirporteText.text;
     
-    NSURL *url = [NSURL URLWithString:@"http://flight-prediction.herokuapp.com/predictions/DL123"];
+    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/predictions/%@/%@/%@/%@/%@", airline, flight, departDate ,departAirport, arrivalAirport];
+    NSLog(@"Requested URL: %@", strUrl);
+    NSURL *url = [NSURL URLWithString: strUrl];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];
@@ -163,47 +169,21 @@ return cell;
     responseString = [result stringByAppendingString:responseString];
     
  
-    MapViewController *mapViewController = [[MapViewController alloc] init];
+    MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
     
     if(mapViewController.view){
-       
-        NSLog(@"Delay dparture is %@", [jsonDictionary valueForKey:@"departDelay"]);
-        NSLog(@"Delay arrival is %@", [jsonDictionary valueForKey:@"arrivalDealy"]);
-        int departureDelay = [[jsonDictionary valueForKey:@"departDelay"] doubleValue];
-        
-        if(departureDelay<20){
-            mapViewController.departurePrediction.text =@"PHL";
-            mapViewController.departurePrediction.textColor =[UIColor blueColor];
-            
-        }else{
-            mapViewController.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
-             mapViewController.departurePrediction.textColor =[UIColor redColor];
+        if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            // optional - add more buttons:
+            //        [alert addButtonWithTitle:@"Yes"];
+            [alert show];
         }
+        NSLog(@"Hello");
+            
+        [self.navigationController pushViewController:mapViewController animated:YES];
 
-        
-        int destinationDelay = [[jsonDictionary valueForKey:@"arrivalDealy"] doubleValue];
-        
-        
-        mapViewController.destinationPrediction.text =@"PHX";
-        mapViewController.destinationPrediction.textColor =[UIColor blueColor];
- 
-        mapViewController.airlineLabel.text = self.airlineText.text;
-        
-        
-        mapViewController.flightNumberLabel.text =self.flightNumberText.text;    }
-
-   
-    if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        // optional - add more buttons:
-//        [alert addButtonWithTitle:@"Yes"];
-        [alert show];
-    }else{
-       [self.navigationController pushViewController:mapViewController animated:YES]; 
-    }    
-
-//    [self.navigationController pushViewController:mapViewController animated:YES];
-    
+    }
+    NSLog(@"test here");
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request

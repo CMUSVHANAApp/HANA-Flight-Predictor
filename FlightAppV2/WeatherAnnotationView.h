@@ -18,7 +18,7 @@
 
 }
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *image;
+@property (readwrite, assign) int weatherCode;
 @property (nonatomic, retain) NSString *subTitle;
 @end
 
