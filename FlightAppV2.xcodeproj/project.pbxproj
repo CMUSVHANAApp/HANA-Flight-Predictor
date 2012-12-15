@@ -95,6 +95,7 @@
 		1A8811D6167AF67800718D76 /* Sunny-Interval-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */; };
 		1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C9167AF67800718D76 /* Sunny-Period-48.png */; };
 		1A8811D9167B016700718D76 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811D8167B016700718D76 /* question.png */; };
+		1A977793167C03DE000FAE21 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A977792167C03DE000FAE21 /* pin.png */; };
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
 		77BFDD7C1677D6E6008099A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFDD7B1677D6E6008099A2 /* Default.png */; };
@@ -197,6 +198,7 @@
 		1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-Interval-48.png"; sourceTree = "<group>"; };
 		1A8811C9167AF67800718D76 /* Sunny-Period-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-Period-48.png"; sourceTree = "<group>"; };
 		1A8811D8167B016700718D76 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		1A977792167C03DE000FAE21 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		7710FFD81676850E00E05E22 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 		182E2F4516711B050036F6D6 /* FlightAppV2 */ = {
 			isa = PBXGroup;
 			children = (
+				1A977792167C03DE000FAE21 /* pin.png */,
 				182E2F9616711D880036F6D6 /* MapViewController.h */,
 				182E2F9716711D880036F6D6 /* MapViewController.m */,
 				182E2F9816711D880036F6D6 /* MapViewController.xib */,
@@ -448,6 +451,7 @@
 				1A8811D6167AF67800718D76 /* Sunny-Interval-48.png in Resources */,
 				1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */,
 				1A8811D9167B016700718D76 /* question.png in Resources */,
+				1A977793167C03DE000FAE21 /* pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
