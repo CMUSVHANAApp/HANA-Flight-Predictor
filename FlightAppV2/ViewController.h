@@ -11,6 +11,8 @@
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     
     
+  
+    
         
     
 }
@@ -19,6 +21,9 @@
 
 - (IBAction)grabURLInBackground:(id)sender;
 - (IBAction)loadDefaults;
+
+@property (nonatomic, retain) NSArray *jsonArray;
+
 
 @property (retain, nonatomic) IBOutlet UITextField *airlineText;
 @property (retain, nonatomic) IBOutlet UITextField *flightNumberText;

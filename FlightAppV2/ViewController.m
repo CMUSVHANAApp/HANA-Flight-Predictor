@@ -25,16 +25,17 @@
 @implementation ViewController
 
 @synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel, poweredBySAPLabel, realTimePredictionLabel;
-@synthesize itineraryInputView;
+@synthesize itineraryInputView, jsonArray;
 
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    
     if(tableView == self.listTableView){
         
-        return 10;
+        return 40;
     }else{
         return 2;
     }
@@ -45,6 +46,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+   
+
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -53,52 +57,60 @@
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
-    }
-    
-    
+    }    
     
     // Configure the cell...
     if(tableView == self.listTableView){
         
         
-        
         cell.accessoryType = UITableViewCellAccessoryNone;
         
         UILabel *departureLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 5, 150, 30)];
-        UILabel *destinationLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 5, 100, 30)];
-        UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(320, 5, 100, 30)];
-        UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(480, 5, 100, 30)];
+        UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 5, 100, 30)];
+        UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(260, 5, 170, 30)];
+       
+        UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(430, 5, 170, 30)];
         UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(600, 5, 150, 30)];
         
-        //
-        
-        if([indexPath row] == 0)
-        {
-        departureLabel.text = @"Delta";
+       
+        [departureLabel setText:[[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"]];
+                        
         [departureLabel setBackgroundColor:[UIColor clearColor]];
         
-        destinationLabel.text = @"FX150";
-        [destinationLabel setBackgroundColor:[UIColor clearColor]];
+        NSDate *now = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Australia/Sydney"]];
+   
+        
+        [departureTime setText:[formatter stringFromDate:now]];
+        [departureTime setBackgroundColor:[UIColor clearColor]];
         
         
-        numberLabel.text = @"21.30pm";
+        [numberLabel setText:[[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"flightNumber"]];
         [numberLabel setBackgroundColor:[UIColor clearColor]];
         
         
-        
-        arrivalTimeLabel.text = @"10.30pm";
+        [arrivalTimeLabel setText:[[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"date"]];
+        [arrivalTimeLabel setBackgroundColor:[UIColor clearColor]];
+            
         [numberLabel setBackgroundColor:[UIColor clearColor]];
+         
         
-        
-        statusLabel.text = @"On time ";
+        if([[NSString stringWithFormat:@"%@", [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"departDelay"]] isEqualToString:@"0"]){
+             [statusLabel setText:@"On time"];
+        }else{
+            [statusLabel setText:[NSString stringWithFormat:@"Delay %@ mins", [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"departDelay"]]];
+        }
+           
+    
         [statusLabel setBackgroundColor:[UIColor clearColor]];
         [statusLabel setTextColor:[UIColor blueColor]];
         
-        }
-        
         
         [cell addSubview:departureLabel];
-        [cell addSubview:destinationLabel];
+        [cell addSubview:departureTime];
         [cell addSubview:numberLabel];
         [cell addSubview:statusLabel];
         [cell addSubview:arrivalTimeLabel];
@@ -112,8 +124,11 @@
 
 - (void)viewDidLoad
 {
+     NSLog(@"View Did Load Called ARRAY %@", self.jsonArray);
   
+    self.loadDefaults;
     
+     NSLog(@"Load Defaults has been called %@", self.jsonArray);
     
     self.airlineText.text = @"Delta";
     self.flightNumberText.text = @"DL123";
@@ -128,6 +143,14 @@
 	
     realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
     poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -159,12 +182,6 @@
     [request startAsynchronous];
     
     
-    NSString *strUrl2 = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/flights"];
-    NSURL *url2 = [NSURL URLWithString: strUrl2];
-    ASIHTTPRequest *request2 = [ASIHTTPRequest requestWithURL:url2];
-    [request2 setDelegate:self];
-    [request2 startAsynchronous];
-    
     
     
 }
@@ -177,49 +194,63 @@
     NSURL *url = [NSURL URLWithString: strUrl];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
-    [request startAsynchronous];
-    
-    
+    [request startSynchronous];
+
     
 }
 - (void)requestFinished:(ASIHTTPRequest *) request 
 {
+         
+    if([request.url.absoluteString isEqualToString:@"http://flight-prediction.herokuapp.com/flights"]){
+       
+        self.jsonArray  = [[NSArray alloc] init];
+             
+        self.jsonArray = [[request responseString] JSONValue];
+       
+      
     
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    
-    NSString *responseString = [request responseString];
-    
-    NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
-    
-    
-    
-    
-    NSString *result = @" Response for ";
-    result = [result stringByAppendingString:self.departureAirportText.text];
-    
-    result = [result stringByAppendingString:@" to "];
-    
-    result = [result stringByAppendingString:self.destinationAirporteText.text];
-    
-    
-    responseString = [result stringByAppendingString:responseString];
-    
-    
-    MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
-    
-    if(mapViewController.view){
-        if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            // optional - add more buttons:
-            //        [alert addButtonWithTitle:@"Yes"];
-            [alert show];
-        }
-        NSLog(@"Hello");
         
-        [self.navigationController pushViewController:mapViewController animated:YES];
+    }else{
+       
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        
+        NSString *responseString = [request responseString];
+        
+        NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
+        
+        
+        
+        
+        NSString *result = @" Response for ";
+        result = [result stringByAppendingString:self.departureAirportText.text];
+        
+        result = [result stringByAppendingString:@" to "];
+        
+        result = [result stringByAppendingString:self.destinationAirporteText.text];
+        
+        
+        responseString = [result stringByAppendingString:responseString];
+        
+        
+        MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
+        
+        if(mapViewController.view){
+            if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                // optional - add more buttons:
+                //        [alert addButtonWithTitle:@"Yes"];
+                [alert show];
+            }
+            NSLog(@"Hello");
+            
+            [self.navigationController pushViewController:mapViewController animated:YES];
+            
+        }
+        NSLog(@"test here");
+        
+    
         
     }
-    NSLog(@"test here");
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
