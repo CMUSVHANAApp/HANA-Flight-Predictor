@@ -66,7 +66,7 @@
 - (void) setWeatherCode:(int)weatherCode {
     switch (weatherCode){
         case 113: // Clear/Sunny
-            imageView_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"sunny-48.png"]];
+            imageView_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"Sunny-48.png"]];
             break;
         case 116: case 119: //Partly Cloudy  // Cloudy
             imageView_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"Cloudy-48.png"]];

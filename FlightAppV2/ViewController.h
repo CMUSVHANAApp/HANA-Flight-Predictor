@@ -11,17 +11,24 @@
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     
     
+        
+    
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
 
 - (IBAction)grabURLInBackground:(id)sender;
+- (IBAction)loadDefaults;
+
 @property (retain, nonatomic) IBOutlet UITextField *airlineText;
 @property (retain, nonatomic) IBOutlet UITextField *flightNumberText;
 @property (retain, nonatomic) IBOutlet UITextField *departureAirportText;
 @property (retain, nonatomic) IBOutlet UITextField *departureDateText;
-@property (retain, nonatomic) IBOutlet UITextField *destinationAirporteText;
 
+@property (retain, nonatomic) IBOutlet UITextField *destinationAirporteText;
+@property (retain, nonatomic) IBOutlet UILabel *realTimePredictionLabel;
+
+@property (retain, nonatomic) IBOutlet UILabel *poweredBySAPLabel;
 
 @property (strong, nonatomic) IBOutlet UITableView *listTableView;
 @property (strong, nonatomic) IBOutlet UILabel *airlineLabel;
@@ -30,6 +37,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *departureDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *destinationAirportLabel;
 
+@property (retain, nonatomic) IBOutlet UIView *itineraryInputView;
 
 
 
