@@ -100,6 +100,7 @@
 		1A977793167C03DE000FAE21 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A977792167C03DE000FAE21 /* pin.png */; };
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
+		77473AE11683803F007963CA /* saplogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AE01683803F007963CA /* saplogo.png */; };
 		77BFDD7C1677D6E6008099A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFDD7B1677D6E6008099A2 /* Default.png */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +207,7 @@
 		7710FFD81676850E00E05E22 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		77473AE01683803F007963CA /* saplogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saplogo.png; sourceTree = "<group>"; };
 		77BFDD7B1677D6E6008099A2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -335,6 +337,7 @@
 		182E2F4616711B050036F6D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77473AE01683803F007963CA /* saplogo.png */,
 				18DC2B641682FBF2005A46E2 /* airlines */,
 				182516B8167B078000FC70C5 /* Predict My Flight.png */,
 				182516B6167AFE9E00FC70C5 /* Untitled.png */,
@@ -468,6 +471,7 @@
 				1A977793167C03DE000FAE21 /* pin.png in Resources */,
 				18DC2B681682FD09005A46E2 /* usairways.png in Resources */,
 				18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */,
+				77473AE11683803F007963CA /* saplogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

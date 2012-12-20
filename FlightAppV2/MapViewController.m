@@ -49,6 +49,11 @@
 
 - (void)viewDidLoad
 {
+    UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sap.png"]];
+   // UIImageView *dropLogoView = [[UIImageView alloc] initWithImage:logoView];
+    [self.view addSubview:logoView];
+    
+    
     displayView.layer.cornerRadius = 5;
     displayView.layer.masksToBounds = YES;
     
