@@ -12,107 +12,117 @@
 #import "ASIHTTPRequest.h"
 #import "MapViewController.h"
 #import "SBJson.h"
-
-
-
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
 
-@synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel;
-
-
+@synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel, poweredBySAPLabel, realTimePredictionLabel, itineraryInputView, jsonArray;
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     if(tableView == self.listTableView){
-        
-        return 1;
+        return self.jsonArray.count;
     }else{
-        return 2;
-    }
-    
+        return 1;
+    }    
 }
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+  
     
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-       
-    }
-    
-    
-    
-    // Configure the cell...
+      
+  
     if(tableView == self.listTableView){
         
         
-        
         cell.accessoryType = UITableViewCellAccessoryNone;
+     
+        UIImageView *airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
+        NSString *airline = [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"];
+        airlineImageView.image= [self getAirlineImage:airline];
+       
+      
+        UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 5, 100, 30)];
+        UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(260, 5, 170, 30)];
+       
+        UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(430, 5, 170, 30)];
+        UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(600, 5, 150, 30)];
         
-        if ([indexPath section] == 0) {
-            UILabel *departureLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 5, 150, 30)];
-            UILabel *destinationLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 5, 150, 30)];
-            UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(450, 5, 150, 30)];
-            UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(600, 5, 150, 30)];
-            //
-            
-            if([indexPath row] == 0){
-                departureLabel.text = @"SFO";
-                [departureLabel setBackgroundColor:[UIColor clearColor]];
-                
-                destinationLabel.text = @"KQ";
-                [destinationLabel setBackgroundColor:[UIColor clearColor]];
-                
-                numberLabel.text = @"FX150";
-                [numberLabel setBackgroundColor:[UIColor clearColor]];
-              
-                statusLabel.text = @"On time ";
-                [statusLabel setBackgroundColor:[UIColor clearColor]];
-                [statusLabel setTextColor:[UIColor blueColor]];
-                
-            }
-            
-            
-            [cell addSubview:departureLabel];
-            [cell addSubview:destinationLabel];
-            [cell addSubview:numberLabel];
-            [cell addSubview:statusLabel];
-            
-          
-
-            
-        }
         
+        NSDate *now = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Australia/Sydney"]];
    
+        
+        [departureTime setText:[formatter stringFromDate:now]];
+        [departureTime setBackgroundColor:[UIColor clearColor]];
+        
+        
+        [numberLabel setText:[[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"flightNumber"]];
+        [numberLabel setBackgroundColor:[UIColor clearColor]];
+        
+        
+        [arrivalTimeLabel setText:[[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"date"]];
+        [arrivalTimeLabel setBackgroundColor:[UIColor clearColor]];
+            
+        [numberLabel setBackgroundColor:[UIColor clearColor]];
+         
+        
+        if([[NSString stringWithFormat:@"%@", [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"departDelay"]] isEqualToString:@"0"]){
+             [statusLabel setText:@"On time"];
+        }else{
+            [statusLabel setText:[NSString stringWithFormat:@"Delay %@ mins", [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"departDelay"]]];
+        }
+           
     
+        [statusLabel setBackgroundColor:[UIColor clearColor]];
+        [statusLabel setTextColor:[UIColor blueColor]];
+        
+        [cell addSubview:airlineImageView];
+        [cell addSubview:departureTime];
+        [cell addSubview:numberLabel];
+        [cell addSubview:statusLabel];
+        [cell addSubview:arrivalTimeLabel];
     
-}
-
-
-return cell;
-
+    }
+    }
+    
+    return cell;
+    
 }
 
 - (void)viewDidLoad
 {
+     
+    [self loadDefaults];
+   
+    
+    self.airlineText.text = @"Delta";
+    self.flightNumberText.text = @"DL123";
+    self.departureAirportText.text = @"PHX";
+    self.departureDateText.text = @"2012-12-15";
+    self.destinationAirporteText.text = @"PHL";
     [super viewDidLoad];
+    
+    itineraryInputView.layer.cornerRadius = 5;
+    itineraryInputView.layer.masksToBounds = YES;
+    
 	
-    
-    
-    
-    
+    realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+    poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     
 }
 
@@ -124,97 +134,104 @@ return cell;
 
 - (IBAction)grabURLInBackground:(id)sender
 {
-       
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *formattedDate = [formatter stringFromDate:[NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]]];
     
-    NSURL *url = [NSURL URLWithString:@"http://flight-prediction.herokuapp.com/predictions/DL123"];
+    NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
+    NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
+    NSString *departDate = self.departureDateText.text;
+    NSString *departAirport = ([self.departureAirportText.text length] == 0)?@"PHX":self.departureAirportText.text;
+    NSString *arrivalAirport = ([self.destinationAirporteText.text length] == 0)?@"PHL":self.destinationAirporteText.text;
+    
+    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/predictions/%@/%@/%@/%@/%@", airline, flight, departDate ,departAirport, arrivalAirport];
+    NSLog(@"Requested URL: %@", strUrl);
+    NSURL *url = [NSURL URLWithString: strUrl];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];
+    
+    
+    
+    
 }
 
-- (void)requestFinished:(ASIHTTPRequest *)request
+- (IBAction)loadDefaults
 {
     
-  SBJsonParser *parser = [[SBJsonParser alloc] init];
     
-   NSString *responseString = [request responseString];
+    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/flights"];
+    NSURL *url = [NSURL URLWithString: strUrl];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setDelegate:self];
+    [request startSynchronous];
+
     
-    NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
-    
-    
-    NSLog(@"Delay dparture is %@", [jsonDictionary valueForKey:@"delayDeparture"]);
-    
-        
-    
-    
-    NSString *result = @" Response for ";
-    result = [result stringByAppendingString:self.departureAirportText.text];
-    
-    result = [result stringByAppendingString:@" to "];
-    
-    result = [result stringByAppendingString:self.destinationAirporteText.text];
-    
-    
-    responseString = [result stringByAppendingString:responseString];
-    
- 
-    MapViewController *mapViewController = [[MapViewController alloc] init];
-    
-    if(mapViewController.view){
-        
+}
+- (void)requestFinished:(ASIHTTPRequest *) request 
+{
+         
+    if([request.url.absoluteString isEqualToString:@"http://flight-prediction.herokuapp.com/flights"]){
        
+        self.jsonArray  = [[NSArray alloc] init];
+             
+        self.jsonArray = [[request responseString] JSONValue];
+       
+      
+    
         
-        int departureDelay = [[jsonDictionary valueForKey:@"delayDeparture"] doubleValue];
-        
-        if(departureDelay<20){
-            mapViewController.departurePrediction.text =@"On time";
-             mapViewController.departurePrediction.textColor =[UIColor blueColor];
-            
-        }else{
-            mapViewController.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
-             mapViewController.departurePrediction.textColor =[UIColor redColor];
-        }
-
-        
-        int destinationDelay = [[jsonDictionary valueForKey:@"delayArrival"] doubleValue];
-        
-        if(destinationDelay<20){
-            mapViewController.destinationPrediction.text =@"On time";
-            mapViewController.destinationPrediction.textColor =[UIColor blueColor];
- 
-        }else{
-           mapViewController.destinationPrediction.text =[NSString stringWithFormat:@"Delay %d minutes", destinationDelay];
-            mapViewController.destinationPrediction.textColor =[UIColor redColor];
-        }
-        mapViewController.airlineLabel.text = self.airlineText.text;
-        
-        
-        mapViewController.flightNumberLabel.text =self.flightNumberText.text;    }
-   
-    if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        // optional - add more buttons:
-//        [alert addButtonWithTitle:@"Yes"];
-        [alert show];
     }else{
-       [self.navigationController pushViewController:mapViewController animated:YES]; 
+       
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        
+        NSString *responseString = [request responseString];
+        
+        NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
+        
+        
+        
+        
+        NSString *result = @" Response for ";
+        result = [result stringByAppendingString:self.departureAirportText.text];
+        
+        result = [result stringByAppendingString:@" to "];
+        
+        result = [result stringByAppendingString:self.destinationAirporteText.text];
+        
+        
+        responseString = [result stringByAppendingString:responseString];
+        
+        
+        MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
+        
+        if(mapViewController.view){
+            if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                // optional - add more buttons:
+                //        [alert addButtonWithTitle:@"Yes"];
+                [alert show];
+            }
+            NSLog(@"Hello");
+            
+            [self.navigationController pushViewController:mapViewController animated:YES];
+            
+        }
+        
+        
+    
+        
     }
-    
-
-    
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-//    NSError *error = [request error];
+    //    NSError *error = [request error];
     
     NSString *alertViewText = [[NSString alloc] initWithFormat:@"Error"];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title" message:alertViewText delegate:(nil) cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failed" message:alertViewText delegate:(nil) cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     
     [alert show];
 }
-
-
 
 
 - (void)dealloc {
@@ -223,7 +240,20 @@ return cell;
     [_departureAirportText release];
     [_departureDateText release];
     [_destinationAirporteText release];
+    
     [super dealloc];
+}
+
+-(UIImage *)getAirlineImage:(NSString *) airline{
+    UIImage *airlineImage;
+    
+    if([airline isEqualToString:@"Delta Air Lines"]){
+        airlineImage= [UIImage imageNamed:@"deltaairlines.jpg"]; 
+    }else{
+         airlineImage = [UIImage imageNamed:@"usairways.png"];
+    }
+//    NSLog(airline);
+    return airlineImage;
 }
 
 @end

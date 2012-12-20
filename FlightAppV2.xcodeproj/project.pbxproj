@@ -10,6 +10,9 @@
 		180EB5BD16715A3500FD5B06 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5BC16715A3500FD5B06 /* MapAnnotation.m */; };
 		180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5BF167173A000FD5B06 /* weather_few_clouds.png */; };
 		180EB5C51671D60800FD5B06 /* weather_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5C41671D60800FD5B06 /* weather_128.png */; };
+		182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */; };
+		182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B6167AFE9E00FC70C5 /* Untitled.png */; };
+		182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B8167B078000FC70C5 /* Predict My Flight.png */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -74,9 +77,31 @@
 		186E6B2016712D8100AB495C /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */; };
 		186E6B2116712D8100AB495C /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0816712D8100AB495C /* SBJsonWriter.h */; };
 		186E6B2216712D8100AB495C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0916712D8100AB495C /* SBJsonWriter.m */; };
-		7710FFD716767C0600E05E22 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFD616767C0600E05E22 /* Default.png */; };
+		18DC2B681682FD09005A46E2 /* usairways.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DC2B671682FD09005A46E2 /* usairways.png */; };
+		18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */; };
+		1A49A6371678A2F500918751 /* WeatherAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49A6351678A2F500918751 /* WeatherAnnotationView.m */; };
+		1A8811B8167AF63900718D76 /* Thunderstorms-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811B7167AF63900718D76 /* Thunderstorms-48.png */; };
+		1A8811BB167AF64900718D76 /* thunder-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BA167AF64900718D76 /* thunder-48.png */; };
+		1A8811CA167AF67800718D76 /* Cloudy-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BC167AF67700718D76 /* Cloudy-48.png */; };
+		1A8811CB167AF67800718D76 /* fog-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BD167AF67700718D76 /* fog-48.png */; };
+		1A8811CC167AF67800718D76 /* hail-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BE167AF67700718D76 /* hail-48.png */; };
+		1A8811CD167AF67800718D76 /* light-rain-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811BF167AF67700718D76 /* light-rain-48.png */; };
+		1A8811CE167AF67800718D76 /* Light-Showers-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C0167AF67700718D76 /* Light-Showers-48.png */; };
+		1A8811CF167AF67800718D76 /* light-snow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C1167AF67700718D76 /* light-snow-48.png */; };
+		1A8811D0167AF67800718D76 /* lightning-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C2167AF67700718D76 /* lightning-48.png */; };
+		1A8811D1167AF67800718D76 /* Overcast-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C3167AF67700718D76 /* Overcast-48.png */; };
+		1A8811D2167AF67800718D76 /* rain-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C4167AF67700718D76 /* rain-48.png */; };
+		1A8811D3167AF67800718D76 /* Showers-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C5167AF67700718D76 /* Showers-48.png */; };
+		1A8811D4167AF67800718D76 /* snow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C6167AF67700718D76 /* snow-48.png */; };
+		1A8811D5167AF67800718D76 /* Sunny-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C7167AF67800718D76 /* Sunny-48.png */; };
+		1A8811D6167AF67800718D76 /* Sunny-Interval-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */; };
+		1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811C9167AF67800718D76 /* Sunny-Period-48.png */; };
+		1A8811D9167B016700718D76 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811D8167B016700718D76 /* question.png */; };
+		1A977793167C03DE000FAE21 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A977792167C03DE000FAE21 /* pin.png */; };
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
+		77473AE11683803F007963CA /* saplogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AE01683803F007963CA /* saplogo.png */; };
+		77BFDD7C1677D6E6008099A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFDD7B1677D6E6008099A2 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +109,9 @@
 		180EB5BC16715A3500FD5B06 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		180EB5BF167173A000FD5B06 /* weather_few_clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_few_clouds.png; sourceTree = "<group>"; };
 		180EB5C41671D60800FD5B06 /* weather_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_128.png; sourceTree = "<group>"; };
+		182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2012-12-13 at 9.00.22 PM.png"; sourceTree = "<group>"; };
+		182516B6167AFE9E00FC70C5 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
+		182516B8167B078000FC70C5 /* Predict My Flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Predict My Flight.png"; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,10 +182,33 @@
 		186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		186E6B0816712D8100AB495C /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		186E6B0916712D8100AB495C /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		7710FFD616767C0600E05E22 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		18DC2B671682FD09005A46E2 /* usairways.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usairways.png; sourceTree = "<group>"; };
+		18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deltaairlines.jpg; sourceTree = "<group>"; };
+		1A49A6351678A2F500918751 /* WeatherAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherAnnotationView.m; path = FlightAppV2/WeatherAnnotationView.m; sourceTree = "<group>"; };
+		1A49A6361678A2F500918751 /* WeatherAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherAnnotationView.h; path = FlightAppV2/WeatherAnnotationView.h; sourceTree = "<group>"; };
+		1A8811B7167AF63900718D76 /* Thunderstorms-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thunderstorms-48.png"; sourceTree = "<group>"; };
+		1A8811BA167AF64900718D76 /* thunder-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thunder-48.png"; sourceTree = "<group>"; };
+		1A8811BC167AF67700718D76 /* Cloudy-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cloudy-48.png"; sourceTree = "<group>"; };
+		1A8811BD167AF67700718D76 /* fog-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fog-48.png"; sourceTree = "<group>"; };
+		1A8811BE167AF67700718D76 /* hail-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hail-48.png"; sourceTree = "<group>"; };
+		1A8811BF167AF67700718D76 /* light-rain-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-rain-48.png"; sourceTree = "<group>"; };
+		1A8811C0167AF67700718D76 /* Light-Showers-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light-Showers-48.png"; sourceTree = "<group>"; };
+		1A8811C1167AF67700718D76 /* light-snow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-snow-48.png"; sourceTree = "<group>"; };
+		1A8811C2167AF67700718D76 /* lightning-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightning-48.png"; sourceTree = "<group>"; };
+		1A8811C3167AF67700718D76 /* Overcast-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overcast-48.png"; sourceTree = "<group>"; };
+		1A8811C4167AF67700718D76 /* rain-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rain-48.png"; sourceTree = "<group>"; };
+		1A8811C5167AF67700718D76 /* Showers-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Showers-48.png"; sourceTree = "<group>"; };
+		1A8811C6167AF67700718D76 /* snow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-48.png"; sourceTree = "<group>"; };
+		1A8811C7167AF67800718D76 /* Sunny-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-48.png"; sourceTree = "<group>"; };
+		1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-Interval-48.png"; sourceTree = "<group>"; };
+		1A8811C9167AF67800718D76 /* Sunny-Period-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-Period-48.png"; sourceTree = "<group>"; };
+		1A8811D8167B016700718D76 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		1A977792167C03DE000FAE21 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		7710FFD81676850E00E05E22 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		77473AE01683803F007963CA /* saplogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saplogo.png; sourceTree = "<group>"; };
+		77BFDD7B1677D6E6008099A2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +261,8 @@
 				186E6B0916712D8100AB495C /* SBJsonWriter.m */,
 				182E2F9B167122CE0036F6D6 /* MapKit.framework */,
 				182E2F6A16711CF80036F6D6 /* ASIAuthenticationDialog.h */,
+				1A49A6351678A2F500918751 /* WeatherAnnotationView.m */,
+				1A49A6361678A2F500918751 /* WeatherAnnotationView.h */,
 				182E2F6B16711CF80036F6D6 /* ASIAuthenticationDialog.m */,
 				182E2F6C16711CF80036F6D6 /* ASICacheDelegate.h */,
 				182E2F6D16711CF80036F6D6 /* ASIDataCompressor.h */,
@@ -262,6 +315,7 @@
 		182E2F4516711B050036F6D6 /* FlightAppV2 */ = {
 			isa = PBXGroup;
 			children = (
+				1A977792167C03DE000FAE21 /* pin.png */,
 				182E2F9616711D880036F6D6 /* MapViewController.h */,
 				182E2F9716711D880036F6D6 /* MapViewController.m */,
 				182E2F9816711D880036F6D6 /* MapViewController.xib */,
@@ -283,10 +337,32 @@
 		182E2F4616711B050036F6D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7710FFD616767C0600E05E22 /* Default.png */,
+				77473AE01683803F007963CA /* saplogo.png */,
+				18DC2B641682FBF2005A46E2 /* airlines */,
+				182516B8167B078000FC70C5 /* Predict My Flight.png */,
+				182516B6167AFE9E00FC70C5 /* Untitled.png */,
+				182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */,
+				77BFDD7B1677D6E6008099A2 /* Default.png */,
+				1A8811BC167AF67700718D76 /* Cloudy-48.png */,
+				1A8811BD167AF67700718D76 /* fog-48.png */,
+				1A8811BE167AF67700718D76 /* hail-48.png */,
+				1A8811D8167B016700718D76 /* question.png */,
+				1A8811BF167AF67700718D76 /* light-rain-48.png */,
+				1A8811C0167AF67700718D76 /* Light-Showers-48.png */,
+				1A8811C1167AF67700718D76 /* light-snow-48.png */,
+				1A8811C2167AF67700718D76 /* lightning-48.png */,
+				1A8811C3167AF67700718D76 /* Overcast-48.png */,
+				1A8811C4167AF67700718D76 /* rain-48.png */,
+				1A8811C5167AF67700718D76 /* Showers-48.png */,
+				1A8811C6167AF67700718D76 /* snow-48.png */,
+				1A8811C7167AF67800718D76 /* Sunny-48.png */,
+				1A8811C8167AF67800718D76 /* Sunny-Interval-48.png */,
+				1A8811C9167AF67800718D76 /* Sunny-Period-48.png */,
 				180EB5C41671D60800FD5B06 /* weather_128.png */,
 				180EB5BF167173A000FD5B06 /* weather_few_clouds.png */,
+				1A8811BA167AF64900718D76 /* thunder-48.png */,
 				182E2F4716711B050036F6D6 /* FlightAppV2-Info.plist */,
+				1A8811B7167AF63900718D76 /* Thunderstorms-48.png */,
 				182E2F4816711B050036F6D6 /* InfoPlist.strings */,
 				182E2F4B16711B050036F6D6 /* main.m */,
 				182E2F4D16711B050036F6D6 /* FlightAppV2-Prefix.pch */,
@@ -294,6 +370,15 @@
 				182E2F5516711B050036F6D6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18DC2B641682FBF2005A46E2 /* airlines */ = {
+			isa = PBXGroup;
+			children = (
+				18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */,
+				18DC2B671682FD09005A46E2 /* usairways.png */,
+			);
+			path = airlines;
 			sourceTree = "<group>";
 		};
 		7710FFD516767BDF00E05E22 /* Resources */ = {
@@ -361,8 +446,32 @@
 				182E2F9A16711D880036F6D6 /* MapViewController.xib in Resources */,
 				180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */,
 				180EB5C51671D60800FD5B06 /* weather_128.png in Resources */,
-				7710FFD716767C0600E05E22 /* Default.png in Resources */,
 				7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */,
+				77BFDD7C1677D6E6008099A2 /* Default.png in Resources */,
+				182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */,
+				182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */,
+				182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */,
+				1A8811B8167AF63900718D76 /* Thunderstorms-48.png in Resources */,
+				1A8811BB167AF64900718D76 /* thunder-48.png in Resources */,
+				1A8811CA167AF67800718D76 /* Cloudy-48.png in Resources */,
+				1A8811CB167AF67800718D76 /* fog-48.png in Resources */,
+				1A8811CC167AF67800718D76 /* hail-48.png in Resources */,
+				1A8811CD167AF67800718D76 /* light-rain-48.png in Resources */,
+				1A8811CE167AF67800718D76 /* Light-Showers-48.png in Resources */,
+				1A8811CF167AF67800718D76 /* light-snow-48.png in Resources */,
+				1A8811D0167AF67800718D76 /* lightning-48.png in Resources */,
+				1A8811D1167AF67800718D76 /* Overcast-48.png in Resources */,
+				1A8811D2167AF67800718D76 /* rain-48.png in Resources */,
+				1A8811D3167AF67800718D76 /* Showers-48.png in Resources */,
+				1A8811D4167AF67800718D76 /* snow-48.png in Resources */,
+				1A8811D5167AF67800718D76 /* Sunny-48.png in Resources */,
+				1A8811D6167AF67800718D76 /* Sunny-Interval-48.png in Resources */,
+				1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */,
+				1A8811D9167B016700718D76 /* question.png in Resources */,
+				1A977793167C03DE000FAE21 /* pin.png in Resources */,
+				18DC2B681682FD09005A46E2 /* usairways.png in Resources */,
+				18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */,
+				77473AE11683803F007963CA /* saplogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +535,7 @@
 				182E2F9916711D880036F6D6 /* MapViewController.m in Sources */,
 				180EB5BD16715A3500FD5B06 /* MapAnnotation.m in Sources */,
 				7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */,
+				1A49A6371678A2F500918751 /* WeatherAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,10 +617,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edward Akoto (ULDT5AZ8QF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightAppV2/FlightAppV2-Prefix.pch";
 				INFOPLIST_FILE = "FlightAppV2/FlightAppV2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "16C8F9D9-1852-4BD9-A209-A63FA0F31D56";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -519,10 +632,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edward Akoto (ULDT5AZ8QF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightAppV2/FlightAppV2-Prefix.pch";
 				INFOPLIST_FILE = "FlightAppV2/FlightAppV2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "16C8F9D9-1852-4BD9-A209-A63FA0F31D56";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

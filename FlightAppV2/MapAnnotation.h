@@ -14,6 +14,7 @@
     CLLocationCoordinate2D coordinate;
     NSString *title;
     NSString *subtitle;
+    int weatherCode;
     
     
 }
@@ -22,5 +23,5 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subTitle;
-
+@property (readwrite, assign) int weatherCode;
 @end

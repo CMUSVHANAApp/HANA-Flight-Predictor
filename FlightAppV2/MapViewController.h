@@ -15,17 +15,25 @@
   IBOutlet MKMapView *mapView;
     
 }
+@property (retain, nonatomic) IBOutlet UILabel *flightInformationLabel;
+@property (retain, nonatomic) IBOutlet UILabel *poweredBySAPLabel;
 
 
+@property (retain, nonatomic) IBOutlet UILabel *realTimeLabel;
 
+@property (retain, nonatomic) IBOutlet UILabel *delay_summary;
 
+@property (nonatomic, assign) NSMutableDictionary *jsonDictionary;
 @property (retain, readwrite) IBOutlet UILabel *arrivalDelay;
 @property (strong, nonatomic) IBOutlet UILabel *departurePrediction;
 @property (strong, nonatomic) IBOutlet UILabel *destinationPrediction;
 @property (retain, nonatomic) IBOutlet UILabel *airlineLabel;
 @property (retain, nonatomic) IBOutlet UILabel *flightNumberLabel;
+@property (retain, nonatomic) IBOutlet UIView *displayView;
 
 
 @property (retain, nonatomic) IBOutlet UIImageView *rainImage;
+
+-(IBAction)drawRoute;
 
 @end
