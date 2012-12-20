@@ -15,9 +15,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-
-
-
 @interface ViewController ()
 @end
 
@@ -50,18 +47,18 @@
         
         
         cell.accessoryType = UITableViewCellAccessoryNone;
-        
-        UILabel *departureLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 5, 150, 30)];
+     
+        UIImageView *airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
+        NSString *airline = [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"];
+        airlineImageView.image= [self getAirlineImage:airline];
+       
+      
         UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 5, 100, 30)];
         UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(260, 5, 170, 30)];
        
         UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(430, 5, 170, 30)];
         UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(600, 5, 150, 30)];
         
-       
-        [departureLabel setText:[[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"]];
-                        
-        [departureLabel setBackgroundColor:[UIColor clearColor]];
         
         NSDate *now = [NSDate date];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -94,7 +91,7 @@
         [statusLabel setBackgroundColor:[UIColor clearColor]];
         [statusLabel setTextColor:[UIColor blueColor]];
         
-        [cell addSubview:departureLabel];
+        [cell addSubview:airlineImageView];
         [cell addSubview:departureTime];
         [cell addSubview:numberLabel];
         [cell addSubview:statusLabel];
@@ -109,11 +106,9 @@
 
 - (void)viewDidLoad
 {
-     NSLog(@"View Did Load Called ARRAY %@", self.jsonArray);
-  
-    self.loadDefaults;
-    
-     NSLog(@"Load Defaults has been called %@", self.jsonArray);
+     
+    [self loadDefaults];
+   
     
     self.airlineText.text = @"Delta";
     self.flightNumberText.text = @"DL123";
@@ -129,16 +124,6 @@
     realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
     poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,7 +137,7 @@
     NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     NSString *formattedDate = [formatter stringFromDate:[NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]]];
-    NSLog(formattedDate);
+    
     NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
     NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
     NSString *departDate = self.departureDateText.text;
@@ -257,6 +242,18 @@
     [_destinationAirporteText release];
     
     [super dealloc];
+}
+
+-(UIImage *)getAirlineImage:(NSString *) airline{
+    UIImage *airlineImage;
+    
+    if([airline isEqualToString:@"Delta Air Lines"]){
+        airlineImage= [UIImage imageNamed:@"deltaairlines.jpg"]; 
+    }else{
+         airlineImage = [UIImage imageNamed:@"usairways.png"];
+    }
+//    NSLog(airline);
+    return airlineImage;
 }
 
 @end
