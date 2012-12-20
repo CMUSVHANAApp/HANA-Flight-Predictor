@@ -21,24 +21,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlightAppV2/ViewController.m"
-         timestampString = "377509290.252104"
+         timestampString = "377676738.513471"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "204"
-         endingLineNumber = "204"
+         startingLineNumber = "189"
+         endingLineNumber = "189"
          landmarkName = "-requestFinished:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlightAppV2/ViewController.m"
-         timestampString = "377509290.252104"
+         timestampString = "377676738.513471"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "104"
-         endingLineNumber = "104"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -19,36 +19,24 @@
 
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
 
-@synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel, poweredBySAPLabel, realTimePredictionLabel;
-@synthesize itineraryInputView, jsonArray;
-
-
+@synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel, poweredBySAPLabel, realTimePredictionLabel, itineraryInputView, jsonArray;
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    
     if(tableView == self.listTableView){
-        
-        return 40;
+        return self.jsonArray.count;
     }else{
-        return 2;
-    }
-    
+        return 1;
+    }    
 }
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-   
-
-    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -56,10 +44,8 @@
     
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        
-    }    
-    
-    // Configure the cell...
+      
+  
     if(tableView == self.listTableView){
         
         
@@ -108,7 +94,6 @@
         [statusLabel setBackgroundColor:[UIColor clearColor]];
         [statusLabel setTextColor:[UIColor blueColor]];
         
-        
         [cell addSubview:departureLabel];
         [cell addSubview:departureTime];
         [cell addSubview:numberLabel];
@@ -116,7 +101,7 @@
         [cell addSubview:arrivalTimeLabel];
     
     }
-    
+    }
     
     return cell;
     
@@ -246,7 +231,7 @@
             [self.navigationController pushViewController:mapViewController animated:YES];
             
         }
-        NSLog(@"test here");
+        
         
     
         
