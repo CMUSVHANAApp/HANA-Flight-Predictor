@@ -11,7 +11,8 @@
 #import "MapAnnotation.h"
 #import "WeatherAnnotationView.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "ASIHTTPRequest.h"
+#import "SBJsonParser.h"
 
 @interface MapViewController ()
 
@@ -152,10 +153,34 @@
       
     NSLog(@"Delay dparture is %@", [self.jsonDictionary valueForKey:@"departDelay"]);
     NSLog(@"Delay arrival is %@", [self.jsonDictionary valueForKey:@"arrivalDelay"]);
-
     
+    /** Restaurant Recommendations **/
+    NSString *cityCode =[[[self.jsonDictionary valueForKey:@"departAirport"]valueForKey:@"geoLocation"] valueForKey:@"zipCode"];
+    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/recommendations/%@/restaurant", cityCode];
+    NSLog(@"Requested URL: %@", strUrl);
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:strUrl]];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]
+                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
+                               NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                               SBJsonParser *parser = [[SBJsonParser alloc] init];
+                               
+                               NSMutableDictionary *recommendationArray = [[parser objectWithString:responseString error:nil] valueForKey:@"recommendations"];
+                               //NSMutableDictionary *biz;
+                               int i = 0 ;
+                               for (NSMutableDictionary *biz in recommendationArray) {
+                                   NSLog(@"%@", [biz valueForKey:@"name"]);
+                                   if(i==3) break;
+                                   i++;
+                                   // do something with uid and count
+                               }
+                           }];
     [super viewDidLoad];
    
+}
+- (void)requestFinished:(ASIHTTPRequest *) request
+{
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
