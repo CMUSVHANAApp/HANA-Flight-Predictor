@@ -13,6 +13,7 @@
 		182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */; };
 		182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B6167AFE9E00FC70C5 /* Untitled.png */; };
 		182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B8167B078000FC70C5 /* Predict My Flight.png */; };
+		1827E27A1683BFA0007D44A3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2791683BFA0007D44A3 /* Default.png */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -101,7 +102,6 @@
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
 		77473AE11683803F007963CA /* saplogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AE01683803F007963CA /* saplogo.png */; };
-		77BFDD7C1677D6E6008099A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFDD7B1677D6E6008099A2 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +112,7 @@
 		182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2012-12-13 at 9.00.22 PM.png"; sourceTree = "<group>"; };
 		182516B6167AFE9E00FC70C5 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
 		182516B8167B078000FC70C5 /* Predict My Flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Predict My Flight.png"; sourceTree = "<group>"; };
+		1827E2791683BFA0007D44A3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -208,7 +209,6 @@
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		77473AE01683803F007963CA /* saplogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saplogo.png; sourceTree = "<group>"; };
-		77BFDD7B1677D6E6008099A2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +233,7 @@
 		182E2F3016711B050036F6D6 = {
 			isa = PBXGroup;
 			children = (
+				1827E2791683BFA0007D44A3 /* Default.png */,
 				7710FFD516767BDF00E05E22 /* Resources */,
 				186E6AF116712D8100AB495C /* NSObject+SBJson.h */,
 				186E6AF216712D8100AB495C /* NSObject+SBJson.m */,
@@ -342,7 +343,6 @@
 				182516B8167B078000FC70C5 /* Predict My Flight.png */,
 				182516B6167AFE9E00FC70C5 /* Untitled.png */,
 				182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */,
-				77BFDD7B1677D6E6008099A2 /* Default.png */,
 				1A8811BC167AF67700718D76 /* Cloudy-48.png */,
 				1A8811BD167AF67700718D76 /* fog-48.png */,
 				1A8811BE167AF67700718D76 /* hail-48.png */,
@@ -447,7 +447,6 @@
 				180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */,
 				180EB5C51671D60800FD5B06 /* weather_128.png in Resources */,
 				7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */,
-				77BFDD7C1677D6E6008099A2 /* Default.png in Resources */,
 				182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */,
 				182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */,
 				182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */,
@@ -472,6 +471,7 @@
 				18DC2B681682FD09005A46E2 /* usairways.png in Resources */,
 				18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */,
 				77473AE11683803F007963CA /* saplogo.png in Resources */,
+				1827E27A1683BFA0007D44A3 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
