@@ -154,41 +154,82 @@
     NSLog(@"Delay dparture is %@", [self.jsonDictionary valueForKey:@"departDelay"]);
     NSLog(@"Delay arrival is %@", [self.jsonDictionary valueForKey:@"arrivalDelay"]);
     
-    /** Restaurant Recommendations **/
-    NSString *cityCode =[[[self.jsonDictionary valueForKey:@"departAirport"]valueForKey:@"geoLocation"] valueForKey:@"zipCode"];
-    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/recommendations/%@/restaurant", cityCode];
-    NSLog(@"Requested URL: %@", strUrl);
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:strUrl]];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]
-                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
-                               NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                               SBJsonParser *parser = [[SBJsonParser alloc] init];
-                               
-                               NSMutableDictionary *recommendationArray = [[parser objectWithString:responseString error:nil] valueForKey:@"recommendations"];
-                               //NSMutableDictionary *biz;
-                               int i = 0 ;
-                               for (NSMutableDictionary *biz in recommendationArray) {
-                                   NSLog(@"%@", [biz valueForKey:@"name"]);
-                                   if(i==3) break;
-                                   i++;
-                                   // do something with uid and count
-                               }
-                           }];
+    /** Recommendations **/
+    NSArray *loop = [NSArray arrayWithObjects: @"Dining", @"Transportation", @"Accomendation", nil];
+    for(int key_i=0; key_i< 3; key_i++){
+        NSString *key = [loop objectAtIndex:key_i];
+        NSMutableDictionary *recommendationArray = [[[self.jsonDictionary valueForKey: @"recommendations"] valueForKey: key] valueForKey: @"recommendations"];
+        //NSMutableDictionary *biz;
+        
+        UIView *container = [[UIView alloc] initWithFrame:CGRectMake(70, 588+key_i*(20+3*25), 460, 10+ 3*25)];
+        [container setBackgroundColor: [UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.0f] ];
+        [self.view addSubview:container];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 2, 460, 38)];
+        label.text = key;
+        [label setTextColor: [UIColor colorWithRed:199/255.0 green:74/255.0 blue:148/255.0 alpha:1.0]];
+        [label setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.0f] ];
+        [container addSubview:label];
+        [label autorelease];
+        
+        
+        int i = 0 ;
+        for (NSMutableDictionary *biz in recommendationArray) {
+            NSLog(@"%@", [biz valueForKey:@"name"]);
+            if(i==3) break;
+            
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, 35+ i*25, 450, 25)];
+            [view setBackgroundColor: [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f] ];
+            [container addSubview:view];
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 250, 21)];
+            label.text = [biz valueForKey:@"name"];
+            if(key == @"Dining"){
+                label.text = [NSString stringWithFormat: @"%@ - (%@)", [biz valueForKey:@"name"], [biz valueForKey:@"category"]];
+            }
+            label.adjustsFontSizeToFitWidth = YES;
+            [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
+            [view addSubview:label];
+            
+            //double latitude = [[[biz valueForKey:@"geoLocation"] valueForKey:@"latitude" ]  doubleValue];
+            //double longitude = [[[biz valueForKey:@"geoLocation"] valueForKey:@"longitude"] doubleValue];
+
+            label = [[UILabel alloc] initWithFrame:CGRectMake(350, 2, 80, 21)];
+            label.text = [NSString stringWithFormat: @"%0.2f miles", [[biz valueForKey: @"distance"] doubleValue]];
+            label.adjustsFontSizeToFitWidth = YES;
+            [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
+            [view addSubview:label];
+
+
+            label = [[UILabel alloc] initWithFrame:CGRectMake(500, 2, 50, 21)];
+            label.text = @" more >";
+            label.adjustsFontSizeToFitWidth = YES;
+            [label setTextColor: [UIColor colorWithRed:1.0 green:1.0 blue:0.0 alpha:1.0]];
+            [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
+            label.userInteractionEnabled = YES;
+            UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToLink:)];
+            [label addGestureRecognizer:gr];
+            gr.numberOfTapsRequired = 1;
+            gr.cancelsTouchesInView = NO;
+            [view addSubview:label];
+            i++;
+            // do something with uid and count
+        }
+
+        
+    }
+
     [super viewDidLoad];
    
 }
-- (void)requestFinished:(ASIHTTPRequest *) request
-{
-    
-    
+-(void) goToLink:(UILabel*)sender{
+    NSLog(@"I am here");
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    
-    
 }
 
 

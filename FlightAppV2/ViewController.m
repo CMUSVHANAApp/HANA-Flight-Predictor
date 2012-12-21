@@ -185,7 +185,7 @@
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         
         NSString *responseString = [request responseString];
-        
+        NSLog(responseString);
         NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
         
         
