@@ -47,10 +47,6 @@
         
         
         cell.accessoryType = UITableViewCellAccessoryNone;
-     
-//        UIImageView *airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
-//        NSString *airline = [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"];
-//        airlineImageView.image= [self getAirlineImage:airline];
         
         UIImageView *airlineImageView;
         NSString *airline = [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"];
@@ -58,11 +54,12 @@
 
        
       
-        UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 5, 100, 30)];
-        UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(260, 5, 170, 30)];
+        UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 5, 70, 30)];
+        UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(180, 5, 200, 30)];
        
-        UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(430, 5, 170, 30)];
-        UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(600, 5, 150, 30)];
+        
+        UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(380, 5, 220, 30)];
+        UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(610, 5, 150, 30)];
         
         
         NSDate *now = [NSDate date];
@@ -221,10 +218,7 @@
             [self.navigationController pushViewController:mapViewController animated:YES];
             
         }
-        
-        
-    
-        
+       
     }
 }
 
@@ -263,7 +257,7 @@
         airlineImage = [UIImage imageNamed:@"usairways.gif"];
         airlineImageView.image = airlineImage;
     }
-    NSLog(airline);
+    //NSLog(airline);
     return airlineImageView;
 }
 

@@ -122,7 +122,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flight Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgS-qa-EPk">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgS-qa-EPk">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -145,16 +145,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.83137254901960789" alpha="0.82000000000000006" colorSpace="deviceWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mID-iM-iGO" secondAttribute="trailing" constant="141" id="0Vl-qH-Pa4"/>
-                                    <constraint firstAttribute="trailing" secondItem="INW-aY-uL3" secondAttribute="trailing" constant="38" id="CJ0-pU-zA7"/>
+                                    <constraint firstAttribute="trailing" secondItem="mID-iM-iGO" secondAttribute="trailing" constant="225" id="5TJ-bI-XdB"/>
+                                    <constraint firstItem="INW-aY-uL3" firstAttribute="centerY" secondItem="M86-ZS-sDC" secondAttribute="centerY" type="default" id="6na-yZ-y7A"/>
                                     <constraint firstItem="gTu-R1-Sac" firstAttribute="baseline" secondItem="xgS-qa-EPk" secondAttribute="baseline" type="default" id="GkT-3L-MsG"/>
-                                    <constraint firstItem="xgS-qa-EPk" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="128" id="Myn-gk-Aim"/>
-                                    <constraint firstItem="hCi-X6-H5U" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Nkd-OQ-gt8"/>
+                                    <constraint firstItem="hCi-X6-H5U" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="11" id="HTN-jU-gqf"/>
+                                    <constraint firstItem="gTu-R1-Sac" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="180" id="IVs-eu-2tX"/>
+                                    <constraint firstItem="xgS-qa-EPk" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="109" id="Y47-bQ-FqP"/>
                                     <constraint firstItem="INW-aY-uL3" firstAttribute="baseline" secondItem="mID-iM-iGO" secondAttribute="baseline" type="default" id="YmW-hD-Tts"/>
                                     <constraint firstItem="mID-iM-iGO" firstAttribute="baseline" secondItem="gTu-R1-Sac" secondAttribute="baseline" type="default" id="aHE-Tw-AGS"/>
                                     <constraint firstItem="xgS-qa-EPk" firstAttribute="baseline" secondItem="hCi-X6-H5U" secondAttribute="baseline" type="default" id="bxU-yv-dgQ"/>
-                                    <constraint firstItem="gTu-R1-Sac" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="300" id="fXu-Ig-XIU"/>
-                                    <constraint firstItem="INW-aY-uL3" firstAttribute="centerY" secondItem="M86-ZS-sDC" secondAttribute="centerY" type="default" id="iGI-QC-UG2"/>
+                                    <constraint firstAttribute="trailing" secondItem="INW-aY-uL3" secondAttribute="trailing" constant="36" id="oLI-1o-cyP"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I35-tZ-Xir">
