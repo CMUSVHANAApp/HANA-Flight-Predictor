@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,7 +15,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-ad-Xn8">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="696" id="Euz-C1-68W"/>
                                     <constraint firstAttribute="height" constant="262" id="nIX-mS-CRW"/>
                                 </constraints>
                                 <prototypes>
@@ -164,10 +163,23 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recent Flight Predictions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuV-GO-Gp7">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="291" id="Gdp-LK-0iF"/>
+                                            <constraint firstAttribute="height" constant="33" id="qyH-GW-4OU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.83137254900000002" alpha="0.81999999999999995" colorSpace="deviceWhite"/>
                                 <constraints>
+                                    <constraint firstItem="WuV-GO-Gp7" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="203" id="Fcb-GI-dtk"/>
                                     <constraint firstAttribute="bottom" secondItem="YiW-Bi-6hr" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="OIz-xP-Rr1"/>
+                                    <constraint firstItem="WuV-GO-Gp7" firstAttribute="centerX" secondItem="I35-tZ-Xir" secondAttribute="centerX" type="default" id="bEs-2x-p9r"/>
+                                    <constraint firstItem="WuV-GO-Gp7" firstAttribute="top" secondItem="I35-tZ-Xir" secondAttribute="top" type="default" id="cN9-p0-jea"/>
+                                    <constraint firstItem="YiW-Bi-6hr" firstAttribute="top" secondItem="I35-tZ-Xir" secondAttribute="top" constant="11" id="d0t-b9-8IE"/>
                                     <constraint firstAttribute="trailing" secondItem="YiW-Bi-6hr" secondAttribute="trailing" constant="141" id="ftS-ME-d1X"/>
                                 </constraints>
                             </view>
@@ -306,7 +318,6 @@
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="centerX" secondItem="qXL-3r-weV" secondAttribute="centerX" type="default" id="XxZ-AJ-OdX"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="SeT-62-R2n" secondAttribute="trailing" type="default" id="fPX-H5-JPH"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="74" id="h9V-9Y-9ng"/>
-                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="824" id="ihY-qj-aH2"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="M86-ZS-sDC" secondAttribute="trailing" type="default" id="iub-03-sMo"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="top" secondItem="5" secondAttribute="top" constant="527" id="kTg-NU-DCL"/>
                             <constraint firstItem="dEt-0g-o1f" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qUg-fe-LQ2"/>
