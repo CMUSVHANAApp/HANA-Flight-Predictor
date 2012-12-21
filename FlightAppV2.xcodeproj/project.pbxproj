@@ -15,7 +15,6 @@
 		182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B8167B078000FC70C5 /* Predict My Flight.png */; };
 		1827E27A1683BFA0007D44A3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2791683BFA0007D44A3 /* Default.png */; };
 		1827E2831683DF01007D44A3 /* usairways.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2821683DF01007D44A3 /* usairways.gif */; };
-		1827E2851683E1EB007D44A3 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2841683E1EB007D44A3 /* Default-Portrait.png */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -103,6 +102,11 @@
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
 		77473AE11683803F007963CA /* saplogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AE01683803F007963CA /* saplogo.png */; };
+		77473AEF1684A1EE007963CA /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AEE1684A1EE007963CA /* Default-Portrait~ipad.png */; };
+		77473AF11684A225007963CA /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF01684A225007963CA /* Default-Portrait@2x~ipad.png */; };
+		77473AF31684A25B007963CA /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF21684A25B007963CA /* Default-Landscape@2x~ipad.png */; };
+		77473AF51684A5FB007963CA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF41684A5FB007963CA /* Icon.png */; };
+		77473AF71684A685007963CA /* icon_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF61684A685007963CA /* icon_retina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,7 +119,6 @@
 		182516B8167B078000FC70C5 /* Predict My Flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Predict My Flight.png"; sourceTree = "<group>"; };
 		1827E2791683BFA0007D44A3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1827E2821683DF01007D44A3 /* usairways.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = usairways.gif; sourceTree = "<group>"; };
-		1827E2841683E1EB007D44A3 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "FlightAppV2/Default-Portrait.png"; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -211,6 +214,11 @@
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		77473AE01683803F007963CA /* saplogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saplogo.png; sourceTree = "<group>"; };
+		77473AEE1684A1EE007963CA /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		77473AF01684A225007963CA /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		77473AF21684A25B007963CA /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		77473AF41684A5FB007963CA /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		77473AF61684A685007963CA /* icon_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_retina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +243,11 @@
 		182E2F3016711B050036F6D6 = {
 			isa = PBXGroup;
 			children = (
-				1827E2841683E1EB007D44A3 /* Default-Portrait.png */,
+				77473AF61684A685007963CA /* icon_retina.png */,
+				77473AF41684A5FB007963CA /* Icon.png */,
+				77473AF21684A25B007963CA /* Default-Landscape@2x~ipad.png */,
+				77473AF01684A225007963CA /* Default-Portrait@2x~ipad.png */,
+				77473AEE1684A1EE007963CA /* Default-Portrait~ipad.png */,
 				1827E2791683BFA0007D44A3 /* Default.png */,
 				7710FFD516767BDF00E05E22 /* Resources */,
 				186E6AF116712D8100AB495C /* NSObject+SBJson.h */,
@@ -418,7 +430,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = "Edward Akoto";
+				ORGANIZATIONNAME = CMUSV;
 			};
 			buildConfigurationList = 182E2F3516711B050036F6D6 /* Build configuration list for PBXProject "FlightAppV2" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -475,7 +487,11 @@
 				77473AE11683803F007963CA /* saplogo.png in Resources */,
 				1827E27A1683BFA0007D44A3 /* Default.png in Resources */,
 				1827E2831683DF01007D44A3 /* usairways.gif in Resources */,
-				1827E2851683E1EB007D44A3 /* Default-Portrait.png in Resources */,
+				77473AEF1684A1EE007963CA /* Default-Portrait~ipad.png in Resources */,
+				77473AF11684A225007963CA /* Default-Portrait@2x~ipad.png in Resources */,
+				77473AF31684A25B007963CA /* Default-Landscape@2x~ipad.png in Resources */,
+				77473AF51684A5FB007963CA /* Icon.png in Resources */,
+				77473AF71684A685007963CA /* icon_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

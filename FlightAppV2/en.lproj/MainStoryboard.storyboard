@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,7 +15,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-ad-Xn8">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="696" id="Euz-C1-68W"/>
+                                    <constraint firstAttribute="width" constant="696" id="4NL-cu-djf"/>
                                     <constraint firstAttribute="height" constant="262" id="nIX-mS-CRW"/>
                                 </constraints>
                                 <prototypes>
@@ -146,10 +146,10 @@
                                 <color key="backgroundColor" white="0.83137254901960789" alpha="0.82000000000000006" colorSpace="deviceWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mID-iM-iGO" secondAttribute="trailing" constant="225" id="5TJ-bI-XdB"/>
-                                    <constraint firstItem="INW-aY-uL3" firstAttribute="centerY" secondItem="M86-ZS-sDC" secondAttribute="centerY" type="default" id="6na-yZ-y7A"/>
                                     <constraint firstItem="gTu-R1-Sac" firstAttribute="baseline" secondItem="xgS-qa-EPk" secondAttribute="baseline" type="default" id="GkT-3L-MsG"/>
                                     <constraint firstItem="hCi-X6-H5U" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="11" id="HTN-jU-gqf"/>
                                     <constraint firstItem="gTu-R1-Sac" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="180" id="IVs-eu-2tX"/>
+                                    <constraint firstItem="mID-iM-iGO" firstAttribute="centerY" secondItem="M86-ZS-sDC" secondAttribute="centerY" type="default" id="JJP-HL-BAK"/>
                                     <constraint firstItem="xgS-qa-EPk" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="109" id="Y47-bQ-FqP"/>
                                     <constraint firstItem="INW-aY-uL3" firstAttribute="baseline" secondItem="mID-iM-iGO" secondAttribute="baseline" type="default" id="YmW-hD-Tts"/>
                                     <constraint firstItem="mID-iM-iGO" firstAttribute="baseline" secondItem="gTu-R1-Sac" secondAttribute="baseline" type="default" id="aHE-Tw-AGS"/>
@@ -164,10 +164,21 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recent Flight Predictions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuV-GO-Gp7">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="291" id="Gdp-LK-0iF"/>
+                                            <constraint firstAttribute="height" constant="33" id="qyH-GW-4OU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.83137254900000002" alpha="0.81999999999999995" colorSpace="deviceWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="YiW-Bi-6hr" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="OIz-xP-Rr1"/>
+                                    <constraint firstItem="WuV-GO-Gp7" firstAttribute="centerX" secondItem="I35-tZ-Xir" secondAttribute="centerX" type="default" id="bEs-2x-p9r"/>
+                                    <constraint firstItem="WuV-GO-Gp7" firstAttribute="top" secondItem="I35-tZ-Xir" secondAttribute="top" type="default" id="cN9-p0-jea"/>
                                     <constraint firstAttribute="trailing" secondItem="YiW-Bi-6hr" secondAttribute="trailing" constant="141" id="ftS-ME-d1X"/>
                                 </constraints>
                             </view>
@@ -289,31 +300,39 @@
                                     <constraint firstAttribute="height" constant="54" id="PYu-m9-irx"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="saplogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="fDc-2r-Vb5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Ldn-ov-VzC"/>
+                                    <constraint firstAttribute="width" constant="71" id="fSs-00-Isj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.28426873992841889" green="0.52339250949012783" blue="0.79677535076530615" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="139" id="39j-iU-w5W"/>
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="top" secondItem="5" secondAttribute="top" constant="478" id="6Wq-AD-dVM"/>
-                            <constraint firstItem="I35-tZ-Xir" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="74R-j1-VFg"/>
-                            <constraint firstItem="SeT-62-R2n" firstAttribute="trailing" secondItem="dEt-0g-o1f" secondAttribute="trailing" type="default" id="7nM-4y-v69"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="top" secondItem="5" secondAttribute="top" constant="105" id="92u-4B-xUG"/>
-                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="139" id="AWw-av-V7a"/>
                             <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="780" id="Ibb-WI-2O6"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="leading" secondItem="SPd-ad-Xn8" secondAttribute="leading" type="default" id="O4G-mL-eIf"/>
+                            <constraint firstItem="fDc-2r-Vb5" firstAttribute="top" secondItem="dEt-0g-o1f" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ODm-4L-bbd"/>
                             <constraint firstItem="LEK-Uk-PQo" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R6O-Np-Zy7"/>
                             <constraint firstItem="SPd-ad-Xn8" firstAttribute="centerX" secondItem="LiU-dy-rGA" secondAttribute="centerX" type="default" id="Rdo-sh-lBb"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" type="default" id="See-7d-ltx"/>
                             <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="183" id="VD4-oM-QMQ"/>
+                            <constraint firstAttribute="trailing" secondItem="fDc-2r-Vb5" secondAttribute="trailing" constant="60" id="VTU-MG-Iq5"/>
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="centerX" secondItem="qXL-3r-weV" secondAttribute="centerX" type="default" id="XxZ-AJ-OdX"/>
-                            <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="SeT-62-R2n" secondAttribute="trailing" type="default" id="fPX-H5-JPH"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="74" id="h9V-9Y-9ng"/>
-                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="824" id="ihY-qj-aH2"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="M86-ZS-sDC" secondAttribute="trailing" type="default" id="iub-03-sMo"/>
+                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="kRI-th-ArX"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="top" secondItem="5" secondAttribute="top" constant="527" id="kTg-NU-DCL"/>
                             <constraint firstItem="dEt-0g-o1f" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qUg-fe-LQ2"/>
+                            <constraint firstAttribute="trailing" secondItem="dEt-0g-o1f" secondAttribute="trailing" constant="74" id="rRn-Xr-91z"/>
                             <constraint firstItem="LEK-Uk-PQo" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rpq-xs-6y4"/>
                             <constraint firstAttribute="bottom" secondItem="qXL-3r-weV" secondAttribute="bottom" constant="112" id="s5X-Lw-rXN"/>
                             <constraint firstItem="SeT-62-R2n" firstAttribute="top" secondItem="dEt-0g-o1f" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sKX-pf-Yvl"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="trailing" secondItem="SPd-ad-Xn8" secondAttribute="trailing" type="default" id="soa-hR-lEE"/>
+                            <constraint firstItem="dEt-0g-o1f" firstAttribute="leading" secondItem="SeT-62-R2n" secondAttribute="leading" type="default" id="uf0-Zt-9OK"/>
+                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="824" id="y59-cL-5ZG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hP7-DH-0zK"/>
@@ -356,6 +375,7 @@
     <resources>
         <image name="Predict My Flight.png" width="267" height="40"/>
         <image name="Screen Shot 2012-12-13 at 9.00.22 PM.png" width="344" height="67"/>
+        <image name="saplogo.png" width="66" height="33"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">

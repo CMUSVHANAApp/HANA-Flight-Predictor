@@ -123,8 +123,8 @@
     itineraryInputView.layer.masksToBounds = YES;
     
 	
-    realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
-    poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
+  //  realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+  //  poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     
 }
 
@@ -133,6 +133,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)grabURLInBackground:(id)sender
 {
