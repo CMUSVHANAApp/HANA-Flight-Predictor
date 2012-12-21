@@ -263,7 +263,7 @@
         airlineImage = [UIImage imageNamed:@"usairways.gif"];
         airlineImageView.image = airlineImage;
     }
-    //NSLog(airline);
+    NSLog(airline);
     return airlineImageView;
 }
 
