@@ -15,6 +15,7 @@
 		182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B8167B078000FC70C5 /* Predict My Flight.png */; };
 		1827E27A1683BFA0007D44A3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2791683BFA0007D44A3 /* Default.png */; };
 		1827E2831683DF01007D44A3 /* usairways.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2821683DF01007D44A3 /* usairways.gif */; };
+		1827E2851683E1EB007D44A3 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2841683E1EB007D44A3 /* Default-Portrait.png */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -114,6 +115,7 @@
 		182516B8167B078000FC70C5 /* Predict My Flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Predict My Flight.png"; sourceTree = "<group>"; };
 		1827E2791683BFA0007D44A3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1827E2821683DF01007D44A3 /* usairways.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = usairways.gif; sourceTree = "<group>"; };
+		1827E2841683E1EB007D44A3 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "FlightAppV2/Default-Portrait.png"; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -233,6 +235,7 @@
 		182E2F3016711B050036F6D6 = {
 			isa = PBXGroup;
 			children = (
+				1827E2841683E1EB007D44A3 /* Default-Portrait.png */,
 				1827E2791683BFA0007D44A3 /* Default.png */,
 				7710FFD516767BDF00E05E22 /* Resources */,
 				186E6AF116712D8100AB495C /* NSObject+SBJson.h */,
@@ -472,6 +475,7 @@
 				77473AE11683803F007963CA /* saplogo.png in Resources */,
 				1827E27A1683BFA0007D44A3 /* Default.png in Resources */,
 				1827E2831683DF01007D44A3 /* usairways.gif in Resources */,
+				1827E2851683E1EB007D44A3 /* Default-Portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
