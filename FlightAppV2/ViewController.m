@@ -47,17 +47,19 @@
         
         
         cell.accessoryType = UITableViewCellAccessoryNone;
-     
-        UIImageView *airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
+        
+        UIImageView *airlineImageView;
         NSString *airline = [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"];
-        airlineImageView.image= [self getAirlineImage:airline];
+        airlineImageView= [self getAirlineImageView:airline];
+
        
       
-        UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 5, 100, 30)];
-        UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(260, 5, 170, 30)];
+        UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 5, 70, 30)];
+        UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(180, 5, 200, 30)];
        
-        UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(430, 5, 170, 30)];
-        UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(600, 5, 150, 30)];
+        
+        UILabel *arrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(380, 5, 220, 30)];
+        UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(610, 5, 150, 30)];
         
         
         NSDate *now = [NSDate date];
@@ -121,8 +123,8 @@
     itineraryInputView.layer.masksToBounds = YES;
     
 	
-    realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
-    poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
+  //  realTimePredictionLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+  //  poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     
 }
 
@@ -132,11 +134,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (IBAction)grabURLInBackground:(id)sender
 {
     NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *formattedDate = [formatter stringFromDate:[NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]]];
+   
     
     NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
     NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
@@ -216,10 +219,7 @@
             [self.navigationController pushViewController:mapViewController animated:YES];
             
         }
-        
-        
-    
-        
+       
     }
 }
 
@@ -244,16 +244,22 @@
     [super dealloc];
 }
 
--(UIImage *)getAirlineImage:(NSString *) airline{
+-(UIImageView *)getAirlineImageView:(NSString *) airline{
     UIImage *airlineImage;
+    UIImageView *airlineImageView;
     
     if([airline isEqualToString:@"Delta Air Lines"]){
-        airlineImage= [UIImage imageNamed:@"deltaairlines.jpg"]; 
+        airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
+        airlineImage= [UIImage imageNamed:@"deltaairlines.jpg"];
+        airlineImageView.image = airlineImage;
     }else{
-         airlineImage = [UIImage imageNamed:@"usairways.png"];
+        // Work in progress, getting the right image for other airlines
+        airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,0, 50, 45)];
+        airlineImage = [UIImage imageNamed:@"usairways.gif"];
+        airlineImageView.image = airlineImage;
     }
-//    NSLog(airline);
-    return airlineImage;
+    //NSLog(airline);
+    return airlineImageView;
 }
 
 @end

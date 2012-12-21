@@ -13,6 +13,8 @@
 		182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */; };
 		182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B6167AFE9E00FC70C5 /* Untitled.png */; };
 		182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B8167B078000FC70C5 /* Predict My Flight.png */; };
+		1827E27A1683BFA0007D44A3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2791683BFA0007D44A3 /* Default.png */; };
+		1827E2831683DF01007D44A3 /* usairways.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2821683DF01007D44A3 /* usairways.gif */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -77,7 +79,6 @@
 		186E6B2016712D8100AB495C /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */; };
 		186E6B2116712D8100AB495C /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0816712D8100AB495C /* SBJsonWriter.h */; };
 		186E6B2216712D8100AB495C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0916712D8100AB495C /* SBJsonWriter.m */; };
-		18DC2B681682FD09005A46E2 /* usairways.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DC2B671682FD09005A46E2 /* usairways.png */; };
 		18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */; };
 		1A49A6371678A2F500918751 /* WeatherAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49A6351678A2F500918751 /* WeatherAnnotationView.m */; };
 		1A8811B8167AF63900718D76 /* Thunderstorms-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811B7167AF63900718D76 /* Thunderstorms-48.png */; };
@@ -100,7 +101,12 @@
 		1A977793167C03DE000FAE21 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A977792167C03DE000FAE21 /* pin.png */; };
 		7710FFDB1676850E00E05E22 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7710FFD91676850E00E05E22 /* ImageViewController.m */; };
 		7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7710FFDA1676850E00E05E22 /* ImageViewController.xib */; };
-		77BFDD7C1677D6E6008099A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BFDD7B1677D6E6008099A2 /* Default.png */; };
+		77473AE11683803F007963CA /* saplogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AE01683803F007963CA /* saplogo.png */; };
+		77473AEF1684A1EE007963CA /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AEE1684A1EE007963CA /* Default-Portrait~ipad.png */; };
+		77473AF11684A225007963CA /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF01684A225007963CA /* Default-Portrait@2x~ipad.png */; };
+		77473AF31684A25B007963CA /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF21684A25B007963CA /* Default-Landscape@2x~ipad.png */; };
+		77473AF51684A5FB007963CA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF41684A5FB007963CA /* Icon.png */; };
+		77473AF71684A685007963CA /* icon_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 77473AF61684A685007963CA /* icon_retina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +117,8 @@
 		182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2012-12-13 at 9.00.22 PM.png"; sourceTree = "<group>"; };
 		182516B6167AFE9E00FC70C5 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
 		182516B8167B078000FC70C5 /* Predict My Flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Predict My Flight.png"; sourceTree = "<group>"; };
+		1827E2791683BFA0007D44A3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1827E2821683DF01007D44A3 /* usairways.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = usairways.gif; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,7 +189,6 @@
 		186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		186E6B0816712D8100AB495C /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		186E6B0916712D8100AB495C /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		18DC2B671682FD09005A46E2 /* usairways.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usairways.png; sourceTree = "<group>"; };
 		18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deltaairlines.jpg; sourceTree = "<group>"; };
 		1A49A6351678A2F500918751 /* WeatherAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherAnnotationView.m; path = FlightAppV2/WeatherAnnotationView.m; sourceTree = "<group>"; };
 		1A49A6361678A2F500918751 /* WeatherAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherAnnotationView.h; path = FlightAppV2/WeatherAnnotationView.h; sourceTree = "<group>"; };
@@ -206,7 +213,12 @@
 		7710FFD81676850E00E05E22 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7710FFD91676850E00E05E22 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7710FFDA1676850E00E05E22 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
-		77BFDD7B1677D6E6008099A2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		77473AE01683803F007963CA /* saplogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saplogo.png; sourceTree = "<group>"; };
+		77473AEE1684A1EE007963CA /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		77473AF01684A225007963CA /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		77473AF21684A25B007963CA /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		77473AF41684A5FB007963CA /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		77473AF61684A685007963CA /* icon_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_retina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +243,12 @@
 		182E2F3016711B050036F6D6 = {
 			isa = PBXGroup;
 			children = (
+				77473AF61684A685007963CA /* icon_retina.png */,
+				77473AF41684A5FB007963CA /* Icon.png */,
+				77473AF21684A25B007963CA /* Default-Landscape@2x~ipad.png */,
+				77473AF01684A225007963CA /* Default-Portrait@2x~ipad.png */,
+				77473AEE1684A1EE007963CA /* Default-Portrait~ipad.png */,
+				1827E2791683BFA0007D44A3 /* Default.png */,
 				7710FFD516767BDF00E05E22 /* Resources */,
 				186E6AF116712D8100AB495C /* NSObject+SBJson.h */,
 				186E6AF216712D8100AB495C /* NSObject+SBJson.m */,
@@ -335,11 +353,11 @@
 		182E2F4616711B050036F6D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77473AE01683803F007963CA /* saplogo.png */,
 				18DC2B641682FBF2005A46E2 /* airlines */,
 				182516B8167B078000FC70C5 /* Predict My Flight.png */,
 				182516B6167AFE9E00FC70C5 /* Untitled.png */,
 				182516B1167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png */,
-				77BFDD7B1677D6E6008099A2 /* Default.png */,
 				1A8811BC167AF67700718D76 /* Cloudy-48.png */,
 				1A8811BD167AF67700718D76 /* fog-48.png */,
 				1A8811BE167AF67700718D76 /* hail-48.png */,
@@ -372,8 +390,8 @@
 		18DC2B641682FBF2005A46E2 /* airlines */ = {
 			isa = PBXGroup;
 			children = (
+				1827E2821683DF01007D44A3 /* usairways.gif */,
 				18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */,
-				18DC2B671682FD09005A46E2 /* usairways.png */,
 			);
 			path = airlines;
 			sourceTree = "<group>";
@@ -412,7 +430,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = "Edward Akoto";
+				ORGANIZATIONNAME = CMUSV;
 			};
 			buildConfigurationList = 182E2F3516711B050036F6D6 /* Build configuration list for PBXProject "FlightAppV2" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -444,7 +462,6 @@
 				180EB5C0167173A000FD5B06 /* weather_few_clouds.png in Resources */,
 				180EB5C51671D60800FD5B06 /* weather_128.png in Resources */,
 				7710FFDC1676850E00E05E22 /* ImageViewController.xib in Resources */,
-				77BFDD7C1677D6E6008099A2 /* Default.png in Resources */,
 				182516B2167AEA3400FC70C5 /* Screen Shot 2012-12-13 at 9.00.22 PM.png in Resources */,
 				182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */,
 				182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */,
@@ -466,8 +483,15 @@
 				1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */,
 				1A8811D9167B016700718D76 /* question.png in Resources */,
 				1A977793167C03DE000FAE21 /* pin.png in Resources */,
-				18DC2B681682FD09005A46E2 /* usairways.png in Resources */,
 				18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */,
+				77473AE11683803F007963CA /* saplogo.png in Resources */,
+				1827E27A1683BFA0007D44A3 /* Default.png in Resources */,
+				1827E2831683DF01007D44A3 /* usairways.gif in Resources */,
+				77473AEF1684A1EE007963CA /* Default-Portrait~ipad.png in Resources */,
+				77473AF11684A225007963CA /* Default-Portrait@2x~ipad.png in Resources */,
+				77473AF31684A25B007963CA /* Default-Landscape@2x~ipad.png in Resources */,
+				77473AF51684A5FB007963CA /* Icon.png in Resources */,
+				77473AF71684A685007963CA /* icon_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

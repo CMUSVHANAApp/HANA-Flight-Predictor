@@ -27,17 +27,6 @@
 @synthesize displayView, realTimeLabel, poweredBySAPLabel, flightInformationLabel;
 @synthesize delay_summary;
 
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-              
-    }
-    return self;
-}
-*/
 
 -(id)initWithJsonData:(NSMutableDictionary *) json {
     self = [super init];
@@ -49,6 +38,7 @@
 
 - (void)viewDidLoad
 {
+      
     displayView.layer.cornerRadius = 5;
     displayView.layer.masksToBounds = YES;
     
@@ -148,7 +138,7 @@
 
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
     [mapView addOverlay:polyline];
-    
+    [mapView setMapType:1];
     [mapView setDelegate:self];
       
     NSLog(@"Delay dparture is %@", [self.jsonDictionary valueForKey:@"departDelay"]);
@@ -218,7 +208,6 @@
 
         
     }
-
     [super viewDidLoad];
    
 }

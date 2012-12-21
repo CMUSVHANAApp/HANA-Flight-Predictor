@@ -35,5 +35,6 @@
 @property (retain, nonatomic) IBOutlet UIImageView *rainImage;
 
 -(IBAction)drawRoute;
+-(id)initWithJsonData:(NSMutableDictionary *) json;
 
 @end

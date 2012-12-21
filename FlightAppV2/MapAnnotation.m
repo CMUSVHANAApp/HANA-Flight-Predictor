@@ -11,7 +11,7 @@
 
 @implementation MapAnnotation
 
-@synthesize title, subTitle, coordinate;
+@synthesize title, subTitle, coordinate, weatherCode;
 
 -(void) dealloc{
     [title release];
