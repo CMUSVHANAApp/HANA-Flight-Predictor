@@ -48,9 +48,14 @@
         
         cell.accessoryType = UITableViewCellAccessoryNone;
      
-        UIImageView *airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
+//        UIImageView *airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
+//        NSString *airline = [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"];
+//        airlineImageView.image= [self getAirlineImage:airline];
+        
+        UIImageView *airlineImageView;
         NSString *airline = [[self.jsonArray objectAtIndex:indexPath.row] valueForKey:@"airline"];
-        airlineImageView.image= [self getAirlineImage:airline];
+        airlineImageView= [self getAirlineImageView:airline];
+
        
       
         UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 5, 100, 30)];
@@ -136,7 +141,7 @@
 {
     NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *formattedDate = [formatter stringFromDate:[NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]]];
+   
     
     NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
     NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
@@ -244,16 +249,22 @@
     [super dealloc];
 }
 
--(UIImage *)getAirlineImage:(NSString *) airline{
+-(UIImageView *)getAirlineImageView:(NSString *) airline{
     UIImage *airlineImage;
+    UIImageView *airlineImageView;
     
     if([airline isEqualToString:@"Delta Air Lines"]){
-        airlineImage= [UIImage imageNamed:@"deltaairlines.jpg"]; 
+        airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
+        airlineImage= [UIImage imageNamed:@"deltaairlines.jpg"];
+        airlineImageView.image = airlineImage;
     }else{
-         airlineImage = [UIImage imageNamed:@"usairways.png"];
+        // Work in progress, getting the right image for other airlines
+        airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,0, 50, 45)];
+        airlineImage = [UIImage imageNamed:@"usairways.gif"];
+        airlineImageView.image = airlineImage;
     }
-//    NSLog(airline);
-    return airlineImage;
+    //NSLog(airline);
+    return airlineImageView;
 }
 
 @end

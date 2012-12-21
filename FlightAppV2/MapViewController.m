@@ -27,17 +27,6 @@
 @synthesize displayView, realTimeLabel, poweredBySAPLabel, flightInformationLabel;
 @synthesize delay_summary;
 
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-              
-    }
-    return self;
-}
-*/
 
 -(id)initWithJsonData:(NSMutableDictionary *) json {
     self = [super init];

@@ -44,6 +44,6 @@
 
 @property (retain, nonatomic) IBOutlet UIView *itineraryInputView;
 
-
+-(UIImageView *)getAirlineImageView:(NSString *) airline;
 
 @end

@@ -159,64 +159,16 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I35-tZ-Xir">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Departure Airport" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yh-Ll-xGi">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arrival Airport" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzS-Or-cWd">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiW-Bi-6hr">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doK-Da-LGu">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Ed9-B8-gBw"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Search">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Vf-Y6-0r9">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="148" id="7mY-My-tt3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sia-1e-8Ke">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="148" id="i4c-BV-4k6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.83137254900000002" alpha="0.81999999999999995" colorSpace="deviceWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Sia-1e-8Ke" firstAttribute="leading" secondItem="2Yh-Ll-xGi" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="84J-WB-Hvh"/>
-                                    <constraint firstItem="doK-Da-LGu" firstAttribute="baseline" secondItem="YiW-Bi-6hr" secondAttribute="baseline" type="default" id="Dex-4D-vYL"/>
-                                    <constraint firstItem="2Yh-Ll-xGi" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GLY-Bs-4tD"/>
-                                    <constraint firstItem="LzS-Or-cWd" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="325" id="LLH-nf-XZQ"/>
-                                    <constraint firstItem="Sia-1e-8Ke" firstAttribute="baseline" secondItem="LzS-Or-cWd" secondAttribute="baseline" type="default" id="TgT-aV-UFk"/>
-                                    <constraint firstAttribute="trailing" secondItem="doK-Da-LGu" secondAttribute="trailing" constant="9" id="VXf-xc-hNB"/>
-                                    <constraint firstItem="Sia-1e-8Ke" firstAttribute="baseline" secondItem="2Yh-Ll-xGi" secondAttribute="baseline" type="default" id="bAm-jG-raL"/>
+                                    <constraint firstAttribute="bottom" secondItem="YiW-Bi-6hr" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="OIz-xP-Rr1"/>
                                     <constraint firstAttribute="trailing" secondItem="YiW-Bi-6hr" secondAttribute="trailing" constant="141" id="ftS-ME-d1X"/>
-                                    <constraint firstItem="Sia-1e-8Ke" firstAttribute="centerY" secondItem="I35-tZ-Xir" secondAttribute="centerY" type="default" id="hxy-7g-t3a"/>
-                                    <constraint firstItem="YiW-Bi-6hr" firstAttribute="baseline" secondItem="LzS-Or-cWd" secondAttribute="baseline" type="default" id="ikj-G6-a06"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Vf-Y6-0r9" secondAttribute="trailing" constant="98" id="mjH-dg-sc7"/>
-                                    <constraint firstItem="4Vf-Y6-0r9" firstAttribute="baseline" secondItem="YiW-Bi-6hr" secondAttribute="baseline" type="default" id="ss0-vg-e9X"/>
-                                    <constraint firstItem="4Vf-Y6-0r9" firstAttribute="top" secondItem="doK-Da-LGu" secondAttribute="top" type="default" id="wCS-4F-MUo"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Powered by SAP HANA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-62-R2n">
@@ -340,26 +292,26 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28426873992841889" green="0.52339250949012783" blue="0.79677535076530615" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="M86-ZS-sDC" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="4PX-jG-cAw"/>
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="top" secondItem="5" secondAttribute="top" constant="478" id="6Wq-AD-dVM"/>
                             <constraint firstItem="SeT-62-R2n" firstAttribute="trailing" secondItem="dEt-0g-o1f" secondAttribute="trailing" type="default" id="7nM-4y-v69"/>
-                            <constraint firstItem="I35-tZ-Xir" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="DMH-6M-tdf"/>
-                            <constraint firstAttribute="bottom" secondItem="qXL-3r-weV" secondAttribute="bottom" constant="114" id="NtZ-Tk-JQF"/>
+                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="826" id="9lW-y2-rgQ"/>
+                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="136" id="EFN-JW-JCQ"/>
+                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="779" id="F31-fl-hr1"/>
+                            <constraint firstItem="I35-tZ-Xir" firstAttribute="top" secondItem="5" secondAttribute="top" constant="103" id="Fps-iH-4nf"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="leading" secondItem="SPd-ad-Xn8" secondAttribute="leading" type="default" id="O4G-mL-eIf"/>
                             <constraint firstItem="LEK-Uk-PQo" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R6O-Np-Zy7"/>
                             <constraint firstItem="SPd-ad-Xn8" firstAttribute="centerX" secondItem="LiU-dy-rGA" secondAttribute="centerX" type="default" id="Rdo-sh-lBb"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" type="default" id="See-7d-ltx"/>
-                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="817" id="TiZ-fM-NxD"/>
-                            <constraint firstItem="I35-tZ-Xir" firstAttribute="top" secondItem="5" secondAttribute="top" constant="88" id="TtT-Zb-2oQ"/>
                             <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="183" id="VD4-oM-QMQ"/>
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="centerX" secondItem="qXL-3r-weV" secondAttribute="centerX" type="default" id="XxZ-AJ-OdX"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="SeT-62-R2n" secondAttribute="trailing" type="default" id="fPX-H5-JPH"/>
-                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="138" id="gSL-Ds-hw9"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="74" id="h9V-9Y-9ng"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="M86-ZS-sDC" secondAttribute="trailing" type="default" id="iub-03-sMo"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="top" secondItem="5" secondAttribute="top" constant="527" id="kTg-NU-DCL"/>
-                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="772" id="lhX-wa-Xet"/>
                             <constraint firstItem="dEt-0g-o1f" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qUg-fe-LQ2"/>
                             <constraint firstItem="LEK-Uk-PQo" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rpq-xs-6y4"/>
+                            <constraint firstAttribute="bottom" secondItem="qXL-3r-weV" secondAttribute="bottom" constant="112" id="s5X-Lw-rXN"/>
                             <constraint firstItem="SeT-62-R2n" firstAttribute="top" secondItem="dEt-0g-o1f" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sKX-pf-Yvl"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="trailing" secondItem="SPd-ad-Xn8" secondAttribute="trailing" type="default" id="soa-hR-lEE"/>
                         </constraints>
@@ -405,6 +357,33 @@
         <image name="Predict My Flight.png" width="267" height="40"/>
         <image name="Screen Shot 2012-12-13 at 9.00.22 PM.png" width="344" height="67"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="grabURLInBackground:"/>
+                <relationship kind="action" name="loadDefaults"/>
+                <relationship kind="outlet" name="airlineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="airlineText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="departureAirportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="departureAirportText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="departureDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="departureDateText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="destinationAirportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="destinationAirporteText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="flightNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flightNumberText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="itineraryInputView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="poweredBySAPLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="realTimePredictionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

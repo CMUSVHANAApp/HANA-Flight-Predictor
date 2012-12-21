@@ -14,6 +14,7 @@
 		182516B7167AFE9E00FC70C5 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B6167AFE9E00FC70C5 /* Untitled.png */; };
 		182516B9167B078000FC70C5 /* Predict My Flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 182516B8167B078000FC70C5 /* Predict My Flight.png */; };
 		1827E27A1683BFA0007D44A3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2791683BFA0007D44A3 /* Default.png */; };
+		1827E2831683DF01007D44A3 /* usairways.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1827E2821683DF01007D44A3 /* usairways.gif */; };
 		182E2F4016711B050036F6D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F3F16711B050036F6D6 /* UIKit.framework */; };
 		182E2F4216711B050036F6D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4116711B050036F6D6 /* Foundation.framework */; };
 		182E2F4416711B050036F6D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E2F4316711B050036F6D6 /* CoreGraphics.framework */; };
@@ -78,7 +79,6 @@
 		186E6B2016712D8100AB495C /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */; };
 		186E6B2116712D8100AB495C /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0816712D8100AB495C /* SBJsonWriter.h */; };
 		186E6B2216712D8100AB495C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E6B0916712D8100AB495C /* SBJsonWriter.m */; };
-		18DC2B681682FD09005A46E2 /* usairways.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DC2B671682FD09005A46E2 /* usairways.png */; };
 		18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */; };
 		1A49A6371678A2F500918751 /* WeatherAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49A6351678A2F500918751 /* WeatherAnnotationView.m */; };
 		1A8811B8167AF63900718D76 /* Thunderstorms-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8811B7167AF63900718D76 /* Thunderstorms-48.png */; };
@@ -113,6 +113,7 @@
 		182516B6167AFE9E00FC70C5 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
 		182516B8167B078000FC70C5 /* Predict My Flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Predict My Flight.png"; sourceTree = "<group>"; };
 		1827E2791683BFA0007D44A3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1827E2821683DF01007D44A3 /* usairways.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = usairways.gif; sourceTree = "<group>"; };
 		182E2F3B16711B050036F6D6 /* FlightAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E2F3F16711B050036F6D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		182E2F4116711B050036F6D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -183,7 +184,6 @@
 		186E6B0716712D8100AB495C /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		186E6B0816712D8100AB495C /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		186E6B0916712D8100AB495C /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		18DC2B671682FD09005A46E2 /* usairways.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usairways.png; sourceTree = "<group>"; };
 		18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deltaairlines.jpg; sourceTree = "<group>"; };
 		1A49A6351678A2F500918751 /* WeatherAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherAnnotationView.m; path = FlightAppV2/WeatherAnnotationView.m; sourceTree = "<group>"; };
 		1A49A6361678A2F500918751 /* WeatherAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherAnnotationView.h; path = FlightAppV2/WeatherAnnotationView.h; sourceTree = "<group>"; };
@@ -375,8 +375,8 @@
 		18DC2B641682FBF2005A46E2 /* airlines */ = {
 			isa = PBXGroup;
 			children = (
+				1827E2821683DF01007D44A3 /* usairways.gif */,
 				18DC2B691682FE0D005A46E2 /* deltaairlines.jpg */,
-				18DC2B671682FD09005A46E2 /* usairways.png */,
 			);
 			path = airlines;
 			sourceTree = "<group>";
@@ -468,10 +468,10 @@
 				1A8811D7167AF67800718D76 /* Sunny-Period-48.png in Resources */,
 				1A8811D9167B016700718D76 /* question.png in Resources */,
 				1A977793167C03DE000FAE21 /* pin.png in Resources */,
-				18DC2B681682FD09005A46E2 /* usairways.png in Resources */,
 				18DC2B6A1682FE0D005A46E2 /* deltaairlines.jpg in Resources */,
 				77473AE11683803F007963CA /* saplogo.png in Resources */,
 				1827E27A1683BFA0007D44A3 /* Default.png in Resources */,
+				1827E2831683DF01007D44A3 /* usairways.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
