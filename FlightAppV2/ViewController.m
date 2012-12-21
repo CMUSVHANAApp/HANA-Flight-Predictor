@@ -214,8 +214,6 @@
                 //        [alert addButtonWithTitle:@"Yes"];
                 [alert show];
             }
-            NSLog(@"Hello");
-            
             [self.navigationController pushViewController:mapViewController animated:YES];
             
         }

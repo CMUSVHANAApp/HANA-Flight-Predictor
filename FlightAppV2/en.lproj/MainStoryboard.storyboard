@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -164,7 +164,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recent Flight Predictions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuV-GO-Gp7">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Realtime Flight Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuV-GO-Gp7">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="291" id="Gdp-LK-0iF"/>
                                             <constraint firstAttribute="height" constant="33" id="qyH-GW-4OU"/>
@@ -377,33 +377,6 @@
         <image name="Screen Shot 2012-12-13 at 9.00.22 PM.png" width="344" height="67"/>
         <image name="saplogo.png" width="66" height="33"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="grabURLInBackground:"/>
-                <relationship kind="action" name="loadDefaults"/>
-                <relationship kind="outlet" name="airlineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="airlineText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="departureAirportLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="departureAirportText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="departureDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="departureDateText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="destinationAirportLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="destinationAirporteText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="flightNumberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="flightNumberText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="itineraryInputView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="poweredBySAPLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="realTimePredictionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

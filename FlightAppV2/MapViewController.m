@@ -165,7 +165,6 @@
         
         int i = 0 ;
         for (NSMutableDictionary *biz in recommendationArray) {
-            NSLog(@"%@", [biz valueForKey:@"name"]);
             if(i==3) break;
             
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, 35+ i*25, 450, 25)];
@@ -181,8 +180,6 @@
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
             [view addSubview:label];
             
-            //double latitude = [[[biz valueForKey:@"geoLocation"] valueForKey:@"latitude" ]  doubleValue];
-            //double longitude = [[[biz valueForKey:@"geoLocation"] valueForKey:@"longitude"] doubleValue];
 
             label = [[UILabel alloc] initWithFrame:CGRectMake(350, 2, 80, 21)];
             label.text = [NSString stringWithFormat: @"%0.2f miles", [[biz valueForKey: @"distance"] doubleValue]];
@@ -192,15 +189,14 @@
 
 
             label = [[UILabel alloc] initWithFrame:CGRectMake(500, 2, 50, 21)];
+            label.userInteractionEnabled = YES;
+            UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToLink:)];
+            [label addGestureRecognizer:gr];
+            [gr release];
             label.text = @" more >";
             label.adjustsFontSizeToFitWidth = YES;
             [label setTextColor: [UIColor colorWithRed:1.0 green:1.0 blue:0.0 alpha:1.0]];
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
-            label.userInteractionEnabled = YES;
-            UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToLink:)];
-            [label addGestureRecognizer:gr];
-            gr.numberOfTapsRequired = 1;
-            gr.cancelsTouchesInView = NO;
             [view addSubview:label];
             i++;
             // do something with uid and count
@@ -213,6 +209,11 @@
 }
 -(void) goToLink:(UILabel*)sender{
     NSLog(@"I am here");
+    double latitude = [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"latitude"] doubleValue];
+    double longitude= [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
+;
+
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat: @"http://maps.apple.com?q=%0.4f,%0.4f", latitude, longitude]]];
 }
 
 - (void)didReceiveMemoryWarning
