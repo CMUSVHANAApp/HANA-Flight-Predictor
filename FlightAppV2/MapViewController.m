@@ -38,11 +38,7 @@
 
 - (void)viewDidLoad
 {
-    UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sap.png"]];
-   // UIImageView *dropLogoView = [[UIImageView alloc] initWithImage:logoView];
-    [self.view addSubview:logoView];
-    
-    
+      
     displayView.layer.cornerRadius = 5;
     displayView.layer.masksToBounds = YES;
     
@@ -142,7 +138,7 @@
 
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
     [mapView addOverlay:polyline];
-    
+    [mapView setMapType:1];
     [mapView setDelegate:self];
       
     NSLog(@"Delay dparture is %@", [self.jsonDictionary valueForKey:@"departDelay"]);
@@ -168,6 +164,11 @@
                                    // do something with uid and count
                                }
                            }];
+    
+    UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sap.png"]];
+    // UIImageView *dropLogoView = [[UIImageView alloc] initWithImage:logoView];
+    [self.view addSubview:logoView];
+    
     [super viewDidLoad];
    
 }
