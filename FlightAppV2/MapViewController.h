@@ -13,6 +13,7 @@
 
 @interface MapViewController : ViewController <MKMapViewDelegate>{
   IBOutlet MKMapView *mapView;
+    int weatherCode;
     
 }
 @property (retain, nonatomic) IBOutlet UILabel *flightInformationLabel;
@@ -35,7 +36,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *flightNumberLabel;
 @property (retain, nonatomic) IBOutlet UIView *displayView;
 
-@property (assign, nonatomic) IBOutlet NSInteger *weatherCode;
 
 @property (retain, nonatomic) IBOutlet UIImageView *rainImage;
 

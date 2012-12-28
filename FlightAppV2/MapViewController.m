@@ -30,7 +30,7 @@
 @synthesize lblAtAirport;
 @synthesize lblDepartTime;
 @synthesize lblArrivalTime;
-@synthesize weatherCode;
+
 
 
 
