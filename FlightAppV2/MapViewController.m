@@ -30,6 +30,8 @@
 @synthesize lblAtAirport;
 @synthesize lblDepartTime;
 @synthesize lblArrivalTime;
+@synthesize weatherCode;
+
 
 
 
@@ -42,7 +44,7 @@
 }
 
 - (void)viewDidLoad
-{
+{   
       
     displayView.layer.cornerRadius = 5;
     displayView.layer.masksToBounds = YES;
@@ -53,34 +55,50 @@
     self.flightNumberLabel.text =[self.jsonDictionary valueForKey:@"flightNumber"];
     self.airlineLabel.text = [self.jsonDictionary valueForKey: @"airline"];
     self.lblAtAirport.text = [[[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] uppercaseString];
-    self.lblDepartTime.text = @"TBD";
-    self.lblArrivalTime.text =@"TBD";
     
-
+    weatherCode = 0;
+    
+    if([self.jsonDictionary valueForKey:@"departWeather"] != (id)[NSNull null]  ){
+    
+        //weatherCode = [[[self.jsonDictionary valueForKey:@"departWeather"] objectForKey:@"weatherCode"] integerValue] ;
+       
+    }
+    
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    //[dateFormat setDateFormat:@"d MM yyyy HH:mm:ss zzz"];
+    [dateFormat setDateFormat:@"d MM yyyy HH:mm:ss zzz"];
+       
+    
+    NSDate *departureTime = [dateFormat dateFromString:[NSString stringWithFormat:@"%@",[self.jsonDictionary valueForKey:@"date"]]];
+    NSDateComponents *departureDateComponents = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit fromDate:departureTime];
+    self.lblDepartTime.text = [NSString stringWithFormat:@"%.2d : %.2d",[departureDateComponents hour], [departureDateComponents minute]];
+    
+    
+    
+    NSDate *arrivalTime = [dateFormat dateFromString:[NSString stringWithFormat:@"%@",[self.jsonDictionary valueForKey:@"arrivalDate"]]];
+    NSDateComponents *arrivalDateComponents = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit fromDate:arrivalTime];
+    self.lblArrivalTime.text = [NSString stringWithFormat:@"%.2d : %.2d",[arrivalDateComponents hour], [arrivalDateComponents minute]];
+    
     
     int departureDelay = [[self.jsonDictionary valueForKey:@"departDelay"] doubleValue];
     if(departureDelay==0){
         
         self.departurePrediction.text =@"On time";
         self.departurePrediction.textColor =[UIColor blueColor];
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is cloudy at %@", departureDelay, [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
-                
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+       
         
     }else if (departureDelay<20){
         
         self.departurePrediction.text = [NSString stringWithFormat:@"Delay %d min", departureDelay ];
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is cloudy at %@", departureDelay, [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
-        
-             
-        
-        //self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@", departureDelay, [self getWeatherDescriptionFromCode:weatherCode],  [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
         self.departurePrediction.textColor =[UIColor redColor];
     }else{
         self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d min", departureDelay];
        
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d mins(s) when the weather is cloudy at %@", departureDelay, [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d mins(s) when the weather is %@ at %@", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
 
-        //self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
         self.departurePrediction.textColor =[UIColor redColor];
     }
     
@@ -88,16 +106,12 @@
     locationDeparture.latitude = [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"latitude"] doubleValue];
     locationDeparture.longitude = [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
     MapAnnotation *annotation1 = [[MapAnnotation alloc] initWithCoordinate: locationDeparture];
-//    annotation1.title = [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] ;
+
 
     annotation1.title = [NSString stringWithFormat:@"%@ (D)", [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
                          
     if([self.jsonDictionary valueForKey:@"departWeather"] != (id)[NSNull null]  ){
-        annotation1.weatherCode = [[[self.jsonDictionary valueForKey:@"departWeather"] objectForKey:@"weatherCode"] integerValue] ;
-        
-        
-        
-       
+        annotation1.weatherCode = [[[self.jsonDictionary valueForKey:@"departWeather"] objectForKey:@"weatherCode"] integerValue] ;    
     }
     annotation1.subTitle = self.departurePrediction.text;
     NSLog(@"departure weather is %d", annotation1.weatherCode );
@@ -122,7 +136,7 @@
     locationArrival.longitude = [[[[self.jsonDictionary valueForKey:@"arrivalAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
     locationArrival.latitude = [[[[self.jsonDictionary valueForKey:@"arrivalAirport"] valueForKey:@"geoLocation"] objectForKey: @"latitude"] doubleValue];
     MapAnnotation *annotation2 = [[MapAnnotation alloc] initWithCoordinate: locationArrival];
-//    annotation2.title = [[self.jsonDictionary valueForKey:@"arrivalAirport"] objectForKey:@"name"] ;
+
 
      annotation2.title = [NSString stringWithFormat:@"%@ (A)", [[self.jsonDictionary valueForKey:@"arrivalAirport"] objectForKey:@"name"]];
    
@@ -194,10 +208,6 @@
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 250, 21)];
             label.text = [biz valueForKey:@"name"];
             
-//            UILabel *label = [UILabel alloc];
-//            label.text = [biz valueForKey:@"name"];
-
-            
             if(key == @"Dining"){
                 label.text = [NSString stringWithFormat: @"%@ - (%@)", [biz valueForKey:@"name"], [biz valueForKey:@"category"]];
             }
@@ -260,7 +270,7 @@
     }else {
         pin.annotation = annotation;
     }
-    
+   
     return pin;
 }
 
@@ -274,4 +284,53 @@
     return [polylineView autorelease];
     
 }
+
+-(NSString *)getWeatherDescriptionFromCode:(int) code{
+    NSString *description;
+    
+    switch (code){
+        case 113: // Clear/Sunny
+            description = [NSString stringWithFormat:@"sunny"];
+            break;
+        case 116: case 119: //Partly Cloudy  // Cloudy
+            description = [NSString stringWithFormat:@"cloudy"];
+            break;
+        case 122: //Overcast
+            description = [NSString stringWithFormat:@"overcast"];
+            break;
+        case 143: case 248: case 260: //Mist //Fog //Freezing fog
+            description = [NSString stringWithFormat:@"foggy"];
+            break;
+        case 176: case 263: case 266: case 281: case 284: case 293: case 296: case 311: case 323: case 326:
+            description = [NSString stringWithFormat:@"lighly-rainy"];
+            break;
+        case 179: case 182: case 185: case 227: case 317: case 368: case 374:
+            description = [NSString stringWithFormat:@"lightly snowy"];
+            break;
+        case 200: //Thundery outbreaks in nearby
+            description = [NSString stringWithFormat:@"stormy"];
+            break;
+        case 230: case 320: case 329: case 332: case 335: case 338: case 350: case 371: case 377:
+            description = [NSString stringWithFormat:@"snowy"];
+            break;
+        case 299: case 305: case 356: case 359: case 365: //Moderate rain at times // Heavy rain at times //Moderate or heavy rain showe
+            description = [NSString stringWithFormat:@"showering"];
+            break;
+        case 302: case 308: case 314: //Moderate rain  //Heavy rain //Moderate or Heavy freezing rain
+            description = [NSString stringWithFormat:@"rainy"];
+            break;
+        case 353: case 362: //Light rain shower //Light sleet showers
+            description = [NSString stringWithFormat:@"lighly-showering"];
+            break;
+        case 386: case 389: case 392: case 395: //Patchy light rain in area with thunder  //Moderate or heavy rain in area with thunder //Patchy light snow in area with thunder //Moderate or heavy snow in area with thunder
+            description = [NSString stringWithFormat:@"stormy"];
+            break;
+        default:
+            description = [NSString stringWithFormat:@"rainy"];
+            break;
+    }
+    
+    return description;
+}
+
 @end

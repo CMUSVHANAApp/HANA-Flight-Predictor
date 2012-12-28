@@ -197,24 +197,7 @@
         NSLog(@" %@", responseString);
         NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
         
-        
-        
-        
-        NSString *result = @" Response for ";
-        result = [result stringByAppendingString:self.departureAirportText.text];
-        
-        result = [result stringByAppendingString:@" to "];
-        
-        result = [result stringByAppendingString:self.destinationAirporteText.text];
-        
-        
-        responseString = [result stringByAppendingString:responseString];
-        
-        
         MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
-        
-        
-        
         if(mapViewController.view){
             if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];

@@ -22,5 +22,6 @@
 @property (nonatomic, retain) NSString *title;
 @property (readwrite, assign) int weatherCode;
 @property (nonatomic, retain) NSString *subTitle;
+@property (nonatomic, retain) NSString *descriptionLabel;
 @end
 

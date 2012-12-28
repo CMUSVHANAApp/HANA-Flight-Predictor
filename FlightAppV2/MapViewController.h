@@ -35,10 +35,12 @@
 @property (retain, nonatomic) IBOutlet UILabel *flightNumberLabel;
 @property (retain, nonatomic) IBOutlet UIView *displayView;
 
+@property (assign, nonatomic) IBOutlet NSInteger *weatherCode;
 
 @property (retain, nonatomic) IBOutlet UIImageView *rainImage;
 
 -(IBAction)drawRoute;
 -(id)initWithJsonData:(NSMutableDictionary *) json;
+-(NSString *)getWeatherDescriptionFromCode:(int) code;
 
 @end
