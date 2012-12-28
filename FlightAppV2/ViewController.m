@@ -41,6 +41,7 @@
     
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        
       
   
     if(tableView == self.listTableView){
@@ -115,7 +116,12 @@
     self.airlineText.text = @"Delta";
     self.flightNumberText.text = @"DL123";
     self.departureAirportText.text = @"PHX";
-    self.departureDateText.text = @"2012-12-15";
+    
+    CFGregorianDate currentDate = CFAbsoluteTimeGetGregorianDate(CFAbsoluteTimeGetCurrent(), CFTimeZoneCopySystem());
+     self.departureDateText.text = [NSString stringWithFormat:@"%ld-%d-%d", currentDate.year, currentDate.month, currentDate.day];
+    //NSLog(self.departureDateText.text);
+       
+    //self.departureDateText.text = @"2012-12-15";
     self.destinationAirporteText.text = @"PHL";
     [super viewDidLoad];
     
@@ -144,8 +150,8 @@
     NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
     NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
     NSString *departDate = self.departureDateText.text;
-    NSString *departAirport = ([self.departureAirportText.text length] == 0)?@"PHX":self.departureAirportText.text;
-    NSString *arrivalAirport = ([self.destinationAirporteText.text length] == 0)?@"PHL":self.destinationAirporteText.text;
+    NSString *departAirport = ([self.departureAirportText.text length] == 0)?@"PHX":[self.departureAirportText.text uppercaseString];
+    NSString *arrivalAirport = ([self.destinationAirporteText.text length] == 0)?@"PHL":[self.destinationAirporteText.text uppercaseString];
     
     NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/predictions/%@/%@/%@/%@/%@", airline, flight, departDate ,departAirport, arrivalAirport];
     NSLog(@"Requested URL: %@", strUrl);
@@ -188,7 +194,7 @@
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         
         NSString *responseString = [request responseString];
-        NSLog(responseString);
+        NSLog(@" %@", responseString);
         NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
         
         
@@ -207,6 +213,8 @@
         
         MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
         
+        
+        
         if(mapViewController.view){
             if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -214,6 +222,8 @@
                 //        [alert addButtonWithTitle:@"Yes"];
                 [alert show];
             }
+            mapViewController.departDate.text = self.departureDateText.text;
+
             [self.navigationController pushViewController:mapViewController animated:YES];
             
         }
@@ -250,13 +260,18 @@
         airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,10, 80, 20)];
         airlineImage= [UIImage imageNamed:@"deltaairlines.jpg"];
         airlineImageView.image = airlineImage;
+    }else if([airline isEqualToString:@"Southwest Airlines"]){
+        // Work in progress, getting the right image for other airlines
+        airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,0, 80, 43)];
+        airlineImage = [UIImage imageNamed:@"Southwest-Airlines-logo.jpg"];
+        airlineImageView.image = airlineImage;
     }else{
         // Work in progress, getting the right image for other airlines
         airlineImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10,0, 50, 45)];
         airlineImage = [UIImage imageNamed:@"usairways.gif"];
         airlineImageView.image = airlineImage;
     }
-    //NSLog(airline);
+    NSLog(@" %@", airline);
     return airlineImageView;
 }
 

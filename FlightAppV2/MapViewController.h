@@ -17,7 +17,11 @@
 }
 @property (retain, nonatomic) IBOutlet UILabel *flightInformationLabel;
 @property (retain, nonatomic) IBOutlet UILabel *poweredBySAPLabel;
+@property (retain, nonatomic) IBOutlet UILabel *departDate;
+@property (retain, nonatomic) IBOutlet UILabel *lblDepartTime;
+@property (retain, nonatomic) IBOutlet UILabel *lblArrivalTime;
 
+@property (retain, nonatomic) IBOutlet UILabel *lblAtAirport;
 
 @property (retain, nonatomic) IBOutlet UILabel *realTimeLabel;
 

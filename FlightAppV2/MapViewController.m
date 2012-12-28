@@ -26,6 +26,11 @@
 @synthesize calloutAnnotation = _calloutAnnotation;
 @synthesize displayView, realTimeLabel, poweredBySAPLabel, flightInformationLabel;
 @synthesize delay_summary;
+@synthesize departDate;
+@synthesize lblAtAirport;
+@synthesize lblDepartTime;
+@synthesize lblArrivalTime;
+
 
 
 -(id)initWithJsonData:(NSMutableDictionary *) json {
@@ -45,32 +50,35 @@
     realTimeLabel.font = [UIFont italicSystemFontOfSize:20.0f];
     poweredBySAPLabel.font = [UIFont italicSystemFontOfSize:18.0f];
    
-     self.flightNumberLabel.text =[self.jsonDictionary valueForKey:@"flightNumber"];
-     self.airlineLabel.text = [self.jsonDictionary valueForKey: @"airline"];
+    self.flightNumberLabel.text =[self.jsonDictionary valueForKey:@"flightNumber"];
+    self.airlineLabel.text = [self.jsonDictionary valueForKey: @"airline"];
+    self.lblAtAirport.text = [[[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] uppercaseString];
+    self.lblDepartTime.text = @"TBD";
+    self.lblArrivalTime.text =@"TBD";
+    
 
+    
     int departureDelay = [[self.jsonDictionary valueForKey:@"departDelay"] doubleValue];
-    if(departureDelay<10){
+    if(departureDelay==0){
+        
         self.departurePrediction.text =@"On time";
         self.departurePrediction.textColor =[UIColor blueColor];
-        
-        self.delay_summary.text = @"The average delay time is 0 min when the weather is sunny at Phoenix";
-        
-        
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is cloudy at %@", departureDelay, [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+                
         
     }else if (departureDelay<20){
-        self.departurePrediction.text =@"Delay 5 mins";
-              
-        self.delay_summary.text = @"The average delay time is 5 when the weather is cloudy at phoenix", [self.jsonDictionary valueForKey:@"departDelay"];
         
-       
-      
+        self.departurePrediction.text = [NSString stringWithFormat:@"Delay %d min", departureDelay ];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is cloudy at %@", departureDelay, [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        
+             
         
         //self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
         self.departurePrediction.textColor =[UIColor redColor];
     }else{
-        self.departurePrediction.text =@"Delay 15 mins";
+        self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d min", departureDelay];
        
-         self.delay_summary.text = @"The average delay time is 10 when it is raining at Philadelphia", [self.jsonDictionary valueForKey:@"departDelay"];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d mins(s) when the weather is cloudy at %@", departureDelay, [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
 
         //self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d minutes", departureDelay];
         self.departurePrediction.textColor =[UIColor redColor];
@@ -80,12 +88,19 @@
     locationDeparture.latitude = [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"latitude"] doubleValue];
     locationDeparture.longitude = [[[[self.jsonDictionary valueForKey:@"departAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
     MapAnnotation *annotation1 = [[MapAnnotation alloc] initWithCoordinate: locationDeparture];
-    annotation1.title = [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] ;
+//    annotation1.title = [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] ;
+
+    annotation1.title = [NSString stringWithFormat:@"%@ (D)", [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+                         
     if([self.jsonDictionary valueForKey:@"departWeather"] != (id)[NSNull null]  ){
         annotation1.weatherCode = [[[self.jsonDictionary valueForKey:@"departWeather"] objectForKey:@"weatherCode"] integerValue] ;
+        
+        
+        
+       
     }
     annotation1.subTitle = self.departurePrediction.text;
-        NSLog(@"departure weather is %d", annotation1.weatherCode );
+    NSLog(@"departure weather is %d", annotation1.weatherCode );
     
     [mapView addAnnotation:annotation1];
     [annotation1 release];
@@ -107,7 +122,12 @@
     locationArrival.longitude = [[[[self.jsonDictionary valueForKey:@"arrivalAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
     locationArrival.latitude = [[[[self.jsonDictionary valueForKey:@"arrivalAirport"] valueForKey:@"geoLocation"] objectForKey: @"latitude"] doubleValue];
     MapAnnotation *annotation2 = [[MapAnnotation alloc] initWithCoordinate: locationArrival];
-    annotation2.title = [[self.jsonDictionary valueForKey:@"arrivalAirport"] objectForKey:@"name"] ;
+//    annotation2.title = [[self.jsonDictionary valueForKey:@"arrivalAirport"] objectForKey:@"name"] ;
+
+     annotation2.title = [NSString stringWithFormat:@"%@ (A)", [[self.jsonDictionary valueForKey:@"arrivalAirport"] objectForKey:@"name"]];
+   
+    
+    
     if([self.jsonDictionary valueForKey:@"arrivalWeather"] != (id)[NSNull null] ){
         annotation2.weatherCode = [[[self.jsonDictionary valueForKey:@"arrivalWeather"] objectForKey:@"weatherCode"] integerValue] ;
     }
@@ -173,28 +193,33 @@
             
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 250, 21)];
             label.text = [biz valueForKey:@"name"];
+            
+//            UILabel *label = [UILabel alloc];
+//            label.text = [biz valueForKey:@"name"];
+
+            
             if(key == @"Dining"){
                 label.text = [NSString stringWithFormat: @"%@ - (%@)", [biz valueForKey:@"name"], [biz valueForKey:@"category"]];
             }
-            label.adjustsFontSizeToFitWidth = YES;
+            label.adjustsFontSizeToFitWidth = NO;
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
             [view addSubview:label];
             
 
             label = [[UILabel alloc] initWithFrame:CGRectMake(350, 2, 80, 21)];
             label.text = [NSString stringWithFormat: @"%0.2f miles", [[biz valueForKey: @"distance"] doubleValue]];
-            label.adjustsFontSizeToFitWidth = YES;
+            label.adjustsFontSizeToFitWidth = NO;
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
             [view addSubview:label];
 
 
-            label = [[UILabel alloc] initWithFrame:CGRectMake(500, 2, 50, 21)];
+            label = [[UILabel alloc] initWithFrame:CGRectMake(500, 2, 70, 21)];
             label.userInteractionEnabled = YES;
             UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToLink:)];
             [label addGestureRecognizer:gr];
             [gr release];
             label.text = @" more >";
-            label.adjustsFontSizeToFitWidth = YES;
+            label.adjustsFontSizeToFitWidth = NO;
             [label setTextColor: [UIColor colorWithRed:1.0 green:1.0 blue:0.0 alpha:1.0]];
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
             [view addSubview:label];
@@ -224,8 +249,6 @@
 
 
 - (void)dealloc {
- 
-   
     [super dealloc];
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
@@ -237,6 +260,7 @@
     }else {
         pin.annotation = annotation;
     }
+    
     return pin;
 }
 

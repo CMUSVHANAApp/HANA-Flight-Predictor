@@ -14,7 +14,9 @@
     UIView *contentView_;
     UILabel *titleLabel_;
     UILabel *subtitleLabel_;
+    UILabel *descriptionLabel_;
     UIImageView *imageView_;
+    
 
 }
 @property (nonatomic, retain) NSString *title;
