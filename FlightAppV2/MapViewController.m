@@ -186,12 +186,17 @@
         int i = 0 ;
         for (NSMutableDictionary *biz in recommendationArray) {
             if(i==3) break;
+            UIColor *fontColor = Nil;
+            if(i % 2== 0)
+                fontColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
+            else
+                fontColor = [UIColor colorWithWhite:0.3f alpha:1.0f];
             
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, 35+ i*25, 450, 25)];
             [view setBackgroundColor: [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f] ];
             [container addSubview:view];
             
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 250, 21)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 200, 21)];
             label.text = [biz valueForKey:@"name"];
             
 //            UILabel *label = [UILabel alloc];
@@ -201,28 +206,42 @@
             if(key == @"Dining"){
                 label.text = [NSString stringWithFormat: @"%@ - (%@)", [biz valueForKey:@"name"], [biz valueForKey:@"category"]];
             }
+            label.font = [UIFont systemFontOfSize:14];
             label.adjustsFontSizeToFitWidth = NO;
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
+            [label setTextColor: fontColor];
             [view addSubview:label];
             
 
-            label = [[UILabel alloc] initWithFrame:CGRectMake(350, 2, 80, 21)];
+            label = [[UILabel alloc] initWithFrame:CGRectMake(215, 2, 80, 21)];
             label.text = [NSString stringWithFormat: @"%0.2f miles", [[biz valueForKey: @"distance"] doubleValue]];
+            label.font = [UIFont systemFontOfSize:14];
             label.adjustsFontSizeToFitWidth = NO;
+            [label setTextColor: fontColor];
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
             [view addSubview:label];
 
 
-            label = [[UILabel alloc] initWithFrame:CGRectMake(500, 2, 70, 21)];
+            label = [[UILabel alloc] initWithFrame:CGRectMake(300, 2, 200, 21)];
             label.userInteractionEnabled = YES;
             UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToLink:)];
             [label addGestureRecognizer:gr];
             [gr release];
-            label.text = @" more >";
+            label.text = [NSString stringWithFormat: @"%@", [[biz valueForKey:@"geoLocation"] valueForKey: @"address"]];
+            label.font = [UIFont systemFontOfSize:14];
             label.adjustsFontSizeToFitWidth = NO;
-            [label setTextColor: [UIColor colorWithRed:1.0 green:1.0 blue:0.0 alpha:1.0]];
+           [label setTextColor: fontColor];
             [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
             [view addSubview:label];
+
+            label = [[UILabel alloc] initWithFrame:CGRectMake(500, 2, 100, 21)];
+            label.text = [NSString stringWithFormat: @"%@", [biz valueForKey: @"phone"]];
+            label.font = [UIFont systemFontOfSize:14];
+            label.adjustsFontSizeToFitWidth = NO;
+            [label setTextColor: fontColor];
+            [label setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0f]];
+            [view addSubview:label];
+            
             i++;
             // do something with uid and count
         }
