@@ -54,7 +54,7 @@
    
     self.flightNumberLabel.text =[self.jsonDictionary valueForKey:@"flightNumber"];
     self.airlineLabel.text = [self.jsonDictionary valueForKey: @"airline"];
-    self.lblAtAirport.text = [[[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] uppercaseString];
+    self.lblAtAirport.text = [NSString stringWithFormat:@"%@ airport.",[[[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] uppercaseString]];
     
     weatherCode = 0;
     
@@ -86,18 +86,18 @@
         
         self.departurePrediction.text =@"On time";
         self.departurePrediction.textColor =[UIColor blueColor];
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
        
         
     }else if (departureDelay<20){
         
         self.departurePrediction.text = [NSString stringWithFormat:@"Delay %d min", departureDelay ];
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@", departureDelay, [self getWeatherDescriptionFromCode:weatherCode],  [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode],  [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
         self.departurePrediction.textColor =[UIColor redColor];
     }else{
         self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d min", departureDelay];
        
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d mins(s) when the weather is %@ at %@", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d mins(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
 
         self.departurePrediction.textColor =[UIColor redColor];
     }
