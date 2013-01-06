@@ -179,7 +179,7 @@
     NSLog(@"Delay arrival is %@", [self.jsonDictionary valueForKey:@"arrivalDelay"]);
     
     /** Recommendations **/
-    NSArray *loop = [NSArray arrayWithObjects: @"Dining", @"Transportation", @"Accomendation", nil];
+    NSArray *loop = [NSArray arrayWithObjects: @"Dining", @"Transportation", @"Accomodation", nil];
     for(int key_i=0; key_i< 3; key_i++){
         NSString *key = [loop objectAtIndex:key_i];
         NSMutableDictionary *recommendationArray = [[[self.jsonDictionary valueForKey: @"recommendations"] valueForKey: key] valueForKey: @"recommendations"];
