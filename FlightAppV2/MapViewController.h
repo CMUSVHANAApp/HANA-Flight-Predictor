@@ -36,8 +36,8 @@
 @property (retain, nonatomic) IBOutlet UILabel *flightNumberLabel;
 @property (retain, nonatomic) IBOutlet UIView *displayView;
 
-
 @property (retain, nonatomic) IBOutlet UIImageView *rainImage;
+@property (retain, nonatomic) IBOutlet UILabel *departureDate;
 
 -(IBAction)drawRoute;
 -(id)initWithJsonData:(NSMutableDictionary *) json;

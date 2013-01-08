@@ -30,6 +30,10 @@
 @synthesize lblAtAirport;
 @synthesize lblDepartTime;
 @synthesize lblArrivalTime;
+@synthesize  airlineLabel;
+
+
+
 
 
 
@@ -39,13 +43,14 @@
     self = [super init];
     if(self){
         self.jsonDictionary = json;
+       
     }
     return self;
 }
 
 - (void)viewDidLoad
-{   
-      
+{
+       
     displayView.layer.cornerRadius = 5;
     displayView.layer.masksToBounds = YES;
     
@@ -54,7 +59,14 @@
    
     self.flightNumberLabel.text =[self.jsonDictionary valueForKey:@"flightNumber"];
     self.airlineLabel.text = [self.jsonDictionary valueForKey: @"airline"];
-    self.lblAtAirport.text = [NSString stringWithFormat:@"%@ airport.",[[[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"] uppercaseString]];
+    //self.airlineName.text = [self.jsonDictionary valueForKey: @"airline"];
+    
+    
+    self.lblAtAirport.text = [NSString stringWithFormat:@"%@",[[[self.jsonDictionary objectForKey:@"departAirport"] valueForKey:@"name"] uppercaseString]];
+    
+    CFGregorianDate currentDate = CFAbsoluteTimeGetGregorianDate(CFAbsoluteTimeGetCurrent(), CFTimeZoneCopySystem());
+    self.departDate.text = [NSString stringWithFormat:@"%ld-%d-%d", currentDate.year, currentDate.month, currentDate.day];
+     
     
     weatherCode = 0;
     
@@ -76,6 +88,8 @@
     
     
     
+    
+    
     NSDate *arrivalTime = [dateFormat dateFromString:[NSString stringWithFormat:@"%@",[self.jsonDictionary valueForKey:@"arrivalDate"]]];
     NSDateComponents *arrivalDateComponents = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit fromDate:arrivalTime];
     self.lblArrivalTime.text = [NSString stringWithFormat:@"%.2d : %.2d",[arrivalDateComponents hour], [arrivalDateComponents minute]];
@@ -86,18 +100,18 @@
         
         self.departurePrediction.text =@"On time";
         self.departurePrediction.textColor =[UIColor blueColor];
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], self.lblAtAirport.text];
        
         
     }else if (departureDelay<20){
         
         self.departurePrediction.text = [NSString stringWithFormat:@"Delay %d min", departureDelay ];
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode],  [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d min(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode],  self.lblAtAirport.text];
         self.departurePrediction.textColor =[UIColor redColor];
     }else{
         self.departurePrediction.text =[NSString stringWithFormat:@"Delay %d min", departureDelay];
        
-        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d mins(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], [[self.jsonDictionary valueForKey:@"departAirport"] objectForKey:@"name"]];
+        self.delay_summary.text = [NSString stringWithFormat:@"The average delay time is %d mins(s) when the weather is %@ at %@ airport.", departureDelay, [self getWeatherDescriptionFromCode:weatherCode], self.lblAtAirport.text];
 
         self.departurePrediction.textColor =[UIColor redColor];
     }
@@ -130,7 +144,8 @@
         self.destinationPrediction.text =[NSString stringWithFormat:@"Delay %d minutes", arrivalDelay];
         self.destinationPrediction.textColor =[UIColor redColor];
     }
-    self.airlineLabel.text = self.airlineText.text;
+  
+   
     
     CLLocationCoordinate2D locationArrival;
     locationArrival.longitude = [[[[self.jsonDictionary valueForKey:@"arrivalAirport"] valueForKey:@"geoLocation"] objectForKey: @"longitude"] doubleValue];
@@ -278,6 +293,8 @@
 
 
 - (void)dealloc {
+    
+    [_departureDate release];
     [super dealloc];
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
@@ -340,7 +357,7 @@
             break;
         case 353: case 362: //Light rain shower //Light sleet showers
             description = [NSString stringWithFormat:@"lighly-showering"];
-            break;
+            break;  
         case 386: case 389: case 392: case 395: //Patchy light rain in area with thunder  //Moderate or heavy rain in area with thunder //Patchy light snow in area with thunder //Moderate or heavy snow in area with thunder
             description = [NSString stringWithFormat:@"stormy"];
             break;

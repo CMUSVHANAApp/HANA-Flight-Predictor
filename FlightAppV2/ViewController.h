@@ -21,6 +21,10 @@
 
 - (IBAction)grabURLInBackground:(id)sender;
 - (IBAction)loadDefaults;
+@property (retain, nonatomic) IBOutlet UITextField *searchDeparture;
+@property (retain, nonatomic) IBOutlet UITextField *searchDestination;
+
+- (IBAction)searchButton:(id)sender;
 
 @property (nonatomic, retain) NSArray *jsonArray;
 

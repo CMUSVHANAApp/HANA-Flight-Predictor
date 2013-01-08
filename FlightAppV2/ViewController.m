@@ -22,6 +22,8 @@
 
 @synthesize listTableView, submitButton, airlineLabel, departureAirportLabel, departureDateLabel, destinationAirportLabel, poweredBySAPLabel, realTimePredictionLabel, itineraryInputView, jsonArray;
 
+@synthesize  searchDeparture, searchDestination;
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == self.listTableView){
@@ -54,7 +56,7 @@
         airlineImageView= [self getAirlineImageView:airline];
 
        
-      
+        
         UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 5, 70, 30)];
         UILabel *departureTime = [[UILabel alloc] initWithFrame:CGRectMake(180, 5, 200, 30)];
        
@@ -99,6 +101,9 @@
         [cell addSubview:numberLabel];
         [cell addSubview:statusLabel];
         [cell addSubview:arrivalTimeLabel];
+        
+
+      
     
     }
     }
@@ -107,22 +112,40 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+  
+    
+    NSMutableDictionary *jsonDictionary = [self.jsonArray objectAtIndex:indexPath.row];
+    
+    MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
+    mapViewController.departDate.text = self.departureDateText.text;
+    
+    NSLog(@"Log jsonDictionary %@",jsonDictionary);
+
+    
+    [self.navigationController pushViewController:mapViewController animated:YES];
+   
+        
+}
+
+
 - (void)viewDidLoad
 {
-     
-    [self loadDefaults];
-   
-    
     self.airlineText.text = @"Delta";
     self.flightNumberText.text = @"DL123";
-    self.departureAirportText.text = @"PHX";
+    self.departureAirportText.text = @"SFO";
+   
+    self.searchDeparture.text = @"SFO";
+    self.searchDestination.text = @"SAN";
+    
+    [self loadDefaults];
     
     CFGregorianDate currentDate = CFAbsoluteTimeGetGregorianDate(CFAbsoluteTimeGetCurrent(), CFTimeZoneCopySystem());
      self.departureDateText.text = [NSString stringWithFormat:@"%ld-%d-%d", currentDate.year, currentDate.month, currentDate.day];
     //NSLog(self.departureDateText.text);
-       
-    //self.departureDateText.text = @"2012-12-15";
-    self.destinationAirporteText.text = @"PHL";
+    
+    self.destinationAirporteText.text = @"SAN";
     [super viewDidLoad];
     
     itineraryInputView.layer.cornerRadius = 5;
@@ -149,11 +172,12 @@
     
     NSString *airline = ([self.airlineText.text length]==0)?@"Delta": self.airlineText.text;
     NSString *flight = ([self.flightNumberText.text length] == 0)?@"DL234": self.flightNumberText.text;
-    NSString *departDate = self.departureDateText.text;
-    NSString *departAirport = ([self.departureAirportText.text length] == 0)?@"PHX":[self.departureAirportText.text uppercaseString];
-    NSString *arrivalAirport = ([self.destinationAirporteText.text length] == 0)?@"PHL":[self.destinationAirporteText.text uppercaseString];
+    NSString *departureDateForURL = self.departureDateText.text;
+    NSString *departAirport = ([self.searchDeparture.text length] == 0)?@"SFO":[self.searchDeparture.text uppercaseString];
+   
+    NSString *arrivalAirport = ([self.searchDestination.text length] == 0)?@"SAN":[self.destinationAirporteText.text uppercaseString];
     
-    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/predictions/%@/%@/%@/%@/%@", airline, flight, departDate ,departAirport, arrivalAirport];
+    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/predictions/%@/%@/%@/%@/%@", airline, flight, departureDateForURL ,departAirport, arrivalAirport];
     NSLog(@"Requested URL: %@", strUrl);
     NSURL *url = [NSURL URLWithString: strUrl];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -167,9 +191,19 @@
 
 - (IBAction)loadDefaults
 {
+    NSString *strUrl = [[NSString alloc] init];
     
+    // Determine the defaults to load; for specific route or for all routes
     
-    NSString *strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/flights"];
+    if([self.searchDestination.text isEqualToString:@"ALL"]){
+         strUrl = [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/flights/%@", self.searchDeparture.text];
+       
+
+    }else{
+         strUrl= [NSString stringWithFormat: @"http://flight-prediction.herokuapp.com/flights/%@/%@",self.searchDeparture.text,self.searchDestination.text];
+
+    }
+   
     NSURL *url = [NSURL URLWithString: strUrl];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
@@ -179,37 +213,31 @@
 }
 - (void)requestFinished:(ASIHTTPRequest *) request 
 {
-         
-    if([request.url.absoluteString isEqualToString:@"http://flight-prediction.herokuapp.com/flights"]){
-       
-        self.jsonArray  = [[NSArray alloc] init];
-             
-        self.jsonArray = [[request responseString] JSONValue];
-       
-      
-    
-        
-    }else{
+   
+    // Determine which
+    NSString *url = [[NSString alloc]initWithFormat:@"%@", request.url.absoluteString];
+    NSRange range = [url rangeOfString:@"predictions" options:NSCaseInsensitiveSearch];
+    if (range.length > 0){
        
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         
         NSString *responseString = [request responseString];
-        NSLog(@" %@", responseString);
+        //NSLog(@"Response :  %@", responseString);
         NSMutableDictionary *jsonDictionary = [parser objectWithString:responseString error:nil];
         
+        NSLog(@"Log jsonDictionary %@",jsonDictionary);
+        
         MapViewController *mapViewController = [[MapViewController alloc] initWithJsonData: jsonDictionary ];
-        if(mapViewController.view){
-            if(([[self.airlineText text] length] == 0) || ([[self.flightNumberText text] length] == 0) ){
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing fields" message:@"Complete all fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                // optional - add more buttons:
-                //        [alert addButtonWithTitle:@"Yes"];
-                [alert show];
-            }
-            mapViewController.departDate.text = self.departureDateText.text;
-
-            [self.navigationController pushViewController:mapViewController animated:YES];
-            
-        }
+        
+        mapViewController.departDate.text = self.departureDateText.text;
+        
+        [self.navigationController pushViewController:mapViewController animated:YES];
+        
+    } else{
+        
+        self.jsonArray  = [[NSArray alloc] init];
+        self.jsonArray = [[request responseString] JSONValue];
+        [[self listTableView] reloadData];
        
     }
 }
@@ -226,12 +254,12 @@
 
 
 - (void)dealloc {
-    [_airlineText release];
+   
     [_flightNumberText release];
     [_departureAirportText release];
-    [_departureDateText release];
+   
     [_destinationAirporteText release];
-    
+
     [super dealloc];
 }
 
@@ -256,6 +284,12 @@
     }
     NSLog(@" %@", airline);
     return airlineImageView;
+}
+
+- (IBAction)searchButton:(id)sender {
+   
+    [self loadDefaults];
+    [[self listTableView] reloadData];
 }
 
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEe-hm-Ena">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,7 +15,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-ad-Xn8">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="696" id="4NL-cu-djf"/>
+                                    <constraint firstAttribute="width" constant="696" id="DKX-MH-DeZ"/>
                                     <constraint firstAttribute="height" constant="262" id="nIX-mS-CRW"/>
                                 </constraints>
                                 <prototypes>
@@ -146,10 +146,10 @@
                                 <color key="backgroundColor" white="0.83137254901960789" alpha="0.82000000000000006" colorSpace="deviceWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mID-iM-iGO" secondAttribute="trailing" constant="225" id="5TJ-bI-XdB"/>
+                                    <constraint firstItem="INW-aY-uL3" firstAttribute="centerY" secondItem="M86-ZS-sDC" secondAttribute="centerY" type="default" id="7ge-HG-98E"/>
                                     <constraint firstItem="gTu-R1-Sac" firstAttribute="baseline" secondItem="xgS-qa-EPk" secondAttribute="baseline" type="default" id="GkT-3L-MsG"/>
                                     <constraint firstItem="hCi-X6-H5U" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="11" id="HTN-jU-gqf"/>
                                     <constraint firstItem="gTu-R1-Sac" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="180" id="IVs-eu-2tX"/>
-                                    <constraint firstItem="mID-iM-iGO" firstAttribute="centerY" secondItem="M86-ZS-sDC" secondAttribute="centerY" type="default" id="JJP-HL-BAK"/>
                                     <constraint firstItem="xgS-qa-EPk" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" constant="109" id="Y47-bQ-FqP"/>
                                     <constraint firstItem="INW-aY-uL3" firstAttribute="baseline" secondItem="mID-iM-iGO" secondAttribute="baseline" type="default" id="YmW-hD-Tts"/>
                                     <constraint firstItem="mID-iM-iGO" firstAttribute="baseline" secondItem="gTu-R1-Sac" secondAttribute="baseline" type="default" id="aHE-Tw-AGS"/>
@@ -164,22 +164,67 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Realtime Flight Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuV-GO-Gp7">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J28-3D-DOG">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="291" id="Gdp-LK-0iF"/>
-                                            <constraint firstAttribute="height" constant="33" id="qyH-GW-4OU"/>
+                                            <constraint firstAttribute="width" constant="140" id="jiJ-A1-JGo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Departure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vis-Mt-4Cj">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="fxX-I0-wy1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="08X-aV-KiC">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="lQa-XA-p7y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj2-bd-DMO">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlb-Ho-HJk">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="ebg-Us-5Bf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Refresh">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButton:" destination="2" eventType="touchUpInside" id="ShV-Li-RJN"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.83137254900000002" alpha="0.81999999999999995" colorSpace="deviceWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Wlb-Ho-HJk" firstAttribute="centerY" secondItem="J28-3D-DOG" secondAttribute="centerY" type="default" id="6V9-9n-GOA"/>
+                                    <constraint firstItem="vis-Mt-4Cj" firstAttribute="baseline" secondItem="J28-3D-DOG" secondAttribute="baseline" type="default" id="9v7-YL-xnm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wlb-Ho-HJk" secondAttribute="trailing" constant="37" id="A7F-r8-Ick"/>
+                                    <constraint firstItem="Dj2-bd-DMO" firstAttribute="top" secondItem="vis-Mt-4Cj" secondAttribute="top" type="default" id="EGh-uW-Lo7"/>
+                                    <constraint firstItem="vis-Mt-4Cj" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Gzs-FE-SSg"/>
+                                    <constraint firstItem="Dj2-bd-DMO" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="298" id="JE8-UO-bVY"/>
                                     <constraint firstAttribute="bottom" secondItem="YiW-Bi-6hr" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="OIz-xP-Rr1"/>
-                                    <constraint firstItem="WuV-GO-Gp7" firstAttribute="centerX" secondItem="I35-tZ-Xir" secondAttribute="centerX" type="default" id="bEs-2x-p9r"/>
-                                    <constraint firstItem="WuV-GO-Gp7" firstAttribute="top" secondItem="I35-tZ-Xir" secondAttribute="top" type="default" id="cN9-p0-jea"/>
+                                    <constraint firstItem="Dj2-bd-DMO" firstAttribute="top" secondItem="08X-aV-KiC" secondAttribute="top" type="default" id="UCN-Y8-3TW"/>
+                                    <constraint firstItem="J28-3D-DOG" firstAttribute="centerY" secondItem="I35-tZ-Xir" secondAttribute="centerY" type="default" id="VML-g7-MPI"/>
+                                    <constraint firstItem="Dj2-bd-DMO" firstAttribute="baseline" secondItem="08X-aV-KiC" secondAttribute="baseline" type="default" id="b2b-rO-H0G"/>
                                     <constraint firstAttribute="trailing" secondItem="YiW-Bi-6hr" secondAttribute="trailing" constant="141" id="ftS-ME-d1X"/>
+                                    <constraint firstItem="J28-3D-DOG" firstAttribute="leading" secondItem="I35-tZ-Xir" secondAttribute="leading" constant="128" id="ghn-TR-81G"/>
+                                    <constraint firstAttribute="trailing" secondItem="08X-aV-KiC" secondAttribute="trailing" constant="158" id="k1g-FM-lat"/>
+                                    <constraint firstItem="Dj2-bd-DMO" firstAttribute="bottom" secondItem="08X-aV-KiC" secondAttribute="bottom" type="default" id="mPU-bU-dwn"/>
+                                    <constraint firstItem="Wlb-Ho-HJk" firstAttribute="baseline" secondItem="08X-aV-KiC" secondAttribute="baseline" type="default" id="xz9-Vq-3S4"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Powered by SAP HANA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-62-R2n">
@@ -309,19 +354,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28426873992841889" green="0.52339250949012783" blue="0.79677535076530615" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="139" id="39j-iU-w5W"/>
+                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="202" id="243-9n-tD2"/>
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="top" secondItem="5" secondAttribute="top" constant="478" id="6Wq-AD-dVM"/>
-                            <constraint firstItem="I35-tZ-Xir" firstAttribute="top" secondItem="5" secondAttribute="top" constant="105" id="92u-4B-xUG"/>
-                            <constraint firstItem="I35-tZ-Xir" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="IGE-pO-frt"/>
-                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="780" id="Ibb-WI-2O6"/>
+                            <constraint firstAttribute="bottom" secondItem="M86-ZS-sDC" secondAttribute="bottom" constant="769" id="Er4-fg-yE1"/>
+                            <constraint firstItem="M86-ZS-sDC" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="HeM-W5-Rkf"/>
+                            <constraint firstItem="M86-ZS-sDC" firstAttribute="top" secondItem="5" secondAttribute="top" constant="150" id="J0e-1U-jWv"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="leading" secondItem="SPd-ad-Xn8" secondAttribute="leading" type="default" id="O4G-mL-eIf"/>
                             <constraint firstItem="fDc-2r-Vb5" firstAttribute="top" secondItem="dEt-0g-o1f" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ODm-4L-bbd"/>
                             <constraint firstItem="LEK-Uk-PQo" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R6O-Np-Zy7"/>
                             <constraint firstItem="SPd-ad-Xn8" firstAttribute="centerX" secondItem="LiU-dy-rGA" secondAttribute="centerX" type="default" id="Rdo-sh-lBb"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="leading" secondItem="M86-ZS-sDC" secondAttribute="leading" type="default" id="See-7d-ltx"/>
-                            <constraint firstItem="SPd-ad-Xn8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="183" id="VD4-oM-QMQ"/>
                             <constraint firstAttribute="trailing" secondItem="fDc-2r-Vb5" secondAttribute="trailing" constant="60" id="VTU-MG-Iq5"/>
                             <constraint firstItem="LiU-dy-rGA" firstAttribute="centerX" secondItem="qXL-3r-weV" secondAttribute="centerX" type="default" id="XxZ-AJ-OdX"/>
+                            <constraint firstItem="I35-tZ-Xir" firstAttribute="top" secondItem="5" secondAttribute="top" constant="98" id="eGo-I3-b1g"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="74" id="h9V-9Y-9ng"/>
                             <constraint firstItem="I35-tZ-Xir" firstAttribute="trailing" secondItem="M86-ZS-sDC" secondAttribute="trailing" type="default" id="iub-03-sMo"/>
                             <constraint firstItem="qXL-3r-weV" firstAttribute="top" secondItem="5" secondAttribute="top" constant="527" id="kTg-NU-DCL"/>
@@ -332,7 +377,7 @@
                             <constraint firstItem="SeT-62-R2n" firstAttribute="top" secondItem="dEt-0g-o1f" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sKX-pf-Yvl"/>
                             <constraint firstItem="M86-ZS-sDC" firstAttribute="trailing" secondItem="SPd-ad-Xn8" secondAttribute="trailing" type="default" id="soa-hR-lEE"/>
                             <constraint firstItem="dEt-0g-o1f" firstAttribute="leading" secondItem="SeT-62-R2n" secondAttribute="leading" type="default" id="uf0-Zt-9OK"/>
-                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="824" id="y59-cL-5ZG"/>
+                            <constraint firstAttribute="bottom" secondItem="I35-tZ-Xir" secondAttribute="bottom" constant="812" id="zM5-pw-tqV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hP7-DH-0zK"/>
@@ -346,6 +391,8 @@
                         <outlet property="listTableView" destination="SPd-ad-Xn8" id="xcb-Wl-vAY"/>
                         <outlet property="poweredBySAPLabel" destination="SeT-62-R2n" id="dH5-Ce-bCC"/>
                         <outlet property="realTimePredictionLabel" destination="dEt-0g-o1f" id="P93-8d-H4r"/>
+                        <outlet property="searchDeparture" destination="J28-3D-DOG" id="G0B-tF-tIF"/>
+                        <outlet property="searchDestination" destination="08X-aV-KiC" id="lob-PN-5oJ"/>
                         <outlet property="submitButton" destination="C1t-dV-Wwp" id="wU8-th-4S1"/>
                     </connections>
                 </viewController>
@@ -377,6 +424,36 @@
         <image name="Screen Shot 2012-12-13 at 9.00.22 PM.png" width="344" height="67"/>
         <image name="saplogo.png" width="66" height="33"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="grabURLInBackground:"/>
+                <relationship kind="action" name="loadDefaults"/>
+                <relationship kind="action" name="searchButton:"/>
+                <relationship kind="outlet" name="airlineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="airlineText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="departureAirportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="departureAirportText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="departureDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="departureDateText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="destinationAirportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="destinationAirporteText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="flightNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flightNumberText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="itineraryInputView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="poweredBySAPLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="realTimePredictionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="searchDeparture" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchDestination" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
